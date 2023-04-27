@@ -1,0 +1,119 @@
+/ HEX Converter
+/ by Piotr Maciejończyk
+
+Start,				Clear
+				Input
+				Store		Number
+				Store		NumberTemp
+
+WhileA,			Load		NumberTemp
+				Skipcond	800
+				Jump		Write
+		
+WhileA_do,			Load		Counter1
+				Add		ONE
+				Store		Counter1
+				Jump		DivisionA
+
+WhileB,			Load		Counter1
+				Skipcond	800
+				Jump		Stop
+
+WhileB_do.1,			Store		Counter2
+				Load		Number
+				Store		NumberTemp
+                		Jump 		WhileC
+                
+WhileB_do.2,			Load		Counter1
+				Subt		ONE
+				Store		Counter1
+				Jump		Write
+
+WhileC,			Load		Counter2
+				Skipcond	800
+				Jump		WhileB_do.2
+		
+WhileC_do,			Subt		ONE
+				Store		Counter2
+				Jump		DivisionA
+	
+DivisionA,			Load 		NumberTemp
+				Store		Dividend
+
+DivisionB,			Subt		SIXTEEN
+				Skipcond	000
+				Jump		DivisionC
+				Load		Dividend
+				Store		Remainder
+				Load		Quotient
+				Store		NumberTemp
+				Clear
+				Store		Quotient
+				Load		Tester
+				Skipcond	800
+				Jump		WhileA
+				Jump		WhileC
+
+DivisionC,			Store		Dividend
+				Load		Quotient
+				Add		ONE
+				Store		Quotient
+				Load		Dividend
+				Jump		DivisionB
+
+Write,				Load		str_ptr
+				Add		Remainder
+				Store		Temp_ptr
+				Clear
+				AddI		Temp_ptr
+				Output
+
+WriteEnd,			Clear
+				Store		Remainder
+				Load		Tester
+				Skipcond	800
+				Jump		Inspect
+				Jump		WhileB
+                
+Inspect,			Clear
+				Add		ONE
+				Store		Tester
+                		Jump 		WhileB
+                
+Stop,				Clear
+				Halt
+
+str_ptr,			HEX		44
+
+str,				HEX		30			/ 0
+				HEX		31			/ 1
+				HEX		32			/ 2
+				HEX		33			/ 3
+				HEX		34			/ 4
+				HEX		35			/ 5
+				HEX		36			/ 6
+				HEX		37			/ 7
+				HEX		38			/ 8
+				HEX		39			/ 9
+				HEX		41			/ A = 10
+				HEX		42			/ B = 11
+				HEX		43			/ C = 12
+				HEX		44			/ D = 13
+				HEX		45			/ E = 14
+				HEX		46			/ F = 15
+
+/ constants
+ZERO,				DEC		0
+ONE,				DEC		1
+SIXTEEN,			DEC		16
+
+/ variables
+Counter1,			DEC		-1
+Counter2,			DEC		0
+Number,			DEC		0
+NumberTemp,			DEC		0
+Quotient,			DEC		0
+Dividend,			DEC		0
+Remainder,			DEC		0
+Temp_ptr,			DEC		0
+Tester,			DEC		0

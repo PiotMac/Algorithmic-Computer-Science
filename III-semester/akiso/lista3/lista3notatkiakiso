@@ -1,0 +1,41 @@
+1.
+/dev - 
+/proc - 
+/sys - 
+
+sudo dd if=sda1 bs=512 count=1 | hexdump -C (cd /dev)
+
+(cd /proc)
+cat cpuinfo
+cat meminfo
+cat partitions
+
+2.
+ps aux (wszystkie procesy bez drzewa)
+ps axjf (z drzewem)
+
+ps --pid (lista)
+ps --ppid (rodzice)
+
+ps t (sprawdzenie procesow dla danego terminala)
+ps l (sprawdzenie nice)
+ps e (wszystkie procesy)
+
+ps -eo pid,ppid,state,pri,ni,pmem,pcpu
+
+4.
+sleep 1000
+sleep 1000 & (w tle)
+jobs (co pracuje)
+^Z - stop
+fg (PID) - wyciąga z tła
+bg (PID) - daje w tło
+kill
+
+5.
+mkfifo FIFO
+1. terminal: cat > FIFO
+2. terminal: cat < FIFO
+
+7.
+touch ./'--ABc DeF'

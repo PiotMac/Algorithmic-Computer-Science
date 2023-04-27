@@ -1,0 +1,55 @@
+﻿/ Division Calculator
+/ by Piotr Maciejończyk
+
+/ Prompt user to type in integers
+Clear
+Store result
+Input
+Store X
+Input
+Store Y
+
+check,  Clear
+         / check if Y is zero, if it is, then we jump to halt
+         Load Y
+         Skipcond 400
+         Jump ybiggerthanx / false
+         Jump halt / true
+
+ybiggerthanx, 	Load X
+				Subt Y
+				Skipcond 000
+				Jump loop
+				Jump fremainder
+                
+/ Loop for performing iterative subtraction
+loop,    Load X
+         Subt Y
+		 Store X
+         
+         Clear
+         Load result
+         Add one
+         Store result
+
+		 Jump ybiggerthanx
+
+/ Function to calculate the remainder
+fremainder,  Load X
+			 Store remainder
+             Clear
+             Jump halt
+
+			
+halt,    Load result
+         Output
+         Clear
+         Load remainder
+		 Output
+         Halt
+
+X, DEC 0
+Y, DEC 0
+one, DEC 1
+result, DEC 0
+remainder, DEC 0

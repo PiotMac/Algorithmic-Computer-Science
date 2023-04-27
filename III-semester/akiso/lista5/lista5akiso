@@ -1,0 +1,12 @@
+1.
+
+
+2.
+a) nie da się napisać programu do obsługi SIGKILL (program wtedy mógłby się stać "nieśmiertelny") oraz SIGSTOP (oraz wyskakuje błąd dla 32 i 33 bo nie ma ich w kill -l)
+b) - jeśli używa się sudo to można przesłać sygnał, ale jest ignorowany
+   - jeśli NIE używa się sudo to NIE można przesłać sygnału do inita
+c) First signal received, namely SIGUSR1, handler is called and is running
+   Second signal received, since handler from nr1 is still running, the signal nr2 gets pending and blocked.
+   Third signal received, since handler from nr1 is still running, the signal 3 gets discarded.
+   Fourth, fifth...etc signal of the same type as the signal nr1 are discarded.
+

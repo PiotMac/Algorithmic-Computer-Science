@@ -1,0 +1,15 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/szysio/Pulpit/javafx-sdk-18.0.1/lib/javafx.base.jar",
+        "/home/szysio/Pulpit/javafx-sdk-18.0.1/lib/javafx.controls.jar",
+        "/home/szysio/Pulpit/javafx-sdk-18.0.1/lib/javafx.fxml.jar",
+        "/home/szysio/Pulpit/javafx-sdk-18.0.1/lib/javafx.graphics.jar",
+        "/home/szysio/Pulpit/javafx-sdk-18.0.1/lib/javafx.media.jar",
+        "/home/szysio/Pulpit/javafx-sdk-18.0.1/lib/javafx.swing.jar",
+        "/home/szysio/Pulpit/javafx-sdk-18.0.1/lib/javafx.web.jar",
+        "/home/szysio/Pulpit/javafx-sdk-18.0.1/lib/javafx-swt.jar"
+    ]
+}

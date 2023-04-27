@@ -1,0 +1,110 @@
+\hypertarget{class_symulacja}{}\doxysection{Symulacja Class Reference}
+\label{class_symulacja}\index{Symulacja@{Symulacja}}
+
+
+Inheritance diagram for Symulacja\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{class_symulacja__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Symulacja\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_symulacja__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_symulacja_a3a5509557a38e3446429e1236339113a}{start}} (Stage stage)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_symulacja_a292731054944d98beca2af6344aadb5c}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_symulacja_a94c5a00b2dfc227870cfdd216a10e02e}\label{class_symulacja_a94c5a00b2dfc227870cfdd216a10e02e}} 
+\mbox{\hyperlink{class_moj_watek}{Moj\+Watek}}\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries kwadraty}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_symulacja_a656f12b1a407978d9412f19a75768aa2}\label{class_symulacja_a656f12b1a407978d9412f19a75768aa2}} 
+static Random {\bfseries losowy} = new Random()
+\item 
+\mbox{\Hypertarget{class_symulacja_add3dc38499d256dc4f76ac8ee7686db2}\label{class_symulacja_add3dc38499d256dc4f76ac8ee7686db2}} 
+static List$<$ \mbox{\hyperlink{class_moj_watek}{Moj\+Watek}} $>$ {\bfseries sasiedzi}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_symulacja_ac87e515473a3a5fb6993870e1dd9aa7f}\label{class_symulacja_ac87e515473a3a5fb6993870e1dd9aa7f}} 
+static int {\bfseries n}
+\item 
+\mbox{\Hypertarget{class_symulacja_a2d4013377bb9fcdf5943cc7f564c7122}\label{class_symulacja_a2d4013377bb9fcdf5943cc7f564c7122}} 
+static double {\bfseries szybkosc}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Główna klasa programu \begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Piotr Maciejończyk 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em n} & -\/ liczba kolumn w gridzie \\
+\hline
+{\em m} & -\/ liczba wierszy w gridzie \\
+\hline
+{\em szybkosc} & -\/ opóźnienie z jakim działa wątek \\
+\hline
+{\em prawdopodobienstwo} & -\/ liczba determinująca prawdopodobieństwo danego zdarzenia \\
+\hline
+{\em losowy} & -\/ generator liczb losowych \\
+\hline
+{\em kwadraty} & -\/ dwuwymiarowa tablica kwadratów na gridzie \\
+\hline
+{\em sasiedzi} & -\/ lista sąsiadów każdego wątku \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_symulacja_a292731054944d98beca2af6344aadb5c}\label{class_symulacja_a292731054944d98beca2af6344aadb5c}} 
+\index{Symulacja@{Symulacja}!main@{main}}
+\index{main@{main}!Symulacja@{Symulacja}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void Symulacja.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metoda main programu 
+\begin{DoxyParams}{Parameters}
+{\em args} & -\/ użytkownik podaje rozmiary okna grida, opóźnienie wątków oraz prawdopodobieństwo \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_symulacja_a3a5509557a38e3446429e1236339113a}\label{class_symulacja_a3a5509557a38e3446429e1236339113a}} 
+\index{Symulacja@{Symulacja}!start@{start}}
+\index{start@{start}!Symulacja@{Symulacja}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Symulacja.\+start (\begin{DoxyParamCaption}\item[{Stage}]{stage }\end{DoxyParamCaption})}
+
+Metoda inicjująca działanie programu 
+\begin{DoxyParams}{Parameters}
+{\em stage} & -\/ główny panel interfejsu \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Symulacja.\+java\end{DoxyCompactItemize}

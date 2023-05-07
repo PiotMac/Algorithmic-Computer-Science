@@ -1,0 +1,17 @@
+body {
+	background-color: #808080;
+}
+
+#top {
+	display: flex;
+	flex-direction: row;
+}
+
+#submit {
+	width: 300%;
+	height: 50%;
+}
+
+div {
+	margin: 5px;
+}

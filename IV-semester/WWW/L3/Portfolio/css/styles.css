@@ -1,0 +1,226 @@
+html {
+  line-weight: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Trebuchet MS", serif, sans-serif, monospace;
+  background-color: #827070;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+}
+@media only screen and (min-width: 1100px) {
+  body {
+    font-size: 1em;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button, side-button {
+  font-family: "Trebuchet MS", serif, sans-serif, monospace;
+  font-weight: bold;
+  background-color: #5e5d7a;
+  color: yellow;
+  -webkit-text-stroke: 0.5px black;
+  margin: 10px;
+  padding: 20px;
+  font-size: 200%;
+}
+button:hover, side-button:hover {
+  border: 2px solid black;
+}
+
+side-button {
+  width: 15%;
+  font-size: 150%;
+  justify-content: center;
+}
+
+nav, professional-bar, interests-bar {
+  display: flex;
+  background-color: #694646;
+  border: 5px solid black;
+  justify-content: center;
+}
+
+professional-bar, interests-bar {
+  border-top: 0px;
+}
+
+ul {
+  text-align: center;
+  list-style-position: inside;
+}
+ul.circle {
+  list-style-type: circle;
+}
+ul.square {
+  list-style-type: square;
+}
+
+p {
+  text-align: center;
+  margin: 1em 5em 1em 5em;
+  color: black;
+}
+@media only screen and (min-width: 1100px) {
+  p {
+    margin: 1em 10em 1em 10em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  p {
+    margin: 1em 20em 1em 20em;
+  }
+}
+
+a {
+  color: black;
+}
+a:hover {
+  color: yellow;
+}
+
+h3, h2, h1 {
+  text-align: center;
+  font-family: "Trebuchet MS", serif, sans-serif, monospace;
+  font-style: normal;
+  font-weight: bold;
+  -webkit-text-stroke: 0.5px black;
+}
+
+h1 {
+  font-size: 300%;
+  color: yellow;
+}
+
+h2 {
+  font-size: 200%;
+  color: #5e5d7a;
+}
+
+h3 {
+  font-size: 150%;
+  color: #694646;
+}
+
+img {
+  display: block;
+  margin: 1em auto 1em auto;
+  border: 5px solid black;
+  width: 60%;
+  padding: 1em;
+  background-color: #5e5d7a;
+}
+@media only screen and (min-width: 1100px) {
+  img {
+    width: 40%;
+    padding: 1.2em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  img {
+    width: 20%;
+    padding: 1.5em;
+  }
+}
+
+.teacher {
+  display: flex;
+}
+@media only screen and (min-width: 600px) {
+  .teacher {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .teacher {
+    flex-direction: row;
+  }
+}
+
+video {
+  margin: 1em auto 1em auto;
+  width: 40%;
+}
+@media only screen and (min-width: 1100px) {
+  video {
+    height: auto;
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  video {
+    height: auto;
+    width: 20%;
+  }
+}
+
+pre {
+  align-items: center;
+  width: 50%;
+}
+
+code {
+  overflow: auto;
+  display: block;
+  border: 5px solid black;
+  border-width: 2px;
+  background-color: #eee;
+}
+
+@media only screen and (min-width: 1100px) {
+  .first_row {
+    display: grid;
+    column-gap: 10px;
+    column-count: 3;
+  }
+  .first_row p {
+    margin: 1em auto 1em auto;
+  }
+  .first_row .checkers {
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+  .first_row .minesweeper {
+    grid-column-start: 2;
+    grid-column-end: 2;
+  }
+  .first_row .marie {
+    grid-column-start: 3;
+    grid-column-end: 3;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .second_row {
+    display: grid;
+    column-gap: 10px;
+    column-count: 2;
+  }
+  .second_row p {
+    margin: 1em auto 1em auto;
+  }
+  .second_row .monte {
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+  .second_row .hangman {
+    grid-column-start: 2;
+    grid-column-end: 2;
+  }
+}
+
+hr.rounded {
+  width: 100%;
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=styles.css.map */

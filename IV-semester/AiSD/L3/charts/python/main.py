@@ -130,7 +130,7 @@ plt.close(4)
 """
 
 # -----------------------------------------------EX 4-------------------------------------------------
-
+"""
 data = pd.read_csv("ex4.csv", sep=";")
 n = data["n"].unique()
 
@@ -247,3 +247,115 @@ plt.axhline(y=time_estimated_coefficient, color="k", linewidth=2.0, label="coeff
 plt.legend(loc=2, fontsize="xx-small")
 plt.savefig("binary_search_coefficient_time.png", bbox_inches="tight", dpi=500)
 plt.close(8)
+
+"""
+# -----------------------------------------------EX 5----------------------------------------------------
+
+data = pd.read_csv("ex5.csv", sep=";")
+n = data["n"].unique()
+
+random_type_of_data = data[data["data"] == "random"]
+worst_type_of_data = data[data["data"] == "worst"]
+
+quickSortSelectRandomData = random_type_of_data[random_type_of_data["type"] == "quickSortSelect"]
+quickSortRandomData = random_type_of_data[random_type_of_data["type"] == "quickSort"]
+quickSortSelectWorstData = worst_type_of_data[worst_type_of_data["type"] == "quickSortSelect"]
+quickSortWorstData = worst_type_of_data[worst_type_of_data["type"] == "quickSort"]
+
+time_qsSR = quickSortSelectRandomData["time"]
+comps_qsSR = quickSortSelectRandomData["comps"]
+swaps_qsSR = quickSortSelectRandomData["swaps"]
+
+time_qsR = quickSortRandomData["time"]
+comps_qsR = quickSortRandomData["comps"]
+swaps_qsR = quickSortRandomData["swaps"]
+
+time_qsSW = quickSortSelectWorstData["time"]
+comps_qsSW = quickSortSelectWorstData["comps"]
+swaps_qsSW = quickSortSelectWorstData["swaps"]
+
+time_qsW = quickSortWorstData["time"]
+comps_qsW = quickSortWorstData["comps"]
+swaps_qsW = quickSortWorstData["swaps"]
+
+plt.figure(9)
+plt.rc('xtick', labelsize=5)
+plt.rc('ytick', labelsize=5)
+plt.xlabel("n", fontsize="10")
+plt.ylabel("avg time in \u00B5s", fontsize="10")
+plt.rc('legend', fontsize=2)
+plt.rc('axes', labelsize=1)
+plt.title("Average time usage in QuickSort and QuickSelect in average case", fontsize="8")
+plt.plot(n, time_qsSR, "r", linewidth=0.9, label="QuickSelect")
+plt.plot(n, time_qsR, "b", linewidth=0.9, label="QuickSort")
+
+plt.legend(loc=4, fontsize="xx-small")
+plt.savefig("quick_vs_select_average_time.png", bbox_inches="tight", dpi=500)
+plt.close(9)
+
+plt.figure(10)
+plt.xlabel("n", fontsize="10")
+plt.ylabel("avg_comparisons", fontsize="10")
+plt.rc('legend', fontsize=2)
+plt.rc('axes', labelsize=1)
+plt.title("Average # of comparisons in QuickSort and QuickSelect in average case", fontsize="8")
+plt.plot(n, comps_qsSR, "r", linewidth=0.9, label="QuickSelect")
+plt.plot(n, comps_qsR, "b", linewidth=0.9, label="QuickSort")
+
+plt.legend(loc=4, fontsize="xx-small")
+plt.savefig("quick_vs_select_average_comps.png", bbox_inches="tight", dpi=500)
+plt.close(10)
+
+plt.figure(11)
+plt.xlabel("n", fontsize="10")
+plt.ylabel("avg_swaps", fontsize="10")
+plt.rc('legend', fontsize=2)
+plt.rc('axes', labelsize=1)
+plt.title("Average # of swaps in QuickSort and QuickSelect in average case", fontsize="8")
+plt.plot(n, swaps_qsSR, "r", linewidth=0.9, label="QuickSelect")
+plt.plot(n, swaps_qsR, "b", linewidth=0.9, label="QuickSort")
+
+plt.legend(loc=4, fontsize="xx-small")
+plt.savefig("quick_vs_select_average_swaps.png", bbox_inches="tight", dpi=500)
+plt.close(11)
+
+plt.figure(12)
+plt.rc('xtick', labelsize=5)
+plt.rc('ytick', labelsize=5)
+plt.xlabel("n", fontsize="10")
+plt.ylabel("avg time in ms", fontsize="10")
+plt.rc('legend', fontsize=2)
+plt.rc('axes', labelsize=1)
+plt.title("Average time usage in QuickSort and QuickSelect in worst case", fontsize="8")
+plt.plot(n, time_qsSW / 1000.0, "r", linewidth=0.9, label="QuickSelect")
+plt.plot(n, time_qsW / 1000.0, "b", linewidth=0.9, label="QuickSort")
+
+plt.legend(loc=2, fontsize="xx-small")
+plt.savefig("quick_vs_select_worst_time.png", bbox_inches="tight", dpi=500)
+plt.close(12)
+
+plt.figure(13)
+plt.xlabel("n", fontsize="10")
+plt.ylabel("avg_comparisons", fontsize="10")
+plt.rc('legend', fontsize=2)
+plt.rc('axes', labelsize=1)
+plt.title("Average # of comparisons in QuickSort and QuickSelect in worst case", fontsize="8")
+plt.plot(n, comps_qsSW, "r", linewidth=0.9, label="QuickSelect")
+plt.plot(n, comps_qsW, "b", linewidth=0.9, label="QuickSort")
+
+plt.legend(loc=2, fontsize="xx-small")
+plt.savefig("quick_vs_select_worst_comps.png", bbox_inches="tight", dpi=500)
+plt.close(13)
+
+plt.figure(14)
+plt.xlabel("n", fontsize="10")
+plt.ylabel("avg_swaps", fontsize="10")
+plt.rc('legend', fontsize=2)
+plt.rc('axes', labelsize=1)
+plt.title("Average # of swaps in QuickSort and QuickSelect in worst case", fontsize="8")
+plt.plot(n, swaps_qsSW, "r", linewidth=0.9, label="QuickSelect")
+plt.plot(n, swaps_qsW, "b", linewidth=0.9, label="QuickSort")
+
+plt.legend(loc=2, fontsize="xx-small")
+plt.savefig("quick_vs_select_worst_swaps.png", bbox_inches="tight", dpi=500)
+plt.close(14)

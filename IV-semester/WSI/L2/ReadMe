@@ -1,0 +1,30 @@
+Piotr Maciejończyk
+2023-05-15
+
+Pliki:
+
+Makefile
+board.h		    // zasady i obsługa gry
+game_server.c	// serwer gry 
+game_client.c	// klient dla gry
+bot.h           // znajdowanie najlepszego ruchu
+bot_client.c    // bot jako klient dla gry
+
+Kompilator: gcc version 11.3.0
+
+Kompilacja: make
+
+Wywołanie serwera:
+
+./game_server <numer ip> <numer portu>
+
+Wywołanie klienta:
+
+./game_client <numer ip> <numer portu> <gracz>
+
+Wywołanie bota:
+
+./bot_client <numer ip> <numer portu> <gracz> <głębokość przeszukiwania>
+
+gracz: 1 dla 0 lub 2 dla X.
+

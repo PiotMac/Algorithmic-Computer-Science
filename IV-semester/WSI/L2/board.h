@@ -74,8 +74,8 @@ void printBoard()
     for(int j=0; j<5; j++ )
       switch(board[i][j]) {
         case 0: printf(" -"); break;
-        case 1: printf(" O"); break;
-        case 2: printf(" X"); break;
+        case 1: printf(" X"); break;
+        case 2: printf(" O"); break;
       }
     printf("\n");
   }
@@ -115,74 +115,4 @@ bool loseCheck(int player)
     }
   }
   return l;
-}
-
-//Finding open-4-in-line pattern (e.g. | X | | X | | - | | X |)
-bool open4(int player) 
-{
-  bool o=false;
-  for (int i=0; i<28; i++) {
-    if( (board[win[i][0][0]][win[i][0][1]] == player) && (board[win[i][1][0]][win[i][1][1]]==0) && (board[win[i][2][0]][win[i][2][1]]==player) && (board[win[i][3][0]][win[i][3][1]]==player) ) {
-      o=true;
-      return o;
-    }
-    if ( (board[win[i][0][0]][win[i][0][1]] == player) && (board[win[i][1][0]][win[i][1][1]]==player) && (board[win[i][2][0]][win[i][2][1]]==0) && (board[win[i][3][0]][win[i][3][1]]==player) ) {
-      o=true;
-      return o;
-    }
-  }
-  return o;
-}
-
-//Finding if opponent has 2-in-line pattern (e.g. | O | | O | | - | | - |)
-bool opponent_two_in_line(int player) {
-  bool t=false;
-  for (int i=0; i<28; i++) {
-    if ( (board[win[i][0][0]][win[i][0][1]] == 3 - player) && (board[win[i][1][0]][win[i][1][1]]==3 - player) && (board[win[i][2][0]][win[i][2][1]]== 0) && (board[win[i][3][0]][win[i][3][1]]== 0) ) {
-      t=true;
-      return t;
-    }
-    if ( (board[win[i][0][0]][win[i][0][1]] == 0) && (board[win[i][1][0]][win[i][1][1]]== 0) && (board[win[i][2][0]][win[i][2][1]]== 3 - player) && (board[win[i][3][0]][win[i][3][1]]== 3 - player) ) {
-      t=true;
-      return t;
-    }
-    if ( (board[win[i][0][0]][win[i][0][1]] == 3 - player) && (board[win[i][1][0]][win[i][1][1]]== 0) && (board[win[i][2][0]][win[i][2][1]]== 3 - player) && (board[win[i][3][0]][win[i][3][1]]== 0) ) {
-      t=true;
-      return t;
-    }
-    if ( (board[win[i][0][0]][win[i][0][1]] == 0) && (board[win[i][1][0]][win[i][1][1]]== 3 - player) && (board[win[i][2][0]][win[i][2][1]]== 0) && (board[win[i][3][0]][win[i][3][1]]== 3 - player) ) {
-      t=true;
-      return t;
-    }
-    if ( (board[win[i][0][0]][win[i][0][1]] == 3 - player) && (board[win[i][1][0]][win[i][1][1]]== 0) && (board[win[i][2][0]][win[i][2][1]]== 0) && (board[win[i][3][0]][win[i][3][1]]== 3 - player) ) {
-      t=true;
-      return t;
-    }
-  }
-
-  return t;
-}
-
-//Finding if the player has open-5-in-line pattern (e.g. | X | | - | | X | | - | | X |)
-bool open5(int player) {
-  bool o=false;
-  for (int i = 0;i < 5; i++) {
-    if (board[i][0] == player && board[i][1] == 0 && board[i][2] == player && board[i][3] == 0 && board[i][4] == player) {
-      o=true;
-      return o;
-    }
-    if (board[0][i] == player && board[1][i] == 0 && board[2][i] == player && board[3][i] == 0 && board[4][i] == player) {
-      o=true;
-      return o;
-    }
-  }
-  if (board[0][0] == player && board[1][1] == 0 && board[2][2] == player && board[3][3] == 0 && board[4][4] == player) {
-    o=true;
-    return o;
-  }
-  if (board[0][4] == player && board[1][3] == 0 && board[2][2] == player && board[3][1] == 0 && board[4][0] == player) {
-    o=true;
-    return o;
-  }
-  return o;
 }

@@ -83,6 +83,7 @@ int main(int argc, char *argv[])
     }
     if( (msg==0) || (msg==6) ) {
       move = bestMove(player);
+      
       setMove(move, player);
       printBoard();
       memset(client_message, '\0', sizeof(client_message));

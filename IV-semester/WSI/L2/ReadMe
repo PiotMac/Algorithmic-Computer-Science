@@ -7,7 +7,7 @@ Makefile
 board.h		    // zasady i obsługa gry
 game_server.c	// serwer gry 
 game_client.c	// klient dla gry
-bot.h           // znajdowanie najlepszego ruchu
+bot.h           // znajdowanie najlepszego ruchu wraz z heurystyką
 bot_client.c    // bot jako klient dla gry
 
 Kompilator: gcc version 11.3.0
@@ -26,5 +26,5 @@ Wywołanie bota:
 
 ./bot_client <numer ip> <numer portu> <gracz> <głębokość przeszukiwania>
 
-gracz: 1 dla 0 lub 2 dla X.
+gracz: 1 dla X lub 2 dla O.
 

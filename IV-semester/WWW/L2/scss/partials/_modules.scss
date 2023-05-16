@@ -1,0 +1,216 @@
+body {
+	font-family: $primary-font;
+	background-color: $primaryBodyColor;
+	display: flex;
+	flex-direction: column;
+	font-size: $base-font-size;
+	@include mediaQ(medium) {
+		font-size: $bigger-screen-font-size;
+	}
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+button {
+	font-family: $primary-font;
+	font-weight: bold;
+	background-color: $primaryBackgroundColor;
+	color: $primaryTextColor;
+	-webkit-text-stroke: 0.5px black;
+	margin: 10px;
+	padding: 20px;
+	font-size: $defaultHeaderFontSize * 2;
+	&:hover {
+		border: 2px solid black;
+	}
+}
+
+side-button {
+	@extend button;
+	width: 15%;
+	font-size: 150%;
+	justify-content: center;
+}
+
+nav {
+	display: flex;
+	background-color: $primaryNavColor;
+	border: 5px solid black;
+	justify-content: center;
+}
+
+professional-bar, interests-bar {
+	@extend nav;
+	border-top: 0px;
+}
+
+ul {
+	text-align: center;
+  	list-style-position: inside;
+  	&.circle {
+  		list-style-type: circle
+  	}
+  	&.square {
+  		list-style-type: square;
+  	}
+}
+
+p {
+	text-align: center;
+	margin: $defaultParagraphMargin;
+	color: $defaultParagraphColor;
+	@include mediaQ(medium) {
+		margin: $mediumParagraphMargin;
+	}
+	@include mediaQ(large) {
+		margin: $largeParagraphMargin;
+	}
+}
+
+a {
+	color: $defaultParagraphColor;
+	&:hover {
+		color: $primaryTextColor;
+	}
+}
+
+%basic-header {
+	text-align: center;
+	font-family: $primary-font;
+	font-style: normal;
+	font-weight: bold;
+	-webkit-text-stroke: 0.5px black;
+}
+
+h1 {
+	@extend %basic-header;
+	font-size: $defaultHeaderFontSize * 3;
+	color: $primaryTextColor;
+}
+
+h2 {
+	@extend %basic-header;
+	font-size: $defaultHeaderFontSize * 2;
+	color: $primaryBackgroundColor;
+}
+
+h3 {
+	@extend %basic-header;
+	font-size: $defaultHeaderFontSize * 1.5;
+	color: $primaryNavColor;
+}
+
+
+img {
+	display: block;
+	margin: $standardMargin;
+	border: $defaultBorder;
+	width: 0.6 * $standardWidth;
+	padding: $standardPadding;
+	background-color: $primaryBackgroundColor;
+	@include mediaQ(medium) {
+		width: 0.4 * $standardWidth;
+		padding: $medium-scale * $standardPadding;
+	}
+	@include mediaQ(large) {
+		width: 0.2 * $standardWidth;
+		padding: $large-scale * $standardPadding;
+	}
+}
+
+
+.teacher {
+	display: flex;
+	@media only screen and (min-width: map-get($breakpoints, small)) {
+		flex-direction: setFlex(small);
+	}
+	@media only screen and (min-width: map-get($breakpoints, medium)) {
+		flex-direction: setFlex(large);
+	}
+}
+
+video {
+	margin: $standardMargin;
+	width: 0.4 * $standardWidth;
+	@include mediaQ(medium) {
+		height: auto;
+		width: 0.3 * $standardWidth;
+	}
+	@include mediaQ(large) {
+		height: auto;
+		width: 0.2 * $standardWidth;
+	}
+}
+
+pre {
+	align-items: center;
+	width: 50%;
+}
+
+code {
+	overflow: auto;
+	display: block;
+	border: $defaultBorder;
+	border-width: 2px;
+	background-color: $primaryCodeBackgroundColor;
+}
+
+.first_row {
+	@include mediaQ(medium) {
+		display: grid;
+		column-gap: 10px;
+		column-count: 3;
+
+		p {
+			margin: $standardMargin; 
+		}
+
+		.checkers {
+			grid-column-start: 1;
+			grid-column-end: 1;
+		}
+
+		.minesweeper {
+			grid-column-start: 2;
+			grid-column-end: 2;
+		}
+
+		.marie {
+			grid-column-start: 3;
+			grid-column-end: 3;
+		}
+	}
+}
+
+.second_row {
+	@include mediaQ(medium) {
+		display: grid;
+		column-gap: 10px;
+		column-count: 2;
+
+		p {
+			margin: $standardMargin; 
+		}
+
+		.monte {
+			grid-column-start: 1;
+			grid-column-end: 1;
+		}
+
+		.hangman {
+			grid-column-start: 2;
+			grid-column-end: 2;
+		}
+	}
+}
+
+
+hr.rounded {
+	width: 100%;
+	border-top: 8px solid $primaryRoundedColor;
+  	border-radius: 5px;
+}

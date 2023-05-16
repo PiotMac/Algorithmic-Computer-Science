@@ -1,0 +1,108 @@
+nav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #694646;
+	justify-content: center;
+	border: 5px solid black;
+}
+
+body {
+	background-color: #827070;
+	font-family: "Trebuchet MS", serif, sans-serif, monospace;
+}
+
+
+.nav-bar button {
+	font-weight: bold;
+	font-family: "Trebuchet MS", serif, sans-serif, monospace;
+	background-color: #5e5d7a;
+	color: black;
+	margin: 10px;
+	padding: 20px;
+	font-size: 200%;
+	width: 100%;
+}
+
+
+h1, h2, h3, p {
+	text-align: center;
+}
+
+h1 {
+	color: yellow;
+	font-size: 300%;
+}
+
+h2 {
+	font-size: 200%;
+	text-decoration: underline;
+}
+
+ul {
+	text-align: center;
+	list-style-type: decimal;
+	list-style-position: inside;
+}
+
+code {
+	display: block;
+	border: 2px solid black;
+	background-color: #eee;
+	max-width: 100%;
+	width: fit-content;
+	height: fit-content;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media only screen and (min-width: 1000px) {
+	nav {
+		flex-direction: row;
+		align-items: center;
+	}
+	.nav-bar button {
+		width: 30%;
+	}
+
+	.first_row {
+		display: grid;
+		column-gap: 10px;
+		column-count: 3;
+	}
+
+	.checkers {
+		grid-column-start: 1;
+		grid-column-end: 1;
+	}
+
+	.minesweeper {
+		grid-column-start: 2;
+		grid-column-end: 2;
+	}
+
+	.marie {
+		grid-column-start: 3;
+		grid-column-end: 3;
+	}
+
+	.second_row {
+		display: grid;
+		column-gap: 10px;
+		column-count: 2;
+	}
+
+	.monte {
+		grid-column-start: 1;
+		grid-column-end: 1;
+	}
+
+	.hangman {
+		grid-column-start: 2;
+		grid-column-end: 2;
+	}
+}

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">L5CircularProgressBar</string>
+    <string name="start">START!</string>
+    <string name="choose_mode">Choose mode!</string>
+    <string name="random_progress">Random Progress</string>
+    <string name="pong_game">PONG GAME</string>
+</resources>

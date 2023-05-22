@@ -1,5 +1,6 @@
 package com.example.l5spaceinvaders
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.res.AssetFileDescriptor
@@ -21,18 +22,17 @@ class SpaceInvadersView(private val context: Context, x: Int, y: Int) : SurfaceV
         var score : Int = 0
         var lost : Boolean = false
     }
-
+    private val activity : Activity = context as Activity
     private var gameThread: Thread? = null
-    private val ourHolder: SurfaceHolder
+    private val ourHolder: SurfaceHolder = holder
 
     // a boolean for if the game is being played
-    @Volatile
-    private var playing = false
+    @Volatile private var playing = false
 
     // game is paused at the start
     private var paused = true
     private var canvas: Canvas? = null
-    private val paint: Paint
+    private val paint: Paint = Paint()
 
     // used to help calculate fps
     private var timeFrame: Long = 0
@@ -45,15 +45,15 @@ class SpaceInvadersView(private val context: Context, x: Int, y: Int) : SurfaceV
     private val screenX: Int
     private val screenY: Int
     private lateinit var playerShip: PlayerShip
-    private val playerBullets: Array<Bullet?> = arrayOfNulls<Bullet>(250)
+    private val playerBullets: Array<Bullet?> = arrayOfNulls(250)
     private var numBullets = 0
     private var nextInvaderBullet = 0
-    private val invadersBullets: Array<Bullet?> = arrayOfNulls<Bullet>(50)
+    private val invadersBullets: Array<Bullet?> = arrayOfNulls(50)
     private val maxInvaderBullets = 50
-    private val invaders: Array<Invader?> = arrayOfNulls<Invader>(30)
+    private val invaders: Array<Invader?> = arrayOfNulls(30)
     private var numInvaders = 0
     //private var score = 0
-    private val bricks: Array<DefenceBrick?> = arrayOfNulls<DefenceBrick>(200)
+    private val bricks: Array<DefenceBrick?> = arrayOfNulls(200)
     private var numBricks = 0
 
     // for sound FX
@@ -67,7 +67,7 @@ class SpaceInvadersView(private val context: Context, x: Int, y: Int) : SurfaceV
 
     // score increase per kill and initial lives
     private val INCREASE = 10
-    private val INIT_LIVES = 50
+    private val INIT_LIVES = 35
 
     private var lives = INIT_LIVES
 
@@ -82,8 +82,6 @@ class SpaceInvadersView(private val context: Context, x: Int, y: Int) : SurfaceV
     private var lastMenace = System.nanoTime() / 1000000
 
     init {
-        ourHolder = holder
-        paint = Paint()
         screenX = x
         screenY = y
         score = 0
@@ -92,8 +90,7 @@ class SpaceInvadersView(private val context: Context, x: Int, y: Int) : SurfaceV
         try {
             // create objects of the 2 required classes
             val assetManager = context.assets
-            var descriptor: AssetFileDescriptor
-            descriptor = assetManager.openFd("shoot.ogg")
+            var descriptor: AssetFileDescriptor = assetManager.openFd("shoot.ogg")
             shootID = soundPool.load(descriptor, 0)
             descriptor = assetManager.openFd("invaderexplode.ogg")
             invaderExplodeID = soundPool.load(descriptor, 0)
@@ -233,9 +230,9 @@ class SpaceInvadersView(private val context: Context, x: Int, y: Int) : SurfaceV
                 if (invader.y > screenY - screenY / 10) lost = true
             }
             // increase the menace level by making the sounds more frequent
-            menaceInterval = menaceInterval - 80
+            menaceInterval -= 80
         }
-        if (lost) pause()//prepareLevel()
+        if (lost) stop()//prepareLevel()
 
         // determines if the player's bullet hit the top of the screen
         for (bullet in playerBullets) {
@@ -270,7 +267,7 @@ class SpaceInvadersView(private val context: Context, x: Int, y: Int) : SurfaceV
                         score += INCREASE
                         // checks to see if the player has won
                         if (score == numInvaders * INCREASE) {
-                            prepareLevel()
+                            stop()//prepareLevel()
                             break
                         }
                     }
@@ -329,7 +326,7 @@ class SpaceInvadersView(private val context: Context, x: Int, y: Int) : SurfaceV
                     // checks if game is over
                     if (lives == 0) {
                         //prepareLevel()
-                        pause()
+                        stop()
                     }
                 }
             }
@@ -390,17 +387,37 @@ class SpaceInvadersView(private val context: Context, x: Int, y: Int) : SurfaceV
         }
     }
 
-    fun pause() {
+    private fun stop() {
+        Log.i("paused", "stop")
         playing = false
+        paused = true
+        if (score == INCREASE * numInvaders) {
+            lost = true
+        }
+        SpaceInvadersActivity.isPlaying = false
+        Log.i("paused", "stop1")
+        /*
         try {
             gameThread!!.join()
         } catch (e: InterruptedException) {
             Log.e("Error:", "joining thread")
         }
+
+         */
+        val intent = Intent()
+        Log.i("paused", "stop2")
+        MainMenuActivity.score = score
+        MainMenuActivity.outcome = lost
+        activity.setResult(Activity.RESULT_OK, intent)
+        activity.finish()
     }
 
     fun resume() {
+        Log.i("paused", "resume")
+        SpaceInvadersActivity.isPlaying = true
         playing = true
+        //score = 0
+        //lost = false
         gameThread = Thread(this)
         gameThread!!.start()
     }

@@ -5,7 +5,7 @@ import android.graphics.BitmapFactory
 import android.graphics.RectF
 
 class PlayerShip(context: Context, screenX: Int, screenY: Int) {
-    var rect: RectF
+    var rect: RectF = RectF()
 
     // the player ship will be represented by a Bitmap
     var bitmap: Bitmap
@@ -25,7 +25,6 @@ class PlayerShip(context: Context, screenX: Int, screenY: Int) {
     private var shipMoving = STOPPED
     init {
         // initialize a blank RectF
-        rect = RectF()
         length = (screenX / 10).toFloat()
         height = (screenY / 10).toFloat()
 
@@ -47,8 +46,8 @@ class PlayerShip(context: Context, screenX: Int, screenY: Int) {
     }
 
     fun update(fps: Long) {
-        if (shipMoving == LEFT) if (x > length * .5) x = x - shipSpeed / fps
-        if (shipMoving == RIGHT) if (x < length * 9.5) x = x + shipSpeed / fps
+        if (shipMoving == LEFT) if (x > length * .5) x -= shipSpeed / fps
+        if (shipMoving == RIGHT) if (x < length * 9.5) x += shipSpeed / fps
 
         // update rect which is used to detect hits
         rect.top = y

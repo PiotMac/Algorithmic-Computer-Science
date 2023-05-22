@@ -3,4 +3,8 @@
     <string name="score">score</string>
     <string name="date">date</string>
     <string name="won">won</string>
+    <string name="play">PLAY</string>
+    <string name="scores">SCORES</string>
+    <string name="sort">SORT</string>
+    <string name="sort_u2b06">SORT ⬆</string>
 </resources>

@@ -7,8 +7,8 @@ import java.util.Random
 
 
 class Invader(context: Context, row: Int, column: Int, screenX: Int, screenY: Int) {
-    var rect: RectF
-    var generator = Random()
+    var rect: RectF = RectF()
+    private var generator = Random()
 
     // the player ship will be represented by a Bitmap
     var bitmap: Bitmap
@@ -26,13 +26,12 @@ class Invader(context: Context, row: Int, column: Int, screenX: Int, screenY: In
     var y: Float
         private set
     private var shipSpeed: Float
-    val LEFT = 1
-    val RIGHT = 2
+    private val LEFT = 1
+    private val RIGHT = 2
     private var shipMoving = RIGHT
     var visibility: Boolean
 
     init {
-        rect = RectF()
         length = (screenX / 20).toFloat()
         height = (screenY / 20).toFloat()
         visibility = true
@@ -63,8 +62,8 @@ class Invader(context: Context, row: Int, column: Int, screenX: Int, screenY: In
     }
 
     fun update(fps: Long) {
-        if (shipMoving == LEFT) x = x - shipSpeed / fps
-        if (shipMoving == RIGHT) x = x + shipSpeed / fps
+        if (shipMoving == LEFT) x -= shipSpeed / fps
+        if (shipMoving == RIGHT) x += shipSpeed / fps
 
         // update rect which is used to detect hits
         rect.top = y
@@ -75,8 +74,8 @@ class Invader(context: Context, row: Int, column: Int, screenX: Int, screenY: In
 
     fun dropDownAndReverse() {
         shipMoving = if (shipMoving == LEFT) RIGHT else LEFT
-        y = y + height
-        shipSpeed = shipSpeed * 1.18f
+        y += height
+        shipSpeed *= 1.18f
     }
 
     fun takeAim(playerShipX: Float, playerShipLength: Float): Boolean {
@@ -90,6 +89,6 @@ class Invader(context: Context, row: Int, column: Int, screenX: Int, screenY: In
 
         // if firing randomly (not near the player) a 1 in 2000 chance
         randomNumber = generator.nextInt(2000)
-        return if (randomNumber == 0) true else false
+        return randomNumber == 0
     }
 }

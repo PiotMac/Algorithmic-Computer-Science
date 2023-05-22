@@ -23,6 +23,27 @@ interface DatabaseDao {
     @Update
     fun updateGame(updatedGame: Game)
 
-    @Delete
-    fun deleteGame(deletedGame: Game)
+    @Query("DELETE FROM Game WHERE Game.score = :score AND Game.date = :date AND Game.won = :result")
+    fun deleteGame(score: Int, date: String, result: Boolean)
+
+    @Query("SELECT * FROM Game ORDER BY Game.score ASC")
+    fun sortAscScore() : List<Game>
+
+    @Query("SELECT * FROM Game ORDER BY Game.score DESC")
+    fun sortDescScore() : List<Game>
+
+    @Query("SELECT * FROM Game ORDER BY Game.date ASC")
+    fun sortAscDate() : List<Game>
+
+    @Query("SELECT * FROM Game ORDER BY Game.date DESC")
+    fun sortDescDate() : List<Game>
+
+    @Query("SELECT * FROM Game ORDER BY Game.won ASC")
+    fun sortAscResult() : List<Game>
+
+    @Query("SELECT * FROM Game ORDER BY Game.won DESC")
+    fun sortDescResult() : List<Game>
+
+    @Query("DELETE FROM Game")
+    fun nukeTable()
 }

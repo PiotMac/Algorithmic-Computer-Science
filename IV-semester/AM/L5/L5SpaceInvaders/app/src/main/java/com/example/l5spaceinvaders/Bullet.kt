@@ -9,11 +9,11 @@ class Bullet(screenY: Int) {
 
     // direction
     val UP = 0
-    val DOWN = 1
+    private val DOWN = 1
 
     // headed nowhere
-    var heading = -1
-    var speed = 800f
+    private var heading = -1
+    private var speed = 800f
     private val width = 5
     private val height: Int
     var status: Boolean

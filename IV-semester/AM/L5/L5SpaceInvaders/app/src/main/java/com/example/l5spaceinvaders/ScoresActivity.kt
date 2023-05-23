@@ -15,6 +15,13 @@ class ScoresActivity : Activity() {
         lateinit var dao : DatabaseDao
         lateinit var gamesRecyclerView : RecyclerView
         lateinit var database: Database
+        fun deleteRecord(position: Int) {
+            dao.deleteRecord(gamesList[position])
+            gamesList.remove(gamesList[position])
+            val gameAdapter = ScoresRecyclerAdapter(gamesList)
+            gamesRecyclerView.adapter = gameAdapter
+            gamesRecyclerView.adapter?.notifyDataSetChanged()
+        }
     }
 
     private lateinit var sortingScoreButton : Button
@@ -82,4 +89,6 @@ class ScoresActivity : Activity() {
         gamesRecyclerView.adapter = gameAdapterUpdated
         gamesRecyclerView.adapter?.notifyDataSetChanged()
     }
+
+
 }

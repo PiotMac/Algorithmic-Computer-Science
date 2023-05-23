@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -12,10 +13,12 @@ class ScoresRecyclerAdapter(private val games: List<Game>) : RecyclerView.Adapte
         val scoreTV : TextView
         val dateTV : TextView
         val winTV : TextView
+        val deleteButton : ImageButton
         init {
             scoreTV = view.findViewById(R.id.scoreTV)
             dateTV = view.findViewById(R.id.dateTV)
             winTV = view.findViewById(R.id.winTV)
+            deleteButton = view.findViewById(R.id.deleteRecordButton)
         }
     }
 
@@ -33,6 +36,9 @@ class ScoresRecyclerAdapter(private val games: List<Game>) : RecyclerView.Adapte
         }
         else {
             holder.winTV.text = "NO"
+        }
+        holder.deleteButton.setOnClickListener {
+            ScoresActivity.deleteRecord(position)
         }
     }
 

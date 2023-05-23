@@ -26,6 +26,9 @@ interface DatabaseDao {
     @Query("DELETE FROM Game WHERE Game.score = :score AND Game.date = :date AND Game.won = :result")
     fun deleteGame(score: Int, date: String, result: Boolean)
 
+    @Delete
+    fun deleteRecord(game: Game)
+
     @Query("SELECT * FROM Game ORDER BY Game.score ASC")
     fun sortAscScore() : List<Game>
 

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Notes</title>
+  <link href="./notes_style.css" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <button onclick="getAllNotes()">All Notes</button>
+    <button onclick="getNoteById()">Get Note by ID</button>
+    <button onclick="createNote()">Create Note</button>
+    <button onclick="updateNote()">Update Note</button>
+    <button onclick="deleteNote()">Delete Note</button>
+  </nav>
+  
+  <div id="notesContainer"></div>
+
+  <script>
+    function getAllNotes() {
+      fetch('http://localhost:3000/notes', {
+        headers: {
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+      })
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Error fetching notes');
+          }
+        })
+        .then(notes => {
+          const notesContainer = document.getElementById('notesContainer');
+          notesContainer.innerHTML = '';
+          let i = 1;
+          let dot = ". ";
+          notes.forEach(note => {
+            const noteElement = document.createElement('div');
+            noteElement.innerHTML = `
+              <h2>${i}${dot}${note.title}</h2>
+              <p>${note.content}</p>
+            `;
+            notesContainer.appendChild(noteElement);
+            i++;
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching notes:', error);
+        });
+    }
+
+    function getNoteById() {
+      const noteId = prompt('Enter the ID of the note:');
+      if (noteId) {
+        fetch(`http://localhost:3000/note/${noteId}`, {
+        headers: {
+          'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+      })
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Error fetching notes');
+          }
+        })
+        .then(note => {
+          const notesContainer = document.getElementById('notesContainer');
+          notesContainer.innerHTML = '';
+
+          const noteElement = document.createElement('div');
+          noteElement.innerHTML = `
+            <h2>${note.title}</h2>
+            <p>${note.content}</p>
+          `;
+          notesContainer.appendChild(noteElement);
+        })
+        .catch(error => {
+          console.error('Error fetching note:', error);
+        });
+      }
+    }
+
+    function createNote() {
+      const title = prompt('Enter the title of the new note:');
+      const content = prompt('Enter the content of the new note:');
+      if (title && content) {
+        const newNote = { title, content };
+
+        fetch('http://localhost:3000/note', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+          },
+          body: JSON.stringify(newNote)
+        })
+          .then(response => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error('Error creating note');
+            }
+          })
+          .then(note => {
+            const notesContainer = document.getElementById('notesContainer');
+            notesContainer.innerHTML = `
+              <h2>${note.title}</h2>
+              <p>${note.content}</p>
+            `;
+          })
+          .catch(error => {
+            console.error('Error creating note:', error);
+          });
+      }
+    }
+
+    function updateNote() {
+      const noteId = prompt('Enter the ID of the note to update:');
+      const title = prompt('Enter the updated title:');
+      const content = prompt('Enter the updated content:');
+      if (noteId && title && content) {
+        const updatedNote = { title, content };
+
+        fetch(`http://localhost:3000/note/${noteId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+          },
+          body: JSON.stringify(updatedNote)
+        })
+          .then(response => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error('Error updating note');
+            }
+          })
+          .then(note => {
+            const notesContainer = document.getElementById('notesContainer');
+            notesContainer.innerHTML = `
+              <h2>${note.title}</h2>
+              <p>${note.content}</p>
+            `;
+          })
+          .catch(error => {
+            console.error('Error updating note:', error);
+          });
+      }
+    }
+
+    function deleteNote() {
+      const noteId = prompt('Enter the ID of the note to delete:');
+      if (noteId) {
+        fetch(`http://localhost:3000/note/${noteId}`, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+          }
+        })
+          .then(response => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error('Error deleting note');
+            }
+          })
+          .then(data => {
+            const notesContainer = document.getElementById('notesContainer');
+            notesContainer.innerHTML = '<h2>Note deleted successfully</h2>';
+          })
+          .catch(error => {
+            console.error('Error deleting note:', error);
+          });
+      }
+    }
+  </script>
+</body>
+</html>
+

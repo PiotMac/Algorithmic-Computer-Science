@@ -18,6 +18,10 @@ public class FibonacciHeapExperiments {
         PrintWriter printWriterExtractions = new PrintWriter(new FileWriter(fileNameExtractions));
         printWriterExtractions.println("n;i;extractionComparisons");
 
+        String fileNameComparisons = "FibonacciHeapConstComparisons.csv";
+        PrintWriter printWriterComparisons = new PrintWriter(new FileWriter(fileNameComparisons));
+        printWriterComparisons.println("n;comparisons");
+
         for (int n = 500; n <= 1000; n+= 500) {
             for (int i = 1; i <= 5; i++) {
                 //Creating empty H1 and H2 heaps
@@ -39,20 +43,17 @@ public class FibonacciHeapExperiments {
                     H2.operationComparisons = 0;
                 }
 
-                //Creating empty H heap
-                FibonacciHeap H = new FibonacciHeap();
-
                 //Heap-Union
-                H.merge(H1, H2);
+                H1.merge(H2);
 
                 //Array of hopefully sorted extracted minimum values
                 ArrayList<Integer> extractedValues = new ArrayList<>();
                 ArrayList<Integer> extractionComparisons = new ArrayList<>();
                 for (int x = 1; x <= 2 * n; x++) {
-                    int extractedMinimumValue = H.extractMinimum();
+                    int extractedMinimumValue = H1.extractMin();
                     extractedValues.add(extractedMinimumValue);
-                    extractionComparisons.add(H.operationComparisons);
-                    H.operationComparisons = 0;
+                    extractionComparisons.add(H1.operationComparisons);
+                    H1.operationComparisons = 0;
 
                     if (isSorted(extractedValues)) {
 
@@ -64,7 +65,7 @@ public class FibonacciHeapExperiments {
 
                 }
 
-                if (H.isEmpty()) {
+                if (H1.trees.isEmpty()) {
                     System.out.println("The H heap is empty!");
                 }
                 else {
@@ -78,18 +79,52 @@ public class FibonacciHeapExperiments {
                 }
             }
         }
+
+        for (int n = 100; n <= 10000; n+= 100) {
+            System.out.println("########## N = " + n + " ##########");
+            double comparisonsPerN = 0.0;
+            for (int i = 1; i <= 5; i++) {
+                FibonacciHeap H1 = new FibonacciHeap();
+                FibonacciHeap H2 = new FibonacciHeap();
+
+                HashSet<Integer> generatedNumbers = new HashSet<>();
+
+                for (int x = 1; x <= n; x++) {
+                    int generatedNumber1 = randomHeapInsertion(generatedNumbers);
+                    H1.insert(generatedNumber1);
+                    comparisonsPerN += H1.operationComparisons;
+                    H1.operationComparisons = 0;
+                    int generatedNumber2 = randomHeapInsertion(generatedNumbers);
+                    H2.insert(generatedNumber2);
+                    comparisonsPerN += H2.operationComparisons;
+                    H2.operationComparisons = 0;
+                }
+
+                H1.merge(H2);
+
+                for (int x = 1; x <= 2 * n; x++) {
+                    H1.extractMin();
+                    comparisonsPerN += H1.operationComparisons;
+                    H1.operationComparisons = 0;
+                }
+            }
+            comparisonsPerN = comparisonsPerN / (5.0 * n);
+            printWriterComparisons.println(n + ";" + comparisonsPerN);
+        }
+
         printWriterInsertions.close();
         printWriterExtractions.close();
+        printWriterComparisons.close();
     }
 
     //Function to generate unique integers for insertion
     private static int randomHeapInsertion(HashSet<Integer> generatedNumbers) {
         int sizeBeforeInsertion = generatedNumbers.size();
-        int generatedNumber = random.nextInt(0, 10000);
+        int generatedNumber = random.nextInt(0, 100000);
         generatedNumbers.add(generatedNumber);
         int sizeAfterInsertion = generatedNumbers.size();
         while (sizeBeforeInsertion == sizeAfterInsertion) {
-            generatedNumber = random.nextInt(0, 10000);
+            generatedNumber = random.nextInt(0, 100000);
             generatedNumbers.add(generatedNumber);
             sizeAfterInsertion = generatedNumbers.size();
         }

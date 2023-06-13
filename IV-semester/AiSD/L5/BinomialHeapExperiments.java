@@ -12,11 +12,15 @@ public class BinomialHeapExperiments {
     public static void main(String[] args) throws IOException {
         String fileNameInsertions = "BinomialHeapInsertions.csv";
         PrintWriter printWriterInsertions = new PrintWriter(new FileWriter(fileNameInsertions));
-        printWriterInsertions.println("n;i;insertionComparisonsH1;insertionComparisonsH2");
+        printWriterInsertions.println("n;i;iteration;insertionComparisonsH1;insertionComparisonsH2");
 
         String fileNameExtractions = "BinomialHeapExtractions.csv";
         PrintWriter printWriterExtractions = new PrintWriter(new FileWriter(fileNameExtractions));
-        printWriterExtractions.println("n;i;extractionComparisons");
+        printWriterExtractions.println("n;i;iteration;extractionComparisons");
+
+        String fileNameConstComparisons = "BinomialHeapConstComparisons.csv";
+        PrintWriter printWriterConstComparisons = new PrintWriter(new FileWriter(fileNameConstComparisons));
+        printWriterConstComparisons.println("n;constComparisons");
 
         for (int n = 500; n <= 1000; n+= 500) {
             for (int i = 1; i <= 5; i++) {
@@ -30,29 +34,26 @@ public class BinomialHeapExperiments {
                 ArrayList<Integer> insertionComparisonsH2 = new ArrayList<>();
                 for (int x = 1; x <= n; x++) {
                     int generatedNumber1 = randomHeapInsertion(generatedNumbers);
-                    H1.heapInsert(generatedNumber1);
+                    H1.insert(generatedNumber1);
                     insertionComparisonsH1.add(H1.operationComparisons);
                     H1.operationComparisons = 0;
                     int generatedNumber2 = randomHeapInsertion(generatedNumbers);
-                    H2.heapInsert(generatedNumber2);
+                    H2.insert(generatedNumber2);
                     insertionComparisonsH2.add(H2.operationComparisons);
                     H2.operationComparisons = 0;
                 }
 
-                //Creating empty H heap
-                BinomialHeap H = new BinomialHeap();
-
                 //Heap-Union
-                H.heapUnion(H1, H2);
+                H1.merge(H2);
 
                 //Array of hopefully sorted extracted minimum values
                 ArrayList<Integer> extractedValues = new ArrayList<>();
                 ArrayList<Integer> extractionComparisons = new ArrayList<>();
                 for (int x = 1; x <= 2 * n; x++) {
-                    int extractedMinimumValue = H.extractMin();
+                    int extractedMinimumValue = H1.extractMin();
                     extractedValues.add(extractedMinimumValue);
-                    extractionComparisons.add(H.operationComparisons);
-                    H.operationComparisons = 0;
+                    extractionComparisons.add(H1.operationComparisons);
+                    H1.operationComparisons = 0;
 
                     if (isSorted(extractedValues)) {
 
@@ -64,32 +65,65 @@ public class BinomialHeapExperiments {
 
                 }
 
-                if (H.isEmpty()) {
+                if (H1.trees.isEmpty()) {
                     System.out.println("The H heap is empty!");
                 }
                 else {
                     System.out.println("Something went wrong!");
                 }
-                for (int p = 0; p < n; p++) {
-                    printWriterInsertions.println(n + ";" + i + ";" + insertionComparisonsH1.get(p) + ";" + insertionComparisonsH2.get(p));
+                for (int p = 1; p <= n; p++) {
+                    printWriterInsertions.println(n + ";" + i + ";" + p + ";" + insertionComparisonsH1.get(p - 1) + ";" + insertionComparisonsH2.get(p - 1));
                 }
-                for (int p = 0; p < 2 * n; p++) {
-                    printWriterExtractions.println(n + ";" + i + ";" + extractionComparisons.get(p));
+                for (int p = 1; p <= 2 * n; p++) {
+                    printWriterExtractions.println(n + ";" + i + ";" + p + ";" + extractionComparisons.get(p - 1));
                 }
             }
         }
+
+        for (int n = 100; n <= 10000; n+= 100) {
+            System.out.println("########## N = " + n + " ##########");
+            double comparisonsPerN = 0.0;
+            for (int i = 1; i <= 5; i++) {
+                BinomialHeap H1 = new BinomialHeap();
+                BinomialHeap H2 = new BinomialHeap();
+
+                HashSet<Integer> generatedNumbers = new HashSet<>();
+
+                for (int x = 1; x <= n; x++) {
+                    int generatedNumber1 = randomHeapInsertion(generatedNumbers);
+                    H1.insert(generatedNumber1);
+                    comparisonsPerN += H1.operationComparisons;
+                    H1.operationComparisons = 0;
+                    int generatedNumber2 = randomHeapInsertion(generatedNumbers);
+                    H2.insert(generatedNumber2);
+                    comparisonsPerN += H2.operationComparisons;
+                    H2.operationComparisons = 0;
+                }
+
+                H1.merge(H2);
+
+                for (int x = 1; x <= 2 * n; x++) {
+                    H1.extractMin();
+                    comparisonsPerN += H1.operationComparisons;
+                    H1.operationComparisons = 0;
+                }
+            }
+            comparisonsPerN = comparisonsPerN / (5.0 * n);
+            printWriterConstComparisons.println(n + ";" + comparisonsPerN);
+        }
         printWriterInsertions.close();
         printWriterExtractions.close();
+        printWriterConstComparisons.close();
     }
 
     //Function to generate unique integers for insertion
     private static int randomHeapInsertion(HashSet<Integer> generatedNumbers) {
         int sizeBeforeInsertion = generatedNumbers.size();
-        int generatedNumber = random.nextInt(0, 10000);
+        int generatedNumber = random.nextInt(0, Integer.MAX_VALUE);
         generatedNumbers.add(generatedNumber);
         int sizeAfterInsertion = generatedNumbers.size();
         while (sizeBeforeInsertion == sizeAfterInsertion) {
-            generatedNumber = random.nextInt(0, 10000);
+            generatedNumber = random.nextInt(0, Integer.MAX_VALUE);
             generatedNumbers.add(generatedNumber);
             sizeAfterInsertion = generatedNumbers.size();
         }

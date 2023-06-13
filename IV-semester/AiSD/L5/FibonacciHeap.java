@@ -1,221 +1,135 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-class FibonacciHeap {
-
+public class FibonacciHeap {
     public int operationComparisons = 0;
-    private FibonacciNode minNode;
-    private int size;
 
-    public boolean isEmpty() {
-        return minNode == null;
-    }
+    private static class FibonacciTree {
+        int value;
+        List<FibonacciTree> child;
+        int order;
 
-    public int getSize() {
-        return size;
-    }
-
-    public void insert(int key) {
-        FibonacciNode newNode = new FibonacciNode(key);
-        if (isEmpty()) {
-            minNode = newNode;
-        } else {
-            newNode.left = minNode;
-            newNode.right = minNode.right;
-            minNode.right = newNode;
-            newNode.right.left = newNode;
-            operationComparisons++;
-            if (newNode.key < minNode.key) {
-                minNode = newNode;
-            }
+        FibonacciTree(int value) {
+            this.value = value;
+            this.child = new ArrayList<>();
+            this.order = 0;
         }
-        size++;
+
+        void addAtEnd(FibonacciTree t) {
+            child.add(t);
+            order++;
+        }
     }
 
-    public void merge(FibonacciHeap heap1, FibonacciHeap heap2) {
-        if (heap1.isEmpty()) {
-            minNode = heap2.minNode;
-        } else if (heap2.isEmpty()) {
-            minNode = heap1.minNode;
-        } else {
-            FibonacciNode heap1Min = heap1.minNode;
-            FibonacciNode heap2Min = heap2.minNode;
+    public List<FibonacciTree> trees;
+    private FibonacciTree least;
+    private int count;
 
-            FibonacciNode heap1MinRight = heap1Min.right;
-            heap1Min.right = heap2Min.right;
-            heap2Min.right.left = heap1Min;
-            heap2Min.right = heap1MinRight;
-            heap1MinRight.left = heap2Min;
+    public FibonacciHeap() {
+        this.trees = new ArrayList<>();
+        this.least = null;
+        this.count = 0;
+    }
 
-            operationComparisons++;
-            if (heap2Min.key < heap1Min.key) {
-                minNode = heap2Min;
+    public void insert(int value) {
+        FibonacciTree newTree = new FibonacciTree(value);
+        trees.add(newTree);
+        operationComparisons++;
+        if (least == null || value < least.value) {
+            least = newTree;
+        }
+        count++;
+    }
+
+    public Integer getMin() {
+        if (least == null) {
+            return null;
+        }
+        return least.value;
+    }
+
+    public Integer extractMin() {
+        FibonacciTree smallest = least;
+        if (smallest != null) {
+            for (FibonacciTree child : smallest.child) {
+                trees.add(child);
+            }
+            trees.remove(smallest);
+            if (trees.isEmpty()) {
+                least = null;
             } else {
-                minNode = heap1Min;
+                least = trees.get(0);
+                consolidate();
             }
+            count--;
+            return smallest.value;
         }
-
-        size = heap1.size + heap2.size;
-    }
-
-    public int getMinimum() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Heap is empty");
-        }
-        return minNode.key;
-    }
-
-    public int extractMinimum() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Heap is empty");
-        }
-        FibonacciNode extractedMin = minNode;
-        if (extractedMin.child != null) {
-            FibonacciNode child = extractedMin.child;
-            do {
-                FibonacciNode next = child.right;
-                child.left = null;
-                child.right = null;
-                minNode.left.right = child;
-                child.left = minNode.left;
-                minNode.left = child;
-                child.right = minNode;
-                child.parent = null;
-                child = next;
-            } while (child != extractedMin.child);
-        }
-        extractedMin.left.right = extractedMin.right;
-        extractedMin.right.left = extractedMin.left;
-        if (extractedMin == extractedMin.right) {
-            minNode = null;
-        } else {
-            minNode = extractedMin.right;
-            consolidate();
-        }
-        size--;
-        return extractedMin.key;
+        return null;
     }
 
     private void consolidate() {
-        int maxDegree = (int) Math.floor(Math.log(size) / Math.log(1.618)) + 1;
-        FibonacciNode[] degreeTable = new FibonacciNode[maxDegree];
+        int maxOrder = (int) (Math.log(count) / Math.log(2)) + 1;
+        List<FibonacciTree> aux = new ArrayList<>();
+        for (int i = 0; i <= maxOrder; i++) {
+            aux.add(null);
+        }
 
-        List<FibonacciNode> roots = new ArrayList<>();
+        while (!trees.isEmpty()) {
+            FibonacciTree x = trees.get(0);
+            int order = x.order;
+            trees.remove(x);
 
-        FibonacciNode currentNode = minNode;
-        do {
-            FibonacciNode current = currentNode;
-            currentNode = currentNode.right;
-
-            int degree = current.degree;
-            while (degreeTable[degree] != null) {
-                FibonacciNode other = degreeTable[degree];
-                if (current.key > other.key) {
-                    FibonacciNode temp = current;
-                    current = other;
-                    other = temp;
+            while (aux.get(order) != null) {
+                FibonacciTree y = aux.get(order);
+                operationComparisons++;
+                if (x.value > y.value) {
+                    FibonacciTree temp = x;
+                    x = y;
+                    y = temp;
                 }
-                linkNodes(other, current);
-                degreeTable[degree] = null;
-                degree++;
+                x.addAtEnd(y);
+                aux.set(order, null);
+                order++;
             }
-
-            degreeTable[degree] = current;
-            roots.add(current);
-        } while (currentNode != minNode);
-
-        minNode = null;
-        for (FibonacciNode root : roots) {
-            if (minNode == null || root.key < minNode.key) {
-                minNode = root;
-            }
+            aux.set(order, x);
         }
-    }
 
-
-
-    private void linkNodes(FibonacciNode child, FibonacciNode parent) {
-        child.left.right = child.right;
-        child.right.left = child.left;
-        child.parent = parent;
-        if (parent.child == null) {
-            parent.child = child;
-            child.left = child;
-            child.right = child;
-        } else {
-            child.left = parent.child;
-            child.right = parent.child.right;
-            parent.child.right = child;
-            child.right.left = child;
-        }
-        parent.degree++;
-        child.marked = false;
-    }
-
-    public void decreaseKey(FibonacciNode node, int newKey) {
-        operationComparisons++;
-        if (newKey > node.key) {
-            throw new IllegalArgumentException("New key is greater than current key");
-        }
-        node.key = newKey;
-        FibonacciNode parent = node.parent;
-        operationComparisons++;
-        if (parent != null && node.key < parent.key) {
-            cut(node, parent);
-            cascadingCut(parent);
-        }
-        operationComparisons++;
-        if (node.key < minNode.key) {
-            minNode = node;
-        }
-    }
-
-    private void cut(FibonacciNode node, FibonacciNode parent) {
-        node.left.right = node.right;
-        node.right.left = node.left;
-        parent.degree--;
-        if (parent.child == node) {
-            parent.child = node.right;
-        }
-        if (parent.degree == 0) {
-            parent.child = null;
-        }
-        node.left = minNode;
-        node.right = minNode.right;
-        minNode.right = node;
-        node.right.left = node;
-        node.parent = null;
-        node.marked = false;
-    }
-
-    private void cascadingCut(FibonacciNode node) {
-        FibonacciNode parent = node.parent;
-        if (parent != null) {
-            if (!node.marked) {
-                node.marked = true;
-            } else {
-                cut(node, parent);
-                cascadingCut(parent);
+        least = null;
+        for (FibonacciTree k : aux) {
+            if (k != null) {
+                trees.add(k);
+                operationComparisons++;
+                if (least == null || k.value < least.value) {
+                    least = k;
+                }
             }
         }
     }
 
-    private static class FibonacciNode {
-        private int key;
-        private int degree;
-        private boolean marked;
-        private FibonacciNode parent;
-        private FibonacciNode child;
-        private FibonacciNode left;
-        private FibonacciNode right;
-
-        public FibonacciNode(int key) {
-            this.key = key;
-            this.degree = 0;
-            this.marked = false;
-            this.parent = null;
-            this.child = null;
-            this.left = this;
-            this.right = this;
+    public void merge(FibonacciHeap otherHeap) {
+        trees.addAll(otherHeap.trees);
+        operationComparisons++;
+        if (least == null || (otherHeap.least != null && otherHeap.least.value < least.value)) {
+            least = otherHeap.least;
         }
+        count += otherHeap.count;
     }
+/*
+    public static void main(String[] args) {
+        FibonacciHeap fibonacciHeap = new FibonacciHeap();
+        fibonacciHeap.insert(1);
+        fibonacciHeap.insert(2);
+        fibonacciHeap.insert(3);
+        fibonacciHeap.insert(4);
+        fibonacciHeap.insert(5);
+        fibonacciHeap.insert(6);
+        fibonacciHeap.extractMin();
+        fibonacciHeap.extractMin();
+        fibonacciHeap.extractMin();
+        fibonacciHeap.extractMin();
+        fibonacciHeap.extractMin();
+        fibonacciHeap.extractMin();
+    }
+
+ */
 }

@@ -18,9 +18,17 @@ public class FibonacciHeapExperiments {
         PrintWriter printWriterExtractions = new PrintWriter(new FileWriter(fileNameExtractions));
         printWriterExtractions.println("n;i;extractionComparisons");
 
-        String fileNameComparisons = "FibonacciHeapConstComparisons.csv";
+        String fileNameComparisons = "FibonacciHeapComparisons.csv";
         PrintWriter printWriterComparisons = new PrintWriter(new FileWriter(fileNameComparisons));
         printWriterComparisons.println("n;comparisons");
+
+        String fileNameConstComparisons = "FibonacciHeapConstComparisons.csv";
+        PrintWriter printWriterConstComparisons = new PrintWriter(new FileWriter(fileNameConstComparisons));
+        printWriterConstComparisons.println("n;comparisons");
+
+        String fileNameAllComparisons = "FibonacciHeapAllComparisons.csv";
+        PrintWriter printWriterAllComparisons = new PrintWriter(new FileWriter(fileNameAllComparisons));
+        printWriterAllComparisons.println("n;i;comparisons");
 
         for (int n = 500; n <= 1000; n+= 500) {
             for (int i = 1; i <= 5; i++) {
@@ -43,8 +51,17 @@ public class FibonacciHeapExperiments {
                     H2.operationComparisons = 0;
                 }
 
+                for (int p = 0; p < n; p++) {
+                    printWriterAllComparisons.println(n + ";" + i + ";" + insertionComparisonsH1.get(p));
+                }
+                for (int p = 0; p < n; p++) {
+                    printWriterAllComparisons.println(n + ";" + i + ";" + insertionComparisonsH2.get(p));
+                }
+
                 //Heap-Union
                 H1.merge(H2);
+                printWriterAllComparisons.println(n + ";" + i + ";" + H1.operationComparisons);
+                H1.operationComparisons = 0;
 
                 //Array of hopefully sorted extracted minimum values
                 ArrayList<Integer> extractedValues = new ArrayList<>();
@@ -76,6 +93,7 @@ public class FibonacciHeapExperiments {
                 }
                 for (int p = 0; p < 2 * n; p++) {
                     printWriterExtractions.println(n + ";" + i + ";" + extractionComparisons.get(p));
+                    printWriterAllComparisons.println(n + ";" + i + ";" + extractionComparisons.get(p));
                 }
             }
         }
@@ -108,13 +126,17 @@ public class FibonacciHeapExperiments {
                     H1.operationComparisons = 0;
                 }
             }
-            comparisonsPerN = comparisonsPerN / (5.0 * n);
+            comparisonsPerN = comparisonsPerN / 5.0;
             printWriterComparisons.println(n + ";" + comparisonsPerN);
+            comparisonsPerN = comparisonsPerN / n;
+            printWriterConstComparisons.println(n + ";" + comparisonsPerN);
         }
 
         printWriterInsertions.close();
         printWriterExtractions.close();
         printWriterComparisons.close();
+        printWriterConstComparisons.close();
+        printWriterAllComparisons.close();
     }
 
     //Function to generate unique integers for insertion

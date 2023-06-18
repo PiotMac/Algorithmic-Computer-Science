@@ -2,12 +2,14 @@ import java.security.SecureRandom;
 
 public class LongestCommonSubsequence {
     SecureRandom random = new SecureRandom();
-    int SIZE = 5000;
+    int SIZE = 50;
 
     public static void main(String[] args) {
         LongestCommonSubsequence lcs = new LongestCommonSubsequence();
-        String X = lcs.randomStringGenerator(lcs.SIZE);
-        String Y = lcs.randomStringGenerator(lcs.SIZE);
+        //String X = lcs.randomStringGenerator(lcs.SIZE);
+        //String Y = lcs.randomStringGenerator(lcs.SIZE);
+        String X = "exponential";
+        String Y = "polynomial";
         int n = X.length();
         int m = Y.length();
         int result = lcs.lcsAlgorithm(X, Y, n, m);

@@ -18,9 +18,17 @@ public class BinomialHeapExperiments {
         PrintWriter printWriterExtractions = new PrintWriter(new FileWriter(fileNameExtractions));
         printWriterExtractions.println("n;i;iteration;extractionComparisons");
 
+        String fileNameComparisons = "BinomialHeapComparisons.csv";
+        PrintWriter printWriterComparisons = new PrintWriter(new FileWriter(fileNameComparisons));
+        printWriterComparisons.println("n;comparisons");
+
         String fileNameConstComparisons = "BinomialHeapConstComparisons.csv";
         PrintWriter printWriterConstComparisons = new PrintWriter(new FileWriter(fileNameConstComparisons));
         printWriterConstComparisons.println("n;constComparisons");
+
+        String fileNameAllComparisons = "BinomialHeapAllComparisons.csv";
+        PrintWriter printWriterAllComparisons = new PrintWriter(new FileWriter(fileNameAllComparisons));
+        printWriterAllComparisons.println("n;i;iteration;comparisons");
 
         for (int n = 500; n <= 1000; n+= 500) {
             for (int i = 1; i <= 5; i++) {
@@ -43,8 +51,18 @@ public class BinomialHeapExperiments {
                     H2.operationComparisons = 0;
                 }
 
+                for (int p = 1; p <= n; p++) {
+                    printWriterAllComparisons.println(n + ";" + i + ";" + p + ";" + insertionComparisonsH1.get(p - 1));
+                }
+                for (int p = n + 1; p <= 2 * n; p++) {
+                    printWriterAllComparisons.println(n + ";" + i + ";" + p + ";" + insertionComparisonsH2.get(p - 1 - n));
+                }
+
                 //Heap-Union
                 H1.merge(H2);
+                int iteration = 2 * n + 1;
+                printWriterAllComparisons.println(n + ";" + i + ";" + iteration +";" + H1.operationComparisons);
+                H1.operationComparisons = 0;
 
                 //Array of hopefully sorted extracted minimum values
                 ArrayList<Integer> extractedValues = new ArrayList<>();
@@ -76,6 +94,8 @@ public class BinomialHeapExperiments {
                 }
                 for (int p = 1; p <= 2 * n; p++) {
                     printWriterExtractions.println(n + ";" + i + ";" + p + ";" + extractionComparisons.get(p - 1));
+                    int it = p + 2 * n + 1;
+                    printWriterAllComparisons.println(n + ";" + i + ";" + it + ";" + extractionComparisons.get(p - 1));
                 }
             }
         }
@@ -108,11 +128,14 @@ public class BinomialHeapExperiments {
                     H1.operationComparisons = 0;
                 }
             }
-            comparisonsPerN = comparisonsPerN / (5.0 * n);
+            comparisonsPerN = comparisonsPerN / 5.0;
+            printWriterComparisons.println(n + ";" + comparisonsPerN);
+            comparisonsPerN = comparisonsPerN / n;
             printWriterConstComparisons.println(n + ";" + comparisonsPerN);
         }
         printWriterInsertions.close();
         printWriterExtractions.close();
+        printWriterComparisons.close();
         printWriterConstComparisons.close();
     }
 

@@ -1,0 +1,19 @@
+@mixin mediaQ($size) {
+	@if map-has-key($breakpoints, $size) {
+		@media only screen and (min-width: map-get($breakpoints, $size)) {
+			@content;
+		}
+	}
+}
+
+@function setFlex($size) {
+	@if map-has-key($breakpoints, $size) {
+		@if map-get($breakpoints, $size) < map-get($breakpoints, medium) {
+			@return column;
+		}
+		@else {
+			@return row;
+		}
+	}
+}
+

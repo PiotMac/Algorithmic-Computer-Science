@@ -10,4 +10,5 @@ In order to use these programs, please write in your terminal: `java Main <encod
 2. `g` option uses Elias δ codes
 3. `o` option uses Elias ω codes
 4. `f` option uses Fibonacci codes
+
 When not given any explicit option, the progran uses Elias ω codes as default.

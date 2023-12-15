@@ -11,4 +11,5 @@ For testing, I also created the **QuantizationTesting.java** file where after wr
 generates `data.csv` file in the `output` directory along with the quantized images (their filenames take form of `<integer from point 3.><inputFile>`).
 
 # Usage
-In order to use this program, please write in your terminal: `java QuantizationMain <inputFile> <outputFile> <0-24>`
+1. In order to use the program for single TGA input file, please write in your terminal: `java QuantizationMain <inputFile> <outputFile> <0-24>`
+2. To test multiple TGA images, write: `java QuantizationTesting`

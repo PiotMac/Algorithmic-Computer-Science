@@ -1,0 +1,2 @@
+Filename;TheBestSolutionWeight;AverageSolutionWeight;Iterations;IslandSize;PopulationSize;EpochSize;IterationsInEpoch;CrossProbability;MutationProbability;CrossType
+xqf131;661;685.29;100;8;32;5;100;0.8;0.05;1

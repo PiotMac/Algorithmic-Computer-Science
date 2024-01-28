@@ -1,7 +1,5 @@
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 
@@ -53,7 +51,7 @@ public class Noise {
                 bitsRemaining--;
 
                 // Inverting the received bit with the given probability
-                if (secureRandom.nextDouble() <= probability) {
+                if (secureRandom.nextDouble() < probability) {
                     if (currentBit == 0) {
                         currentBit = 1;
                     }

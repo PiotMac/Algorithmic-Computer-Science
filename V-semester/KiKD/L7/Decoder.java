@@ -2,41 +2,74 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 public class Decoder {
-    private static int[] decodeByte(int[] dataBits) throws Exception {
+    public static int[] decodeByte(int[] dataBits) throws Exception {
+        int[][] parityMatrix = {
+                {0, 0, 1, 0, 1, 1, 1},
+                {0, 1, 0, 1, 1, 1, 0},
+                {1, 0, 1, 1, 1, 0, 0}
+        };
+
         if (dataBits.length != 8) {
             throw new Exception("Eight bits at a time have to be passed to the decoder!");
         }
 
-        int calculatedParityBit1 = dataBits[2] ^ dataBits[4] ^ dataBits[6];
-        int calculatedParityBit2 = dataBits[2] ^ dataBits[5] ^ dataBits[6];
-        int calculatedParityBit3 = dataBits[4] ^ dataBits[5] ^ dataBits[6];
-        int calculatedParityBit4 = dataBits[2] ^ dataBits[4] ^ dataBits[5] ^ dataBits[6] ^ dataBits[0] ^ dataBits[1] ^ dataBits[3];
+        int[] parityBits = new int[4];
 
-        int errorPosition = 0;
+        for (int i = 0; i < 4; i++) {
+            parityBits[i] = 0;
+            for (int j = 0; j < 7; j++) {
+                if (i == 3) {
+                    parityBits[i] = (parityBits[i] + dataBits[j]) % 2;
+                }
+                else if (parityMatrix[i][j] == 1) {
+                    parityBits[i] = (parityBits[i] + dataBits[j]) % 2;
+                }
+            }
+        }
+
         int wasUncorrected = 0;
 
-        if (dataBits[0] != calculatedParityBit1) {
-            errorPosition += 1;
+        boolean isSyndromeAllZeros = parityBits[0] == 0 && parityBits[0] == parityBits[1] && parityBits[1] == parityBits[2];
+
+        if (dataBits[7] == parityBits[3]) {
+            if (!(isSyndromeAllZeros)) {
+                wasUncorrected++;
+            }
         }
-        if (dataBits[1] != calculatedParityBit2) {
-            errorPosition += 2;
-        }
-        if (dataBits[3] != calculatedParityBit3) {
-            errorPosition += 4;
-        }
-        if (dataBits[7] != calculatedParityBit4) {
-            if (errorPosition == 0) {
+        else {
+            if (isSyndromeAllZeros) {
                 dataBits[7] ^= 1;
             }
             else {
-                dataBits[errorPosition - 1] ^= 1;
+                for (int i = 0; i < 7; i++) {
+                    if (parityMatrix[0][i] == parityBits[0] && parityMatrix[1][i] == parityBits[1] && parityMatrix[2][i] == parityBits[2]) {
+                        dataBits[i] ^= 1;
+                        break;
+                    }
+                }
             }
-        }
-        else if (errorPosition != 0) {
-            wasUncorrected = 1;
+            /*
+            for (int i = 0; i < 4; i++) {
+                parityBits[i] = 0;
+                for (int j = 0; j < 7; j++) {
+                    if (i == 3) {
+                        parityBits[i] = (parityBits[i] + dataBits[j]) % 2;
+                    }
+                    else if (parityMatrix[i][j] == 1) {
+                        parityBits[i] = (parityBits[i] + dataBits[j]) % 2;
+                    }
+                }
+            }
+            isSyndromeAllZeros = parityBits[0] == 0 && parityBits[0] == parityBits[1] && parityBits[1] == parityBits[2];
+
+            if (!isSyndromeAllZeros) {
+                wasUncorrected++;
+            }
+
+             */
         }
 
-        return new int[]{dataBits[2], dataBits[4], dataBits[5], dataBits[6], wasUncorrected};
+        return new int[]{dataBits[0], dataBits[0] ^ dataBits[1], dataBits[5], dataBits[6], wasUncorrected};
     }
 
     public static void main(String[] args) {

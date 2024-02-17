@@ -2,6 +2,7 @@
 The task was to implement two metaheuristic algorithms that try to find and return the best solution for the TSP problem:
 1. Simulated Annealing
 2. Tabu Search
+I also attached my report in a .pdf file (in Polish).
 
 # Simulated Annealing
 I will not go in detail about this metaheuristic but for a good explanation click [here](https://www.baeldung.com/cs/simulated-annealing).

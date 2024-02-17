@@ -4,4 +4,4 @@ it generates Minimum Spanning Tree (MST) and its weight. It also creates a TSP c
 for randomly chosen permutations of all vertices that create a TSP cycle. For better understanding, the program visualizes all those efforts and creates plots that can be found under **plots** directory.
 I have also attached here my report where I go into more details.
 # Usage
-Simply write `./main.py`.
+Simply write `python3 main.py`.

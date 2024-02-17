@@ -5,9 +5,9 @@ The task was to implement two metaheuristic algorithms that try to find and retu
 
 # Simulated Annealing
 I will not go in detail about this metaheuristic but for a good explanation click [here](https://www.baeldung.com/cs/simulated-annealing).
-My `ex1.cpp` file is divided into two functions. The first one finds solutions for the graphs with less than 1000 vertices (from data/smallerTSPs folder) and tests different starting parameters.
+My `ex1.cpp` file is divided into two functions. The first one finds solutions for the graphs with less than 1000 vertices (from **data/smallerTSPs** folder) and tests different starting parameters.
 I then looked for which parameters the metaheurtistic does the best job and properly set those parameters for the next part. The second function does a similar thing as the first one but uses those
-best parameters and performs the Simulated Annealing algorithm on more dense graphs that can be found in the data/biggerTSPs folder. It also repeats 100 times for each graph and then returns the best
+best parameters and performs the Simulated Annealing algorithm on more dense graphs that can be found in the **data/biggerTSPs** folder. It also repeats 100 times for each graph and then returns the best
 found solution (with the smallest weight) and the average of all found solutions.
 My implementation of this metaheuristic is in the `simulated_annealing.hpp` file.
 

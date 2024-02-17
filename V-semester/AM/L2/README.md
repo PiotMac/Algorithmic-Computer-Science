@@ -11,4 +11,4 @@ For each set of data, provide the weight of the minimum spanning tree, the avera
 2. Execute the Local Search algorithm for n random permutations. For each set of data, provide the average value of the obtained solution, the average number of improvement steps, and the best solution obtained.
 3. To speed up calculations, instead of testing the entire neighborhood, we select only the best neighbor from n randomly chosen ones. Execute the modified Local Search algorithm for n random permutations. For each set of data, provide the average value of the obtained solution, the average number of improvement steps, and the best solution obtained.
 # Usage
-Simply run it using `./local-search`. If you want to visualize the cycles and statistics use `./plots.py`
+Simply compile it by writing into a terminal `g++ local-search.cpp -o local_search` and run it using `./local_search`. If you want to visualize the cycles and statistics use `python3 plots.py`

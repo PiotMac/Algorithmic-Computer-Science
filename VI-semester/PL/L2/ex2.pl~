@@ -1,0 +1,11 @@
+jednokrotnie(X, L) :-
+    member(X, L),
+    select(X, L, Tail),
+    \+ member(X, Tail).
+
+dwukrotnie(X, L) :-
+    append(A, [Y|B], L),
+    \+ member(Y, A),
+    append(C, [Y|D], B),
+    \+ member(Y, C),
+    \+ member(Y, D).

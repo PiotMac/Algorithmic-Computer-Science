@@ -1,0 +1,6 @@
+środkowy([X], X).
+środkowy(L, X) :-
+    length(L, Len),
+    Len > 1,
+    Len mod 2 =:= 1,
+    append(_, [X|_], L).

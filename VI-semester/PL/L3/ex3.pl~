@@ -1,0 +1,44 @@
+count_inversions([], 0).
+count_inversions([X|Xs], Count) :-
+    findall(Y, (member(Y, Xs), Y < X), L),
+    length(L, CurrentCount),
+    count_inversions(Xs, RestCount),
+    %count_smaller(X, Xs, SmallerCount),
+    Count is CurrentCount + RestCount.
+/*
+count_smaller(_, [], 0).
+count_smaller(X, [Y|Ys], Count) :-
+    X > Y,
+    count_smaller(X, Ys, RestCount),
+    Count is RestCount + 1.
+count_smaller(X, [_|Ys], Count) :-
+    count_smaller(X, Ys, Count).
+
+count_parity(Original, Permutation, Parity) :-
+    count_inversions(Original, InversionsFirst),
+    count_inversions(Permutation, InversionsSecond),
+    Parity is abs(InversionsFirst - InversionsSecond) mod 2.
+*/
+select_from_list(X, [X|Xs], Xs).
+select_from_list(X, [Y|Ys], [Y|Zs]) :-
+    select_from_list(X, Ys, Zs).
+
+permutation_of_list([],[]).
+permutation_of_list(Xs, [Z|Zs]) :-
+    select_from_list(Z, Xs, Ys),
+    permutation_of_list(Ys, Zs).
+
+even_permutation(Xs, Ys) :-
+    permutation_of_list(Xs, Ys).
+    count_inversions(Ys, Count),
+    Count mod 2 =:= 0.
+    %count_parity(Xs, Ys, Parity),
+    %Parity =:= 0.
+
+odd_permutation(Xs, Ys) :-
+    permutation_of_list(Xs, Ys),
+    count_inversions(Ys, Count),
+    Count mod 2 =:= 1.
+    %count_parity(Ys, Parity),
+    %Parity =:= 1.
+

@@ -96,7 +96,9 @@ public class PolynomialOperations {
             polynomial = subtract(polynomial, multiply(quotientOfTerms, second));
         }
 
+
         remainder = polynomial;
+
         Polynomial[] result = new Polynomial[2];
         result[0] = quotient;
         result[1] = remainder;
@@ -108,17 +110,94 @@ public class PolynomialOperations {
         if (first.getDegree() < second.getDegree()) {
             return gcd(second, first);
         }
-        Polynomial firstCopy = new Polynomial(first.coefficients);
+        Polynomial foundGCD = new Polynomial(first.coefficients);
         Polynomial secondCopy = new Polynomial(second.coefficients);
-
+        Polynomial[] divisionResult = new Polynomial[2];
         while (secondCopy.coefficients[0] != 0.0) {
-            Polynomial[] divisionResult = divide(firstCopy, secondCopy);
+            divisionResult = divide(foundGCD, secondCopy);
 
-            firstCopy = new Polynomial(secondCopy.coefficients);
+            foundGCD = new Polynomial(secondCopy.coefficients);
             secondCopy = new Polynomial(divisionResult[1].coefficients);
         }
 
-        return firstCopy;
+        boolean takeCommonFactor = true;
+        if (divisionResult[0].coefficients[0] % 1.0 != 0.0) {
+            for (int i = 1; i < divisionResult[0].coefficients.length; i++) {
+                if (divisionResult[0].coefficients[0] % 1.0 == 0.0) {
+                    break;
+                }
+                if (divisionResult[0].coefficients[i] % divisionResult[0].coefficients[0] != 0) {
+                    takeCommonFactor = false;
+                }
+            }
+        }
+        else {
+            takeCommonFactor = false;
+        }
+
+        if (takeCommonFactor) {
+            double[] factor = new double[1];
+            factor[0] = divisionResult[0].coefficients[0];
+            foundGCD = multiply(foundGCD, new Polynomial(factor));
+        }
+
+        return foundGCD;
+    }
+
+    public Polynomial gcdOfThree(Polynomial first, Polynomial second, Polynomial third) {
+        Polynomial foundGCDOfTwo = gcd(first, second);
+
+        return gcd(foundGCDOfTwo, third);
+    }
+
+    public Polynomial[] extendedGCD(Polynomial first, Polynomial second, Polynomial gcd) {
+        if (first.getDegree() < second.getDegree()) {
+            return extendedGCD(second, first, gcd);
+        }
+        Polynomial[] result = new Polynomial[3];
+        result[0] = new Polynomial(gcd.coefficients);
+        double[] o = {1.0};
+        double[] p = {0.0};
+        result[1] = new Polynomial(o);
+        result[2] = new Polynomial(p);
+
+        Polynomial firstCopy = new Polynomial(first.coefficients);
+        Polynomial secondCopy = new Polynomial(second.coefficients);
+
+        double[] oS = {1.0};
+        double[] z = {0.0};
+        double[] oT = {0.0};
+        double[] x = {1.0};
+        Polynomial oldS = new Polynomial(oS);
+        Polynomial s = new Polynomial(z);
+        Polynomial oldT = new Polynomial(oT);
+        Polynomial t = new Polynomial(x);
+
+        while (secondCopy.coefficients[0] != 0.0) {
+            Polynomial[] divideResult = divide(firstCopy, secondCopy);
+            Polynomial temp = new Polynomial(firstCopy.coefficients);
+
+            firstCopy = new Polynomial(secondCopy.coefficients);
+            secondCopy = subtract(temp, multiply(divideResult[0], secondCopy));
+
+            temp = new Polynomial(oldS.coefficients);
+            oldS = new Polynomial(s.coefficients);
+            s = subtract(temp, multiply(divideResult[0], s));
+
+            temp = new Polynomial(oldT.coefficients);
+            oldT = new Polynomial(t.coefficients);
+            t = subtract(temp, multiply(divideResult[0], t));
+        }
+
+        Polynomial[] res = divide(gcd, firstCopy);
+        if (res[1].coefficients[0] == 0.0) {
+            Polynomial copy = new Polynomial(gcd.coefficients);
+            Polynomial[] k = divide(copy, firstCopy);
+            result[1] = multiply(oldS, k[0]);
+            result[2] = multiply(oldT, k[0]);
+        }
+
+        return result;
     }
 
     public Polynomial lcm(Polynomial first, Polynomial second) {

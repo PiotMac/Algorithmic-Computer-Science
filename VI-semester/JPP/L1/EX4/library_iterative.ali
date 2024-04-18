@@ -1,0 +1,50 @@
+V "GNAT Lib v11"
+P ZX
+
+RN
+
+U library_iterative%b	library_iterative.adb	6997ca8f NE OO PK
+
+U library_iterative%s	library_iterative.ads	e9a19735 EE NE OO PK
+
+D library_iterative.ads	20240412015327 e9a19735 library_iterative%s
+D library_iterative.adb	20240412015821 80365dba library_iterative%b
+D system.ads		20230513075248 a2da961d system%s
+G a e
+G c Z s b [factorial library_iterative 10 13 none]
+G c Z s b [gcd library_iterative 16 13 none]
+G c Z s b [diophantine_equation library_iterative 22 13 none]
+G c Z s s [solutionIP library_iterative 5 9 none]
+X 1 library_iterative.ads
+1K9*Library_Iterative 28l5 28e22 2|1b14 60l5 60t22
+2M9*UInt64 10r27 10r42 16r24 16r39 2|2r27 2r42 3r16 5r16 6r29 12r24 12r39
+. 13r22
+3I9*Int64<long_integer> 6r11 7r11 22r44 2|26r44 27r38 28r24
+5R9*Solution 8e14 22r58 2|26r58 29r16
+6i7*X{3I9} 2|29m29 53m17
+7i7*Y{3I9} 2|29m37 54m17
+10V13*Factorial{2M9} 10>23 2|2b13 10l8 10t17
+10m23 N{2M9} 2|2b23 5r34
+16V13*GCD{2M9} 16>17 16>20 2|12b13 24l8 24t11
+16m17 A{2M9} 2|12b17 15r13
+16m20 B{2M9} 2|12b20 16r13
+22V13*Diophantine_Equation{5R9} 22>34 22>37 22>40 2|26b13 58l8 58t28
+22i34 A{3I9} 2|26b34 31r16
+22i37 B{3I9} 2|26b37 32r12
+22i40 C{3I9} 2|26b40 52r10 53r31 54r31
+X 2 library_iterative.adb
+3m7 Result{1|2M9} 6m10 6r20 9r14
+5m11 I{1|2M9} 6r36
+13m7 A1{1|2M9} 15m7 19r16 20m10 23r14
+13m11 B1{1|2M9} 16m7 17r13 18r18 19m10 19r23
+13m15 Temp{1|2M9} 18m10 20r16
+27i7 Old_R{1|3I9} 31m7 38r22 39r18 40m10 52r16 53r35 54r35
+27i14 R{1|3I9} 32m7 37r13 38r30 40r19 41m10 41r33
+27i17 Old_S{1|3I9} 33m7 43r18 44m10 53r22
+27i24 S{1|3I9} 34m7 44r19 45m10 45r33
+27i27 Old_T{1|3I9} 35m7 47r18 48m10 54r22
+27i34 T{1|3I9} 36m7 48r19 49m10 49r33
+28i7 Quotient{1|3I9} 38m10 41r22 45r22 49r22
+28i17 Temp{1|3I9} 39m10 41r15 43m10 45r15 47m10 49r15
+29r7 Result{1|5R9} 53m10 54m10 57r14
+

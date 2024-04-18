@@ -1,0 +1,65 @@
+V "GNAT Lib v11"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U library_recursive_h%s	library_recursive_h.ads	fe6c03d5 NE OO PK IL
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W x86_64_linux_gnu_bits_stdint_intn_h%s  x86_64_linux_gnu_bits_stdint_intn_h.ads  x86_64_linux_gnu_bits_stdint_intn_h.ali
+W x86_64_linux_gnu_bits_stdint_uintn_h%s  x86_64_linux_gnu_bits_stdint_uintn_h.ads  x86_64_linux_gnu_bits_stdint_uintn_h.ali
+
+D ada.ads		20230513075248 76789da1 ada%s
+D a-unccon.ads		20230513075248 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20230513075248 edec285f interfaces%s
+D i-c.ads		20230513075248 c624fa43 interfaces.c%s
+D i-cstrin.ads		20230513075248 341d0ddf interfaces.c.strings%s
+D library_recursive_h.ads  20240412064916 3da6cb52 library_recursive_h%s
+D system.ads		20230513075248 a2da961d system%s
+D s-exctab.ads		20230513075248 54135002 system.exception_table%s
+D s-parame.ads		20230513075248 4752c4cb system.parameters%s
+D s-stalib.ads		20230513075248 0f2d51ff system.standard_library%s
+D x86_64_linux_gnu_bits_stdint_intn_h.ads  20240412064916 0dbd6491 x86_64_linux_gnu_bits_stdint_intn_h%s
+D x86_64_linux_gnu_bits_stdint_uintn_h.ads  20240412064916 08535655 x86_64_linux_gnu_bits_stdint_uintn_h%s
+D x86_64_linux_gnu_bits_types_h.ads  20240412064916 fcb205a9 x86_64_linux_gnu_bits_types_h%s
+G a e
+G c Z s s [factorial_recursive library_recursive_h 17 13 none]
+G c Z s s [gcd_recursive library_recursive_h 22 13 none]
+G c Z s s [diophantine_equation_recursive library_recursive_h 27 13 none]
+G c Z s s [solutionIP library_recursive_h 11 9 none]
+X 3 interfac.ads
+38K9*Interfaces 231e15 6|5r6 5r24
+X 4 i-c.ads
+18K20*C 232e17 6|5w17 5r35
+37I9*long<long_integer>
+46M9*unsigned_long
+X 6 library_recursive_h.ads
+9K9*library_recursive_h 35l5 35e24
+11R9*Solution 15e4 30r63
+12i7*x{11|31I12}
+13i7*y{11|31I12}
+17V13*factorial_recursive{12|31M12} 17>34
+17m34 n{12|31M12}
+22V13*gcd_recursive{12|31M12} 22>28 22>79
+22m28 a{12|31M12}
+22m79 b{12|31M12}
+27V13*diophantine_equation_recursive{11R9} 28>7 29>7 30>7
+28i7 a{11|31I12}
+29i7 b{11|31I12}
+30i7 c{11|31I12}
+X 11 x86_64_linux_gnu_bits_stdint_intn_h.ads
+8K9*x86_64_linux_gnu_bits_stdint_intn_h 6|6w6 12r19 13r19 28r11 29r11 30r11
+. 11|33e40
+31I12*int64_t{13|51I12} 6|12r55 13r55 28r47 29r47 30r47
+X 12 x86_64_linux_gnu_bits_stdint_uintn_h.ads
+8K9*x86_64_linux_gnu_bits_stdint_uintn_h 6|7w6 17r38 17r92 22r32 22r83 22r137
+. 12|33e41
+31M12*uint64_t{13|53M12} 6|17r75 17r129 22r69 22r120 22r174
+X 13 x86_64_linux_gnu_bits_types_h.ads
+51I12*uu_int64_t{4|37I9}
+53M12*uu_uint64_t{4|46M9}
+

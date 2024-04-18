@@ -1,0 +1,91 @@
+V "GNAT Lib v11"
+M P W=b
+P ZX
+
+RN
+RV NO_IO
+RV NO_DYNAMIC_SIZED_OBJECTS
+
+U main%b		main.adb		2c9da083 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W library_iterative%s	library_iterative.adb	library_iterative.ali
+W library_recursive%s	library_recursive.adb	library_recursive.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.concat_4%s	s-conca4.adb		s-conca4.ali
+Z system.img_lli%s	s-imglli.ads		s-imglli.ali
+Z system.img_llu%s	s-imgllu.ads		s-imgllu.ali
+Z system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+D ada.ads		20230513075248 76789da1 ada%s
+D a-except.ads		20230513075248 449c9b65 ada.exceptions%s
+D a-ioexce.ads		20230513075248 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20230513075248 119b8fb3 ada.streams%s
+D a-tags.ads		20230513075248 9eaa38c6 ada.tags%s
+D a-textio.ads		20230513075248 aef4d56d ada.text_io%s
+D a-unccon.ads		20230513075248 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20230513075248 edec285f interfaces%s
+D i-cstrea.ads		20230513075248 e53d8b8e interfaces.c_streams%s
+D library_iterative.ads	20240412015327 e9a19735 library_iterative%s
+D library_recursive.ads	20240412015729 c936c610 library_recursive%s
+D main.adb		20240412015624 a2fe24cb main%b
+D system.ads		20230513075248 a2da961d system%s
+D s-conca2.ads		20230513075248 02a0d7d0 system.concat_2%s
+D s-conca4.ads		20230513075248 7e642b20 system.concat_4%s
+D s-crtl.ads		20230513075248 0ebbdb71 system.crtl%s
+D s-exctab.ads		20230513075248 54135002 system.exception_table%s
+D s-ficobl.ads		20230513075248 078245e4 system.file_control_block%s
+D s-imagei.ads		20230513075248 0d3f86a7 system.image_i%s
+D s-imageu.ads		20230513075248 525c30c6 system.image_u%s
+D s-imglli.ads		20230513075248 3723d9ff system.img_lli%s
+D s-imgllu.ads		20230513075248 e025ba90 system.img_llu%s
+D s-parame.ads		20230513075248 4752c4cb system.parameters%s
+D s-secsta.ads		20230513075248 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20230513075248 a7318a92 system.soft_links%s
+D s-stache.ads		20230513075248 a37c21ec system.stack_checking%s
+D s-stalib.ads		20230513075248 0f2d51ff system.standard_library%s
+D s-stoele.ads		20230513075248 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20230513075248 ed88f8fb system.storage_elements%b
+D s-traent.ads		20230513075248 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20230513075248 eea7525d system.unsigned_types%s
+D s-wchcon.ads		20230513075248 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [main standard 10 11 none]
+G r c none [main standard 10 11 none] [factorial library_iterative 10 13 none]
+G r c none [main standard 10 11 none] [gcd library_iterative 16 13 none]
+G r c none [main standard 10 11 none] [diophantine_equation library_iterative 22 13 none]
+G r c none [main standard 10 11 none] [factorial library_recursive 11 13 none]
+G r c none [main standard 10 11 none] [gcd library_recursive 17 13 none]
+G r c none [main standard 10 11 none] [diophantine_equation library_recursive 23 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 12|1r6 2r5
+X 6 a-textio.ads
+58K13*Text_IO 728e16 12|1w10 2r9
+509U14*Put_Line 12|14s4 15s4 16s4 19s4 21s4 22s4 23s4 26s4
+X 10 library_iterative.ads
+1K9*Library_Iterative 28e22 12|4w6 11r21 15r24 15r55 16r41 16r72 18r21 19r80
+. 19r140
+2M9*UInt64 12|15r42 16r59
+3I9*Int64<long_integer> 12|19r98 19r158
+5R9*Solution 8e14 12|11r39
+6i7*X{3I9} 12|19r124
+7i7*Y{3I9} 12|19r184
+10V13*Factorial{2M9} 12|15s73
+16V13*GCD{2M9} 12|16s90
+22V13*Diophantine_Equation{5R9} 12|18s39
+X 11 library_recursive.ads
+1K9*Library_Recursive 29e22 12|5w6 12r21 22r24 22r55 23r41 23r72 25r21 26r80
+. 26r140
+3M9*UInt64 12|22r42 23r59
+4I9*Int64<long_integer> 12|26r98 26r158
+6R9*Solution 9e14 12|12r39
+7i7*X{4I9} 12|26r124
+8i7*Y{4I9} 12|26r184
+11V13*Factorial{3M9} 12|22s73
+17V13*GCD{3M9} 12|23s90
+23V13*Diophantine_Equation{6R9} 12|25s39
+X 12 main.adb
+10U11*Main 10b11 27l5 27t9
+11r5 Sol_Iterative{10|5R9} 18m4 19r110 19r170
+12r5 Sol_Recursive{11|6R9} 25m4 26r110 26r170
+

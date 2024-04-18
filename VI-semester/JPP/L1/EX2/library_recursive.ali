@@ -1,0 +1,39 @@
+V "GNAT Lib v11"
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_RECURSION
+
+U library_recursive%b	library_recursive.adb	015fd299 NE OO PK
+
+U library_recursive%s	library_recursive.ads	c936c610 EE NE OO PK
+
+D library_recursive.ads	20240412015729 c936c610 library_recursive%s
+D library_recursive.adb	20240412015406 c8691489 library_recursive%b
+D system.ads		20230513075248 a2da961d system%s
+G a e
+G c Z s b [factorial library_recursive 11 13 none]
+G c Z s b [gcd library_recursive 17 13 none]
+G c Z s b [diophantine_equation library_recursive 23 13 none]
+G c Z s s [solutionIP library_recursive 6 9 none]
+X 1 library_recursive.ads
+1K9*Library_Recursive 29l5 29e22 2|1b14 46l5 46t22
+3M9*UInt64 11r27 11r42 17r24 17r39 2|3r27 3r42 12r24 12r39
+4I9*Int64<long_integer> 7r11 8r11 23r44 2|21r44
+6R9*Solution 9e14 23r58 2|21r58 22r16 36r20
+7i7*X{4I9} 2|22m29 32m17 39m20 40r30
+8i7*Y{4I9} 2|22m37 29m17 39r30 40m20 40r49
+11V13*Factorial{3M9} 11>23 2|3b13 8s21 10l8 10t17
+11m23 N{3M9} 2|3b23 5r10 8r17 8r31
+17V13*GCD{3M9} 17>17 17>20 2|12b13 17s17 19l8 19t11
+17m17 A{3M9} 2|12b17 15r17 17r24
+17m20 B{3M9} 2|12b20 14r10 17r21 17r30
+23V13*Diophantine_Equation{6R9} 23>34 23>37 23>40 2|21b13 38s21 44l8 44t28
+23i34 A{4I9} 2|21b34 26r13 28r13 32r26 38r45 40r35
+23i37 B{4I9} 2|21b37 26r23 29r26 31r13 38r42 38r51 40r39
+23i40 C{4I9} 2|21b40 24r10 29r22 32r22 38r54
+X 2 library_recursive.adb
+22r7 Result{1|6R9} 25r17 27r17 29m10 30r17 32m10 33r17 39m13 40m13 41r20
+36r13 Temp{1|6R9} 38m13 39r25 40r25 40r44
+

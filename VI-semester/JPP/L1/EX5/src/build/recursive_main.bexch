@@ -1,0 +1,26 @@
+[GENERATED OBJECT FILE]
+b__recursive_main.o
+[PROJECT FILES]
+/home/monek/Desktop/VSCode/VIsem/JPP/L1/EX5/Wrapper.gpr
+20240412021747 fd4170ca8993ef3341db4c8e6216ab12
+[BOUND OBJECT FILES]
+/home/monek/Desktop/VSCode/VIsem/JPP/L1/EX5/src/build/x86_64_linux_gnu_bits_types_h.o
+/home/monek/Desktop/VSCode/VIsem/JPP/L1/EX5/src/build/x86_64_linux_gnu_bits_stdint_intn_h.o
+/home/monek/Desktop/VSCode/VIsem/JPP/L1/EX5/src/build/x86_64_linux_gnu_bits_stdint_uintn_h.o
+/home/monek/Desktop/VSCode/VIsem/JPP/L1/EX5/src/build/library_recursive_h.o
+/home/monek/Desktop/VSCode/VIsem/JPP/L1/EX5/src/build/recursive_main.o
+[GENERATED SOURCE FILES]
+b__recursive_main.ads
+b__recursive_main.adb
+b__recursive_main.ali
+[RESULTING OPTIONS]
+-L/home/monek/Desktop/VSCode/VIsem/JPP/L1/EX5/src/build/
+-L/home/monek/Desktop/VSCode/VIsem/JPP/L1/EX5/src/build/
+-L/usr/lib/gcc/x86_64-linux-gnu/11/adalib/
+-shared
+-shared-libgcc
+-lgnat-11
+-ldl
+[RUN PATH OPTION]
+/usr/lib/gcc/x86_64-linux-gnu/11/adalib/
+/usr/lib

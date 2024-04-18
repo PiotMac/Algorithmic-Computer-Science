@@ -1,0 +1,95 @@
+V "GNAT Lib v11"
+M P W=b
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IO
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U recursive_main%b	recursive_main.adb	a8c3c8ad NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W library_recursive_h%s	library_recursive_h.ads	library_recursive_h.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.concat_4%s	s-conca4.adb		s-conca4.ali
+Z system.img_lli%s	s-imglli.ads		s-imglli.ali
+Z system.img_llu%s	s-imgllu.ads		s-imgllu.ali
+Z system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+W x86_64_linux_gnu_bits_types_h%s  x86_64_linux_gnu_bits_types_h.ads  x86_64_linux_gnu_bits_types_h.ali
+
+D ada.ads		20230513075248 76789da1 ada%s
+D a-except.ads		20230513075248 449c9b65 ada.exceptions%s
+D a-ioexce.ads		20230513075248 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20230513075248 119b8fb3 ada.streams%s
+D a-tags.ads		20230513075248 9eaa38c6 ada.tags%s
+D a-textio.ads		20230513075248 aef4d56d ada.text_io%s
+D a-unccon.ads		20230513075248 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20230513075248 edec285f interfaces%s
+D i-c.ads		20230513075248 c624fa43 interfaces.c%s
+D i-cstrin.ads		20230513075248 341d0ddf interfaces.c.strings%s
+D i-cstrea.ads		20230513075248 e53d8b8e interfaces.c_streams%s
+D library_recursive_h.ads  20240412064916 3da6cb52 library_recursive_h%s
+D recursive_main.adb	20240412022604 01072978 recursive_main%b
+D system.ads		20230513075248 a2da961d system%s
+D s-conca2.ads		20230513075248 02a0d7d0 system.concat_2%s
+D s-conca4.ads		20230513075248 7e642b20 system.concat_4%s
+D s-crtl.ads		20230513075248 0ebbdb71 system.crtl%s
+D s-exctab.ads		20230513075248 54135002 system.exception_table%s
+D s-ficobl.ads		20230513075248 078245e4 system.file_control_block%s
+D s-imagei.ads		20230513075248 0d3f86a7 system.image_i%s
+D s-imageu.ads		20230513075248 525c30c6 system.image_u%s
+D s-imglli.ads		20230513075248 3723d9ff system.img_lli%s
+D s-imgllu.ads		20230513075248 e025ba90 system.img_llu%s
+D s-parame.ads		20230513075248 4752c4cb system.parameters%s
+D s-secsta.ads		20230513075248 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20230513075248 a7318a92 system.soft_links%s
+D s-stache.ads		20230513075248 a37c21ec system.stack_checking%s
+D s-stalib.ads		20230513075248 0f2d51ff system.standard_library%s
+D s-stoele.ads		20230513075248 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20230513075248 ed88f8fb system.storage_elements%b
+D s-traent.ads		20230513075248 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20230513075248 eea7525d system.unsigned_types%s
+D s-wchcon.ads		20230513075248 1b7d22d2 system.wch_con%s
+D x86_64_linux_gnu_bits_stdint_intn_h.ads  20240412064916 0dbd6491 x86_64_linux_gnu_bits_stdint_intn_h%s
+D x86_64_linux_gnu_bits_stdint_uintn_h.ads  20240412064916 08535655 x86_64_linux_gnu_bits_stdint_uintn_h%s
+D x86_64_linux_gnu_bits_types_h.ads  20240412064916 fcb205a9 x86_64_linux_gnu_bits_types_h%s
+G a e
+G c Z b b [recursive_main standard 12 11 none]
+G r c none [recursive_main standard 12 11 none] [factorial_recursive library_recursive_h 17 13 none]
+G r c none [recursive_main standard 12 11 none] [gcd_recursive library_recursive_h 22 13 none]
+G r c none [recursive_main standard 12 11 none] [diophantine_equation_recursive library_recursive_h 27 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 13|1r6 2r5
+X 6 a-textio.ads
+58K13*Text_IO 728e16 13|1w10 2r9
+509U14*Put_Line 13|15s4 16s4 17s4 20s4
+X 8 interfac.ads
+38K9*Interfaces 231e15 13|3r6 4r5
+X 9 i-c.ads
+18K20*C 232e17 13|3w17 4r16
+37I9*long<long_integer>
+46M9*unsigned_long
+X 12 library_recursive_h.ads
+9K9*library_recursive_h 35e24 13|9w6 10r5
+11R9*Solution 15e4 13|13r21
+12i7*x{34|31I12} 13|20r111
+13i7*y{34|31I12} 13|20r158
+17V13*factorial_recursive{35|31M12} 13|16s42
+22V13*gcd_recursive{35|31M12} 13|17s59
+27V13*diophantine_equation_recursive{11R9} 13|19s21
+X 13 recursive_main.adb
+12U11*Recursive_Main 12b11 21l5 21t19
+13r5 Sol_Recursive{12|11R9} 19m4 20r97 20r144
+X 34 x86_64_linux_gnu_bits_stdint_intn_h.ads
+31I12*int64_t{36|51I12}
+X 36 x86_64_linux_gnu_bits_types_h.ads
+9K9*x86_64_linux_gnu_bits_types_h 13|6w6 7r5 36|241e34
+51I12*uu_int64_t{9|37I9} 13|20r80 20r127
+53M12*uu_uint64_t{9|46M9} 13|16r24 17r41
+

@@ -1,0 +1,47 @@
+V "GNAT Lib v11"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U x86_64_linux_gnu_bits_stdint_uintn_h%s  x86_64_linux_gnu_bits_stdint_uintn_h.ads  32c5a9bf NE OO PK IL
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W x86_64_linux_gnu_bits_types_h%s  x86_64_linux_gnu_bits_types_h.ads  x86_64_linux_gnu_bits_types_h.ali
+
+D ada.ads		20230513075248 76789da1 ada%s
+D a-unccon.ads		20230513075248 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20230513075248 edec285f interfaces%s
+D i-c.ads		20230513075248 c624fa43 interfaces.c%s
+D i-cstrin.ads		20230513075248 341d0ddf interfaces.c.strings%s
+D system.ads		20230513075248 a2da961d system%s
+D s-exctab.ads		20230513075248 54135002 system.exception_table%s
+D s-parame.ads		20230513075248 4752c4cb system.parameters%s
+D s-stalib.ads		20230513075248 0f2d51ff system.standard_library%s
+D x86_64_linux_gnu_bits_stdint_uintn_h.ads  20240412064916 08535655 x86_64_linux_gnu_bits_stdint_uintn_h%s
+D x86_64_linux_gnu_bits_types_h.ads  20240412064916 fcb205a9 x86_64_linux_gnu_bits_types_h%s
+G a e
+X 3 interfac.ads
+38K9*Interfaces 231e15 10|5r6 5r24
+X 4 i-c.ads
+18K20*C 232e17 10|5w17 5r35
+44M9*unsigned
+45M9*unsigned_short
+46M9*unsigned_long
+49M9*unsigned_char
+X 10 x86_64_linux_gnu_bits_stdint_uintn_h.ads
+8K9*x86_64_linux_gnu_bits_stdint_uintn_h 33l5 33e41
+25M12*uint8_t{11|41M12}
+27M12*uint16_t{11|45M12}
+29M12*uint32_t{11|49M12}
+31M12*uint64_t{11|53M12}
+X 11 x86_64_linux_gnu_bits_types_h.ads
+9K9*x86_64_linux_gnu_bits_types_h 10|6w6 25r23 27r24 29r24 31r24 11|241e34
+41M12*uu_uint8_t{4|49M9} 10|25r53
+45M12*uu_uint16_t{4|45M9} 10|27r54
+49M12*uu_uint32_t{4|44M9} 10|29r54
+53M12*uu_uint64_t{4|46M9} 10|31r54
+

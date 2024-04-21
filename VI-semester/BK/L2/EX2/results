@@ -1,0 +1,7 @@
+################# MD5 #################
+hashcat -m 0 -a 3 md5_password      (6 letters/digits)    (done in: 8 s)
+hashcat -m 0 -a 3 md5_password      (7 letters/digits)    (done in: 31 s)
+
+################# SHA1 ##############
+hashcat -m 100 -a 3 sha1_password   (6 letters/digits)    (done in: 13 s)
+hashcat -m 100 -a 3 sha1_password   (7 letters/digits)    (done in: 33 s)

@@ -1,0 +1,18 @@
+hashid -m hashed_password
+
+received possible hashes:
+[+] Snefru-256 
+[+] SHA-256 [Hashcat Mode: 1400]
+[+] RIPEMD-256 
+[+] Haval-256 
+[+] GOST R 34.11-94 [Hashcat Mode: 6900]
+[+] GOST CryptoPro S-Box 
+[+] SHA3-256 [Hashcat Mode: 5000]
+[+] Skein-256 
+[+] Skein-512(256) 
+
+hashcat -m 1400 -a 3 hashed_password
+
+tested for: SHA-256
+done in: 22s
+result: uwuwu

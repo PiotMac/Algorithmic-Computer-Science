@@ -1,0 +1,13 @@
+Wireshark może być użyteczny przy analizie różnych wektorów ataku w sieci. Oto kilka przykładów, przy których Wireshark może się przydać:
+
+Analiza ataków typu Man-in-the-Middle (MitM): Wireshark pozwala na przechwytywanie ruchu sieciowego, co umożliwia wykrywanie i analizę ataków typu MitM, gdzie atakujący podszywa się pod komunikację między dwoma innymi stronami.
+
+Badanie ataków typu DoS/DDoS: Wireshark umożliwia analizę ruchu sieciowego w celu wykrywania ataków typu Denial of Service (DoS) i Distributed Denial of Service (DDoS), które mogą prowadzić do przeciążenia serwera i uniemożliwienia dostępu do usług.
+
+Analiza ataków hakerskich: Wireshark pozwala na śledzenie i analizę prób nieautoryzowanego dostępu do systemów, ataków brute-force na hasła, prób wykorzystania luk w zabezpieczeniach itp.
+
+Wykrywanie ataków sieciowych: Wireshark umożliwia wykrywanie i analizę różnych rodzajów ataków sieciowych, takich jak ataki na protokoły sieciowe (np. ARP spoofing, DNS poisoning), ataki na warstwę aplikacji (np. SQL injection, XSS) oraz ataki na infrastrukturę sieciową (np. routing attacks, VLAN hopping).
+
+Badanie wykorzystania zasobów sieciowych: Wireshark pozwala monitorować wykorzystanie zasobów sieciowych, takich jak przepustowość sieci, obciążenie serwerów, zużycie pasma, co może pomóc w wykryciu niepożądanych zachowań lub nadmiernego użycia zasobów.
+
+W sumie, Wireshark jest użytecznym narzędziem do analizy ruchu sieciowego i może być stosowany przy różnych scenariuszach ataków sieciowych oraz w celu wykrywania i reagowania na zagrożenia w sieci.

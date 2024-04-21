@@ -1,0 +1,13 @@
+Program Wireshark służy do analizy ruchu sieciowego, w nim dostępne są różne możliwości filtrowania zebranych danych.
+
+Filtrowanie według adresu IP - Pozwala na wyświetlanie tylko pakietów z określonego adresu IP źródłowego lub docelowego.
+
+Filtrowanie według portu - Pozwala na wyświetlanie tylko pakietów używających określonego numeru portu źródłowego lub docelowego.
+
+Filtrowanie według protokołu - Pozwala na wyświetlanie tylko pakietów z określonego protokołu, takiego jak TCP, HTTP, HTTPS itp.
+
+Filtrowanie według zawartości - Pozwala na wyszukiwanie pakietów zawierających określone ciągi znaków lub dane.
+
+Filtrowanie według typu danych - Pozwala na wyświetlanie tylko pakietów zawierających określone typy danych, na przykład obrazy, dźwięk, tekst itp.
+
+Filtrowanie według czasu - Pozwala na wyświetlanie tylko pakietów przechwyconych w określonym przedziale czasowym.

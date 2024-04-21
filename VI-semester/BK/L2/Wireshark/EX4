@@ -1,0 +1,21 @@
+Korzystając z protokołu HTTP:
+Informacje w przypadku HTTP:
+
+Zawartość żądań i odpowiedzi HTTP, w tym nagłówki żądania i odpowiedzi, metody HTTP (GET, POST, itp.), ścieżki URL, dane przesyłane w formularzach (w przypadku żądań POST), oraz inne metadane związane z komunikacją HTTP.
+Dostępność danych:
+
+W przypadku HTTP, dane są przesyłane w postaci otwartej, co oznacza, że treść komunikacji (np. treść stron internetowych, dane formularzy) jest widoczna w jawnym tekście i może być odczytana przez osoby podsłuchujące.
+Korzystając z protokołu HTTPS:
+Informacje w przypadku HTTPS:
+
+W przypadku HTTPS, treść komunikacji jest szyfrowana za pomocą protokołu SSL/TLS, więc zawartość żądań i odpowiedzi jest zaszyfrowana i nieczytelna dla osób trzecich bez klucza prywatnego.
+Dostępność danych:
+
+Dane przesyłane w ramach komunikacji HTTPS są zabezpieczone i nie można ich odczytać bez odpowiedniego klucza prywatnego serwera. W związku z tym, choć metadane komunikacji (np. adresy URL, nagłówki HTTP) mogą być widoczne, treść komunikacji jest ukryta.
+Czy można na podstawie zebranych informacji dowiedzieć się, jakie strony internetowe/domeny były odwiedzane?
+Przy korzystaniu z HTTP:
+
+Tak, można analizując ścieżki URL oraz inne metadane żądań HTTP. Jednakże, zawartość konkretnych stron internetowych nie będzie dostępna w jawnym tekście, ale można poznać adresy odwiedzanych stron.
+Przy korzystaniu z HTTPS:
+
+Nie, jeśli tylko analizujemy ruch sieciowy bez dostępu do klucza prywatnego serwera. Zawartość żądań i odpowiedzi jest szyfrowana, więc nie można odczytać konkretnych adresów URL ani treści odwiedzanych stron. Jednakże, analizując metadane (np. długość pakietów, adresy IP), można w pewnym stopniu określić, które domeny były odwiedzane

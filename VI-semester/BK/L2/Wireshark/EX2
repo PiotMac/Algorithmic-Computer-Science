@@ -1,0 +1,2 @@
+HTTP/HTTPS W przypadku tych protokołów przesyłane są tekst, obrazy i media a także strony, czyli pliki HTML, CSS oraz JS.
+SFTP Podczas korzystania z tego protokołu możemy znaleźć operacje takie jak otwieranie, zamykanie, kopiowanie i przenoszenie plików, a także operacje na katalogach. Ponadto, możemy zobaczyć przesyłanie samej zawartości plików, które są przesyłane między klientem a serwerem SFTP.

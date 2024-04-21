@@ -1,0 +1,7 @@
+################# MD5 #################
+hashcat -m 0 -a 3  md5_password  (6 digits) (estimated time: 1s)
+hashcat -m 0 -a 3  md5_password  (7 digits) (estimated time: 6mins 14s) (done in: 1min 39s)
+
+################# SHA1 ##############
+hashcat -m 100 -a 3  sha1_password  (6 digits) (estimated time: 1s)
+hashcat -m 100 -a 3  sha1_password  (7 digits) (estimated time: 11 mins 4s) (done in: 2mins 30s)

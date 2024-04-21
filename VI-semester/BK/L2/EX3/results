@@ -1,0 +1,5 @@
+################# MD5 #################
+hashcat -m 0 -a 6 md5_password example.dict ?s?d?d?d    (done in: 1 min 16 s)
+
+################# SHA1 ##############
+hashcat -m 100 -a 6 sha1_password example.dict ?s?d?d?d  (done in: 1 min 39 s)

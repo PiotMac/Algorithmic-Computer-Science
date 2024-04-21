@@ -1,0 +1,12 @@
+none: Polityka DMARC "none" oznacza, że nie ma żadnych konsekwencji dla wiadomości e-mail, które nie spełniają kryteriów weryfikacji DMARC. Wiadomości te mogą być dostarczane normalnie, ale nadawca może otrzymać raporty DMARC z informacjami o próbach wysłania wiadomości w imieniu ich domeny.
+
+quarantine: Polityka DMARC "quarantine" oznacza, że serwery pocztowe, które nie spełniają kryteriów weryfikacji DMARC, mogą zostać oznaczone jako podejrzane, a wiadomości z tych serwerów mogą być kierowane do folderu spam lub oznaczane jako potencjalnie niebezpieczne przez odbiorców.
+
+reject: Polityka DMARC "reject" oznacza, że wiadomości e-mail, które nie spełniają kryteriów weryfikacji DMARC, są odrzucane przez serwery pocztowe. Oznacza to, że te wiadomości nie zostaną dostarczone do skrzynki odbiorczej i mogą zostać zwrócone do nadawcy z komunikatem o błędzie dostawy.
+
+-------------------------------------------
+
+dla domeny gmail.com dostaliśmy p=none
+
+sp=... - Subdomain Policy - polityka dla subdomen
+rua=... - Wskazuje adres e-mail, na który mają być wysyłane raporty o weryfikacji DMARC

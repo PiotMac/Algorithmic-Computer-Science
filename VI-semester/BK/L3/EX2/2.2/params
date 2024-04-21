@@ -1,0 +1,6 @@
+v=1 - wersja DKIM
+a=rsa-sha256 - algorytm użyty do generwowania podpisu cyfrowego
+d=gmail.com - domena nadawcy który wygenerowała klucz
+h=... - lista nagłówków któe zostały uwzględnione w podpisie
+bh=... - wartość skrótu SHA-256 treści wiadomości
+b=... - sam podpis cyfrowy

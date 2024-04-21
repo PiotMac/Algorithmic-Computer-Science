@@ -1,0 +1,6 @@
+End-to-end encryption - szyfrowanie wiadomości już na urządzeniu nadawcy i odszyfrowywanie jej tylko i wyłącznie na urządzeniu odbiorcy
+Zero-access encryption - tylko odbiorca może odszyfrować przeznaczonego dla niego maila jako że tylko on posiada swój klucz prywatny, Proton mail go nie przechowuje
+PGP Support - Proton mail automatycznie wykorzystuje kodowanie wiadomości za pomocą klucza publicznego odbiorcy, umożliwia to stosowanie end-to-end encryption nawet jeśli odbiorcea nie korzysta z Proton mail
+Open-source - oznacza to że każdy ma wgląd do kodu źródłowego Proton mail i może sam zobaczyć lub nawet ulepszyć bezpieczeństwo tego serwisu
+Siedziba w Szwajcarii - Szwajcaria znana jest z tego że nie współpracuje z rządami innych krajów w inwigilacji wiadomości prywatnych przechowywanych w tym kraju
+Serwery w podziemnych bunkrach - Dają dodatkową formę fizycznej ochrony przed atakami

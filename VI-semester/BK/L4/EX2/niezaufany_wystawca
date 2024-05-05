@@ -1,0 +1,7 @@
+Gdy wystawca certyfikatu jest uznany za niezaufanego, oznacza to, że nie można jednoznacznie potwierdzić jego autentyczności lub że certyfikat nie został wystawiony przez zaufaną jednostkę certyfikującą (CA - Certificate Authority).
+
+Istnieje kilka możliwych przyczyn, dla których wystawca może być uznany za niezaufanego:
+
+1. Niewiadomość: System weryfikacji nie posiada wystarczających informacji na temat danego wystawcy, co oznacza, że nie można go jednoznacznie zweryfikować.
+2. Nieznanie certyfikującej instytucji: W przypadku, gdy certyfikat został wystawiony przez instytucję certyfikującą, która nie jest powszechnie znana lub uznana za zaufaną przez system weryfikacji.
+3. Niedostateczne zaufanie: Niektóre systemy lub aplikacje mogą mieć określone kryteria dotyczące zaufanych instytucji certyfikujących. Jeśli wystawca certyfikatu nie spełnia tych kryteriów, może zostać uznany za niezaufanego.

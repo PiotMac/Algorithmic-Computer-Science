@@ -1,0 +1,12 @@
+Podpis XAdES (XML Advanced Electronic Signatures):
+- Format: XAdES jest oparty na formacie XML, co oznacza, że dane podpisu są strukturyzowane w sposób zgodny z językiem XML.
+- Charakterystyka: Jest przeznaczony głównie do podpisywania dokumentów elektronicznych w środowiskach, gdzie format XML jest powszechnie używany lub wymagany, np. w elektronicznym obrocie dokumentami w administracji publicznej lub w sektorze finansowym.
+- Rodzaje podpisów: XAdES definiuje różne poziomy zaawansowania podpisów elektronicznych, takie jak XAdES-BES, XAdES-EPES, XAdES-T czy XAdES-C.
+
+Podpis PAdES (PDF Advanced Electronic Signatures):
+
+- Format: PAdES jest przeznaczony dla dokumentów PDF, co oznacza, że podpisy są wbudowane bezpośrednio w pliki PDF.
+- Charakterystyka: Jest idealny do podpisywania dokumentów PDF, co jest powszechną praktyką w wielu dziedzinach, takich jak umowy, faktury, czy dokumenty prawne.
+- Rodzaje podpisów: Podobnie jak XAdES, PAdES definiuje różne poziomy zaawansowania podpisów, takie jak PAdES-Basic, PAdES-EPES, PAdES-LTV itp.
+
+Ogólnie rzecz biorąc, główna różnica polega na formacie, w jakim są przechowywane podpisy: XAdES w formacie XML, a PAdES w formacie PDF. Wybór między nimi zależy od potrzeb konkretnego środowiska i rodzaju dokumentów, które mają być podpisywane elektronicznie.

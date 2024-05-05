@@ -1,0 +1,11 @@
+1. Podpis zaufany:
+- Tożsamość: Podpis zaufany jest zwykle powiązany z certyfikatem cyfrowym wystawionym przez zaufaną trzecią stronę, taką jak instytucja certyfikująca (CA), która dokonała weryfikacji tożsamości osoby. Jest to najbardziej wiarygodny rodzaj podpisu cyfrowego.
+- Status prawny: Podpis zaufany często jest uznawany prawnie jako równoważny podpisowi odręcznemu i może być używany do zawierania ważnych umów i transakcji.
+
+2. Podpis osobisty:
+- Tożsamość: Podpis osobisty jest oparty na certyfikacie cyfrowym związanym z tożsamością osoby fizycznej, ale niekoniecznie musi być weryfikowany przez instytucję certyfikującą. Zazwyczaj jest to certyfikat wystawiony przez organ administracji publicznej, tak jak urząd wydający dowód osobisty.
+- Status prawny: Status prawny podpisu osobistego może się różnić w zależności od jurysdykcji. W niektórych przypadkach może być uznawany za wiążący, podczas gdy w innych może mieć ograniczoną ważność prawną.
+
+3. Podpis kwalifikowany:
+- Tożsamość: Podpis kwalifikowany jest najbardziej zaawansowaną formą podpisu cyfrowego. Jest oparty na certyfikacie kwalifikowanym, który jest wydawany na podstawie ścisłych przepisów dotyczących weryfikacji tożsamości przez uprawnione jednostki, takie jak kwalifikowana jednostka certyfikująca (QCA).
+- Status prawny: Podpis kwalifikowany ma najwyższy status prawny i jest uznawany jako równoważny podpisowi odręcznemu we wszystkich krajach Unii Europejskiej. Może być stosowany do zawierania umów i transakcji wymagających silnego dowodu tożsamości i integralności dokumentu.

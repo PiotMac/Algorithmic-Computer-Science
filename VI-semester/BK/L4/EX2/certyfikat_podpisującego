@@ -1,0 +1,12 @@
+Na kogo i przez kogo został wystawiony?
+Wystawca certyfikatu: Centrum Kwalifikowane EuroCert
+Wystawiony na:
+
+Czy znajduje się na liście CRL (i czym owa lista jest)?
+
+- NIE znajduje się
+- CRL, czyli Certificate Revocation List (Lista Certyfikatów Unieważnionych), to lista wycofanych certyfikatów. Jest to lista publicznie dostępnych informacji zawierająca numery seryjne certyfikatów, które straciły ważność przed upływem terminu ważności określonego w samym certyfikacie. CRL jest wydawana przez instytucję certyfikującą (CA - Certificate Authority) lub jednostkę odpowiedzialną za zarządzanie infrastrukturą klucza publicznego (PKI - Public Key Infrastructure).
+
+Główne zadanie CRL to umożliwienie weryfikacji, czy dany certyfikat nadal jest ważny. Systemy korzystające z certyfikatów mogą regularnie sprawdzać CRL w celu upewnienia się, że certyfikaty, z których korzystają, nie zostały wycofane ze względu na np. utratę prywatnego klucza, podejrzenie kompromitacji klucza, czy inne powody, które sprawiają, że certyfikat jest niebezpieczny do użycia.
+
+CRL jest podstawowym mechanizmem zarządzania bezpieczeństwem w infrastrukturze klucza publicznego, umożliwiającym reagowanie na sytuacje, w których certyfikaty muszą być wycofane przed upływem ich terminów ważności.

@@ -13,12 +13,12 @@ public class Philosopher implements Runnable {
     }
 
     private void think() throws InterruptedException {
-        System.out.println("Philosopher " + id + " is thinking.");
+        System.out.println("Philosopher[" + id + "] --> THINKING . . .");
         Thread.sleep(((int) (Math.random() * 1000)));
     }
 
     private void eat() throws InterruptedException {
-        System.out.println("Philosopher " + id + " is eating.");
+        System.out.println("Philosopher[" + id + "] --> EATING . . .");
         mealsEaten++;
         Thread.sleep(((int) (Math.random() * 1000)));
     }
@@ -29,19 +29,21 @@ public class Philosopher implements Runnable {
             while (mealsEaten < mealsToEat) {
                 think();
 
-                System.out.println("Philosopher " + id + " is trying to pick up left fork.");
+                System.out.println("Philosopher[" + id + "] --> TRYING TO PICK UP LEFT FORK . . .");
                 leftFork.pickUp();
-                System.out.println("Philosopher " + id + " has picked up left fork.");
-                System.out.println("Philosopher " + id + " is trying to pick up right fork.");
+                System.out.println("Philosopher[" + id + "] --> PICKED UP LEFT FORK!");
+                System.out.println("Philosopher[" + id + "] --> TRYING TO PICK UP RIGHT FORK . . .");
                 rightFork.pickUp();
-                System.out.println("Philosopher " + id + " has picked up right fork.");
+                System.out.println("Philosopher[" + id + "] --> PICKED UP RIGHT FORK!");
 
                 eat();
 
                 leftFork.putDown();
                 rightFork.putDown();
-                System.out.println("Philosopher " + id + " has finished eating - MEALS LEFT: [" + (mealsToEat - mealsEaten) + "]");
+
+                System.out.println("Philosopher[" + id + "] --> FINISHED EATING (MEALS YET TO EAT: " + (mealsToEat - mealsEaten) + ")");
             }
+            System.out.println("Philosopher[" + id + "] --> LEAVES!");
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

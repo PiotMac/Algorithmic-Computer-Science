@@ -7,8 +7,8 @@ import (
 )
 
 const (
-	numPhilosophers = 10
-	mealsPerPhilosopher = 2
+	numPhilosophers = 5
+	mealsPerPhilosopher = 3
 	timeFactor = 500
 )
 
@@ -29,8 +29,12 @@ func (p *Philosopher) eat(wg *sync.WaitGroup, sem *Semaphore) {
 		fmt.Printf("Philosopher[%d] --> HUNGRY!\n", p.id)
 		sem.Acquire()
 
+		fmt.Printf("Philosopher[%d] --> TRYING TO PICK UP LEFT FORK . . .\n", p.id)
 		p.leftFork.Lock()
+		fmt.Printf("Philosopher[%d] --> PICKED UP LEFT FORK!\n", p.id)
+		fmt.Printf("Philosopher[%d] --> TRYING TO PICK UP RIGHT FORK . . .\n", p.id)
 		p.rightFork.Lock()
+		fmt.Printf("Philosopher[%d] --> PICKED UP RIGHT FORK!\n", p.id)
 
 		fmt.Printf("Philosopher[%d] --> EATING . . .\n", p.id)
 		p.mealsEaten++
@@ -41,7 +45,7 @@ func (p *Philosopher) eat(wg *sync.WaitGroup, sem *Semaphore) {
 		p.rightFork.Unlock()
 		sem.Release()
 
-		fmt.Printf("Philosopher[%d] --> MEALS YET TO EAT: %d\n", p.id, mealsPerPhilosopher - p.mealsEaten)
+		fmt.Printf("Philosopher[%d] --> FINISHED EATING (MEALS YET TO EAT: %d)\n", p.id, mealsPerPhilosopher - p.mealsEaten)
 	}
 	fmt.Printf("Philosopher[%d] --> LEAVES!\n", p.id)
 }

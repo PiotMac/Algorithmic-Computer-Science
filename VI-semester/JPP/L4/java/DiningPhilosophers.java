@@ -1,6 +1,6 @@
 public class DiningPhilosophers {
     public static void main(String[] args) throws InterruptedException {
-        int numPhilosophers = 50;
+        int numPhilosophers = 5;
         int maxMeals = 3;
 
         Fork[] forks = new Fork[numPhilosophers];

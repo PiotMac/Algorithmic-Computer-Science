@@ -47,14 +47,22 @@ procedure Dining_Philosophers is
       for Life_Cycle in 1..Meals_Per_Philosopher loop
          Put_Line ("Philosopher[" & Integer'Image (ID) & " ] --> THINKING . . .");
          delay Duration (Random (Rand) * Time_Factor);
+
          Put_Line ("Philosopher[" & Integer'Image (ID) & " ] --> HUNGRY!");
+         Put_Line ("Philosopher[" & Integer'Image (ID) & " ] --> TRYING TO PICK UP LEFT FORK . . .");
          LeftFork.Pick_Up;
+         Put_Line ("Philosopher[" & Integer'Image (ID) & " ] --> PICKED UP LEFT FORK!");
+
+         Put_Line ("Philosopher[" & Integer'Image (ID) & " ] --> TRYING TO PICK UP RIGHT FORK . . .");
          RightFork.Pick_Up;
+         Put_Line ("Philosopher[" & Integer'Image (ID) & " ] --> PICKED UP RIGHT FORK!");
+
          Put_Line ("Philosopher[" & Integer'Image (ID) & " ] --> EATING . . .");
          delay Duration (Random (Rand) * Time_Factor);
+
          LeftFork.Put_Down;
          RightFork.Put_Down;
-         Put_Line ("Philosopher[" & Integer'Image (ID) & " ] --> MEALS YET TO EAT: " & Integer'Image (Meals_Per_Philosopher - Life_Cycle));
+         Put_Line ("Philosopher[" & Integer'Image (ID) & " ] --> FINISHED EATING (MEALS YET TO EAT: " & Integer'Image (Meals_Per_Philosopher - Life_Cycle) & ")");
       end loop;
       Put_Line ("Philosopher[" & Integer'Image (ID) & " ] --> LEAVES!");
    end Philosopher;

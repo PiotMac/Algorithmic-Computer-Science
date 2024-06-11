@@ -1,0 +1,85 @@
+openssl s_client -showcerts -connect pwr.edu.pl:443 </dev/null | sed -n -e '/-.BEGIN/,/-.END/ p' > certifs.pem
+openssl s_client -showcerts -connect google.com:443 </dev/null | sed -n -e '/-.BEGIN/,/-.END/ p' > certifs.pem
+
+openssl x509 -in google3.pem -noout -issuer
+issuer=C=US, O=Google Trust Services, CN=WR2
+
+openssl x509 -in google3.pem -noout -subject
+subject=CN=www.google.com
+
+openssl x509 -in google3.pem -noout -text | grep "Signature Algorithm"
+Signature Algorithm: sha256WithRSAEncryption
+
+openssl x509 -in google3.pem -noout -text | grep DNS
+DNS:www.google.com
+
+openssl x509 -in google3.pem -noout -dates
+notBefore=May 21 06:32:27 2024 GMT
+notAfter=Aug 13 06:32:26 2024 GMT
+
+
+http://c.pki.goog/wr2/9UVbN0w5E6Y.crl
+
+openssl x509 -in google3.pem -noout -ocsp_uri
+http://o.pki.goog/wr2
+
+openssl x509 -in google3.com -noout -text
+
+X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                49:AA:BF:13:A8:E5:FA:B1:CC:0A:A6:23:68:CE:4F:87:BB:92:DF:1B
+            X509v3 Authority Key Identifier: 
+                DE:1B:1E:ED:79:15:D4:3E:37:24:C3:21:BB:EC:34:39:6D:42:B2:30
+            Authority Information Access: 
+                OCSP - URI:http://o.pki.goog/wr2
+                CA Issuers - URI:http://i.pki.goog/wr2.crt
+            X509v3 Subject Alternative Name: 
+                DNS:www.google.com
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.1
+            X509v3 CRL Distribution Points: 
+                Full Name:
+                  URI:http://c.pki.goog/wr2/9UVbN0w5E6Y.crl
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 76:FF:88:3F:0A:B6:FB:95:51:C2:61:CC:F5:87:BA:34:
+                                B4:A4:CD:BB:29:DC:68:42:0A:9F:E6:67:4C:5A:3A:74
+                    Timestamp : May 21 07:32:28.493 2024 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:44:02:20:16:38:96:C6:E3:4A:17:9F:F6:89:16:2E:
+                                B5:09:0E:08:45:E9:DB:A5:6D:4B:AD:77:45:02:83:00:
+                                86:99:1D:F1:02:20:52:E6:BE:93:97:FA:C7:C6:21:C7:
+                                AA:51:59:4D:C6:D5:D5:9A:32:AC:3E:23:08:DE:6E:CA:
+                                51:79:6E:4F:23:76
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 3F:17:4B:4F:D7:22:47:58:94:1D:65:1C:84:BE:0D:12:
+                                ED:90:37:7F:1F:85:6A:EB:C1:BF:28:85:EC:F8:64:6E
+                    Timestamp : May 21 07:32:28.469 2024 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:80:6C:A0:C1:18:23:FB:44:8A:88:B1:
+                                8E:53:E9:1B:E3:7C:57:D5:40:B1:A2:1C:4C:58:3D:BE:
+                                B8:3E:27:B0:53:02:20:41:C2:FB:82:FD:57:5B:3E:5D:
+                                21:53:6E:4B:D1:8A:3D:39:8F:5E:B6:8C:AC:BF:E9:2B:
+                                EA:EF:44:00:19:3A:25
+
+
+
+openssl verify -CAfile google1.pem google2.pem
+
+openssl ocsp -issuer google2.pem -cert google3.pem -url http://o.pki.goog/wr2
+WARNING: no nonce in response
+Response verify OK
+google3.pem: good
+	This Update: Jun 10 09:32:56 2024 GMT
+	Next Update: Jun 17 08:32:55 2024 GMT
+

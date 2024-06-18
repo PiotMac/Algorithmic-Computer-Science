@@ -95,7 +95,7 @@ public class RoundsExperiment {
         fileWriter.close();
     }
 
-    private static void traverseTreeFromLeavesToRoot(int root, Map<Integer, List<Integer>> tree, Map<Integer,
+    public static void traverseTreeFromLeavesToRoot(int root, Map<Integer, List<Integer>> tree, Map<Integer,
             Integer> roundMap, Map<Integer, List<PropagationPair>> order) {
         Map<Integer, Integer> parentMap = new HashMap<>();
 

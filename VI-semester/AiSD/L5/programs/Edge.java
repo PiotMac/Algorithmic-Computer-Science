@@ -7,4 +7,8 @@ public class Edge {
         this.destination = destination;
         this.weight = weight;
     }
+
+    public void print() {
+        System.out.println("[" + source + "] <----> [" + destination + "] : " + weight);
+    }
 }

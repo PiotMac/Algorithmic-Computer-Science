@@ -1,0 +1,2 @@
+all:
+	sml < functions.sml

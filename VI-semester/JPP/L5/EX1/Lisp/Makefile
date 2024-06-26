@@ -1,0 +1,2 @@
+all:
+	clisp functions.lisp

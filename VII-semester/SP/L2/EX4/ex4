@@ -1,0 +1,150 @@
+# Piotr Maciejończyk, 268425, Zadanie 4.
+
+# Dodanie parametru 'svn:externals'
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX4$ svn propset svn:externals "externals https://repo.cs.pwr.edu.pl/info/" .
+property 'svn:externals' set on '.'
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX4$ svn propget svn:externals
+externals https://repo.cs.pwr.edu.pl/info/
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX4$ svn propget svn:externals
+externals https://repo.cs.pwr.edu.pl/info/
+
+# Podczas korzystania z flagi --ignore-externals repozytorium zewnętrzne nie jest pobierane
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX4$ svn up --ignore-externals
+Updating '.':
+At revision 45.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX4$ svn up
+Updating '.':
+
+Fetching external item into 'externals':
+A    externals/skrypty
+A    externals/skrypty/test-dir
+A    externals/SP
+A    externals/SP/l3
+A    externals/SP/l3/a
+A    externals/SP/l3/a/baa
+A    externals/SP/l3/a/baa/b
+A    externals/SP/l3/a/ba
+A    externals/SP/l3/a/ba/b
+A    externals/SP/l3/a/a
+A    externals/SP/l3/a/a/b
+A    externals/SP/l3/a/aa
+A    externals/SP/l3/a/aa/b
+A    externals/SP/l3/a/aaa
+A    externals/SP/l3/a/aaa/b
+A    externals/SP/l3/a/aab
+A    externals/SP/l3/a/aab/b
+A    externals/SP/l3/a/ab
+A    externals/SP/l3/a/ab/b
+A    externals/SP/l3/a/aba
+A    externals/SP/l3/a/aba/b
+A    externals/SP/l3/a/abb
+A    externals/SP/l3/a/abb/b
+A    externals/SP/l3/a/bab
+A    externals/SP/l3/a/bab/b
+A    externals/SP/l3/a/bba
+A    externals/SP/l3/a/bba/b
+A    externals/SP/l3/a/bbb
+A    externals/SP/l3/a/bbb/b
+A    externals/SP/l1
+A    externals/SP/l1/a
+A    externals/SP/l1/a/a
+A    externals/SP/l1/a/a/b
+A    externals/SP/l1/a/aa
+A    externals/SP/l1/a/aa/b
+A    externals/SP/l1/a/aaa
+A    externals/SP/l1/a/aaa/b
+A    externals/SP/l1/a/aab
+A    externals/SP/l1/a/aab/b
+A    externals/SP/l1/a/ab
+A    externals/SP/l1/a/ab/b
+A    externals/SP/l1/a/aba
+A    externals/SP/l1/a/aba/b
+A    externals/SP/l1/a/abb
+A    externals/SP/l1/a/abb/b
+A    externals/SP/l1/a/b
+A    externals/SP/l1/a/b/b
+A    externals/SP/l1/a/ba
+A    externals/SP/l1/a/ba/b
+A    externals/SP/l1/a/baa
+A    externals/SP/l1/a/baa/b
+A    externals/SP/l1/a/bab
+A    externals/SP/l1/a/bab/b
+A    externals/SP/l1/a/bb
+A    externals/SP/l1/a/bb/b
+A    externals/SP/l1/a/bba
+A    externals/SP/l1/a/bba/b
+A    externals/SP/l1/a/bbb
+A    externals/SP/l1/a/bbb/b
+A    externals/asciinema
+A    externals/SP/l1/a/b/b/abb
+A    externals/SP/l1/a/baa/b/abaab
+A    externals/SP/l1/a/bb/b/abbb
+A    externals/SP/l1/a/bbb/b/abbbb
+A    externals/skrypty/test-dir/t2
+A    externals/skrypty/test
+A    externals/skrypty/view-casts-curl.bash
+A    externals/skrypty/view-casts.bash
+A    externals/SP/l3/a/baa/dc
+A    externals/SP/l3/a/baa/b/abaab
+A    externals/SP/l3/a/ba/b/abab
+A    externals/SP/l3/a/a/b/aab
+A    externals/SP/l3/a/aa/b/aaab
+A    externals/SP/l3/a/aaa/b/aaaab
+A    externals/SP/l3/a/aab/b/aaabb
+A    externals/SP/l3/a/ab/b/aabb
+A    externals/SP/l3/a/aba/b/aabab
+A    externals/SP/l3/a/abb/b/aabbb
+A    externals/SP/l3/a/bab/b/ababb
+A    externals/SP/l3/a/bba/b/abbab
+A    externals/SP/l3/a/bbb/b/abbbb
+A    externals/SP/l1/a/a/b/aab
+A    externals/SP/l1/a/aa/b/aaab
+A    externals/SP/l1/a/aaa/b/aaaab
+A    externals/SP/l1/a/aab/b/aaabb
+A    externals/SP/l1/a/ab/b/aabb
+A    externals/SP/l1/a/aba/b/aabab
+A    externals/SP/l1/a/abb/b/aabbb
+A    externals/SP/l1/a/b/ab
+A    externals/SP/l1/a/ba/b/abab
+A    externals/SP/l1/a/bab/b/ababb
+A    externals/SP/l1/a/bba/b/abbab
+A    externals/asciinema/4_meta-sprawozdanie.cast
+A    externals/asciinema/1_pierwszy_checkout.cast
+A    externals/asciinema/5_generowanie_kluczy.cast
+A    externals/asciinema/2_pierwsze_zadanie.cast
+A    externals/repozytorium-svn.txt
+A    externals/asciinema/6_sklejanie_prezentacji.cast
+A    externals/asciinema/3_drugie_zadanie.cast
+A    externals/index.html
+Updated external to revision 25.
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX4$ svn log -v
+------------------------------------------------------------------------
+r45 | 268425 | 2024-11-04 16:41:26 +0100 (pon, 04 lis 2024) | 1 line
+Changed paths:
+   D /SP/L2/EX4/externals
+
+Removed a mistake
+------------------------------------------------------------------------
+r44 | 268425 | 2024-11-04 16:40:50 +0100 (pon, 04 lis 2024) | 1 line
+Changed paths:
+   M /SP/L2/EX4
+
+Properly added external property
+------------------------------------------------------------------------
+r43 | 268425 | 2024-11-04 16:02:57 +0100 (pon, 04 lis 2024) | 1 line
+Changed paths:
+   M /SP/L2/EX4/externals
+
+Added external directory
+------------------------------------------------------------------------
+r42 | 268425 | 2024-11-04 15:51:12 +0100 (pon, 04 lis 2024) | 1 line
+Changed paths:
+   A /SP/L2/EX4
+   A /SP/L2/EX4/externals
+
+Added externals catalog
+------------------------------------------------------------------------
+

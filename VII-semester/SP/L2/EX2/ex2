@@ -1,0 +1,724 @@
+# Piotr Maciejończyk, 268425, Zadanie 2
+
+# W tym zadaniu użyłem folderu z moim projektem przygotowanym na kurs Aplikacje Mobilne
+# Jego struktura (i położenie) zostały pokazane poniżej przy użyciu 'svn ls'
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX2$ svn ls https://repo.cs.pwr.edu.pl/mk1-268425/AM
+L1/
+L2/
+L3/
+L4/
+L5/
+Projekt/
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX2$ svn ls https://repo.cs.pwr.edu.pl/mk1-268425/AM/Projekt
+FlashCards/
+github-link
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX2$ svn ls https://repo.cs.pwr.edu.pl/mk1-268425/AM/Projekt/FlashCards
+.git/
+.gitignore
+.gradle/
+.idea/
+app/
+build/
+build.gradle
+gradle/
+gradle.properties
+gradlew
+gradlew.bat
+local.properties
+settings.gradle
+
+# Pobieramy tylko główny katalog, bez żadnych podkatalogów ani plików.
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX2$ svn export https://repo.cs.pwr.edu.pl/mk1-268425/AM/Projekt/FlashCards --depth empty empty
+A    empty
+Exported revision 37.
+
+# Pobieramy tylko pliki znajdujące się w głównym katalogu, ale bez żadnych podkatalogów.
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX2$ svn export https://repo.cs.pwr.edu.pl/mk1-268425/AM/Projekt/FlashCards --depth files files
+A    files
+A    files/.gitignore
+A    files/build.gradle
+A    files/gradle.properties
+A    files/gradlew
+A    files/gradlew.bat
+A    files/local.properties
+A    files/settings.gradle
+Exported revision 37.
+
+# Pobieramy pliki z głównego katalogu oraz same podkatalogi bez ich zawartości.
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX2$ svn export https://repo.cs.pwr.edu.pl/mk1-268425/AM/Projekt/FlashCards --depth immediates immediates
+A    immediates
+A    immediates/.git
+A    immediates/.gradle
+A    immediates/.idea
+A    immediates/app
+A    immediates/build
+A    immediates/gradle
+A    immediates/.gitignore
+A    immediates/build.gradle
+A    immediates/gradle.properties
+A    immediates/gradlew
+A    immediates/gradlew.bat
+A    immediates/local.properties
+A    immediates/settings.gradle
+Exported revision 37.
+
+# Pobieramy pełną strukturę katalogów i plików, łącznie z całą zawartością podkatalogów.
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX2$ svn export https://repo.cs.pwr.edu.pl/mk1-268425/AM/Projekt/FlashCards --depth infinity infinity
+A    infinity
+A    infinity/.git
+A    infinity/.git/branches
+A    infinity/.git/hooks
+A    infinity/.git/info
+A    infinity/.git/logs
+A    infinity/.git/logs/refs
+A    infinity/.git/logs/refs/heads
+A    infinity/.git/logs/refs/remotes
+A    infinity/.git/logs/refs/remotes/origin
+A    infinity/.git/objects
+A    infinity/.git/objects/01
+A    infinity/.git/objects/02
+A    infinity/.git/objects/03
+A    infinity/.git/objects/04
+A    infinity/.git/objects/05
+A    infinity/.git/objects/07
+A    infinity/.git/objects/08
+A    infinity/.git/objects/0c
+A    infinity/.git/objects/0e
+A    infinity/.git/objects/0f
+A    infinity/.git/objects/10
+A    infinity/.git/objects/13
+A    infinity/.git/objects/18
+A    infinity/.git/objects/19
+A    infinity/.git/logs/refs/remotes/origin/mbranch
+A    infinity/.git/COMMIT_EDITMSG
+A    infinity/.git/objects/08/5118578a192878f7498dcdd97b0612dce2d7c0
+A    infinity/.git/objects/01/6f063c216d914bc799d445ff48f55a7d3b9814
+A    infinity/.git/objects/03/6d09bc5fd523323794379703c4a111d1e28a04
+A    infinity/.git/objects/05/21fe70ec6d483ee98001ea29f7c13bae8512f0
+A    infinity/.git/FETCH_HEAD
+A    infinity/.git/HEAD
+A    infinity/.git/objects/1b
+A    infinity/.git/objects/1c
+A    infinity/.git/objects/1f
+A    infinity/.git/objects/22
+A    infinity/.git/objects/23
+A    infinity/.git/ORIG_HEAD
+A    infinity/.git/objects/07/ced52002d238a324eb80889a508b8abc74cf3e
+A    infinity/.git/objects/29
+A    infinity/.git/objects/2c
+A    infinity/.git/config
+A    infinity/.git/description
+A    infinity/.git/hooks/applypatch-msg.sample
+A    infinity/.git/hooks/commit-msg.sample
+A    infinity/.git/objects/0f/a6c03ef273bb9376e2f6aea7cb1c4e15ae3777
+A    infinity/.git/objects/18/6d085ed07884bf00125f9b173c5e590f368f6b
+A    infinity/.git/objects/0e/d5a0a13cbb3e6d7814efe292f727de699d3865
+A    infinity/.git/objects/13/1705488e62bc7a9dd515a547a6d75788cd9131
+A    infinity/.git/objects/2e
+A    infinity/.git/objects/31
+A    infinity/.git/objects/32
+A    infinity/.git/objects/33
+A    infinity/.git/objects/35
+A    infinity/.git/hooks/fsmonitor-watchman.sample
+A    infinity/.git/hooks/post-update.sample
+A    infinity/.git/hooks/pre-applypatch.sample
+A    infinity/.git/hooks/pre-commit.sample
+A    infinity/.git/hooks/pre-merge-commit.sample
+A    infinity/.git/hooks/pre-push.sample
+A    infinity/.git/hooks/pre-rebase.sample
+A    infinity/.git/hooks/pre-receive.sample
+A    infinity/.git/hooks/prepare-commit-msg.sample
+A    infinity/.git/hooks/push-to-checkout.sample
+A    infinity/.git/hooks/update.sample
+A    infinity/.git/objects/36
+A    infinity/.git/objects/37
+A    infinity/.git/objects/39
+A    infinity/.git/objects/3d
+A    infinity/.git/objects/42
+A    infinity/.git/objects/43
+A    infinity/.git/objects/47
+A    infinity/.git/objects/4a
+A    infinity/.git/objects/4c
+A    infinity/.git/objects/1f/757e0ec9333cbe43aa5acd538a3ec6c114fba8
+A    infinity/.git/objects/1c/0ed0c69eac45dd832a02555890b957e7fe60c5
+A    infinity/.git/objects/1b/193ce99d5d1c5fff703e5ee942605e9fe11358
+A    infinity/.git/objects/23/080d63eb1e4adf25a79cb48e96be6378b65566
+A    infinity/.git/objects/22/dde2b3faa16f281b2c4599dd49c1b8563ce593
+A    infinity/.git/objects/22/369054a644d4f0d1c4e1a0458297eb902a3dc7
+A    infinity/.git/objects/50
+A    infinity/.git/objects/51
+A    infinity/.git/objects/53
+A    infinity/.git/index
+A    infinity/.git/info/exclude
+A    infinity/.git/logs/HEAD
+A    infinity/.git/logs/refs/heads/master
+A    infinity/.git/logs/refs/remotes/origin/HEAD
+A    infinity/.git/logs/refs/remotes/origin/master
+A    infinity/.git/objects/01/3299cd92cd335052f588c02bbc2e06e016fedf
+A    infinity/.git/objects/54
+A    infinity/.git/objects/55
+A    infinity/.git/objects/56
+A    infinity/.git/objects/5c
+A    infinity/.git/objects/5e
+A    infinity/.git/objects/29/0e0d13c34a8ddf9f5e0ff238728a1966255701
+A    infinity/.git/objects/29/02856d5939c27621744056e03507e2676f6fa1
+A    infinity/.git/objects/29/f5ca8a6e201205a58e58579a87fb7d56b399ca
+A    infinity/.git/objects/5f
+A    infinity/.git/objects/60
+A    infinity/.git/objects/62
+A    infinity/.git/objects/02/4fa8ed24f2aaf746a828a6c7eae6deb3201f38
+A    infinity/.git/objects/04/1ebf693a61af7c64cd495f83cea0e0a099e39c
+A    infinity/.git/objects/07/69f9486834c3fdf9629029955686a5cd1c9ed8
+A    infinity/.git/objects/0c/d7cde34a548cfdc9924004865f7289dd0bce57
+A    infinity/.git/objects/10/3860e32fb352930456eb18c75ce417cdcc213d
+A    infinity/.git/objects/19/96b7484f77827feeab9014ce13be149ce8543d
+A    infinity/.git/objects/1f/8e7f7f2038e93b17dba14f9dfd3803d9fb0aca
+A    infinity/.git/objects/23/d4803a8274841e2e4f2dc0bf85ec671abe977a
+A    infinity/.git/objects/2c/42cac6f37c9ae22c3b2ce1e20301df46416c04
+A    infinity/.git/objects/63
+A    infinity/.git/objects/64
+A    infinity/.git/objects/65
+A    infinity/.git/objects/66
+A    infinity/.git/objects/68
+A    infinity/.git/objects/69
+A    infinity/.git/objects/6a
+A    infinity/.git/objects/33/26ccab949a53e3915b4e34d277fc8a592aeb1d
+A    infinity/.git/objects/6b
+A    infinity/.git/objects/6c
+A    infinity/.git/objects/31/a0198916760c2a95c20bd4180c1de2dfdb1c24
+A    infinity/.git/objects/33/fc8bc2d20125eb05f375675ddd1f49ed3305c4
+A    infinity/.git/objects/2e/e184ebaef9305ee06c67c11b42660923e101c4
+A    infinity/.git/objects/32/98f5fc12a3877d1a203c88363f2130e261f1d9
+A    infinity/.git/objects/6d
+A    infinity/.git/objects/72
+A    infinity/.git/objects/73
+A    infinity/.git/objects/35/d0455b2d8a1d21652bc6af5b84c5eb1c18db35
+A    infinity/.git/objects/3d/48ff032b15c405c1f4155ee5c8e6214b1223e4
+A    infinity/.git/objects/47/3e36a1b492d9eb1c35b2d44f3b0b8387641d2c
+A    infinity/.git/objects/33/9062daa6041c4430a1c597e0535c2abe983832
+A    infinity/.git/objects/36/a54ddf47d6ccaf90c7a2de6cb808c733f3a518
+A    infinity/.git/objects/35/bf953decd1f4f49c2f8db18f3cfa25ffd36b08
+A    infinity/.git/objects/39/60b04afb54c6414cb1502d7739926cd99ca7b0
+A    infinity/.git/objects/37/2780cc4fb3fab1a8c8eaa4cb6043ccb8fbba65
+A    infinity/.git/objects/75
+A    infinity/.git/objects/78
+A    infinity/.git/objects/79
+A    infinity/.git/objects/7b
+A    infinity/.git/objects/7e
+A    infinity/.git/objects/80
+A    infinity/.git/objects/43/e607ad935988a862ad8ed28723815afe2bade8
+A    infinity/.git/objects/4c/1d36934bb4f50909adf587910bc00e89a2e028
+A    infinity/.git/objects/42/e511b0fc99d865b3022b596d2d280891f803d1
+A    infinity/.git/objects/4a/4ea1d92f20f545b6a4ff239ec65a8a115857fa
+A    infinity/.git/objects/47/1d231271d8e6733b0af2ab484f1b9674293269
+A    infinity/.git/objects/81
+A    infinity/.git/objects/84
+A    infinity/.git/objects/50/1dd853470e64b0f2d5e0a678aa40b6f3ba618d
+A    infinity/.git/objects/50/c4706fe3bbfa2f9f4898afede55258d4f8c143
+A    infinity/.git/objects/4c/5a8779b802202ff0d739ece2e7ddde8d0e3192
+A    infinity/.git/objects/85
+A    infinity/.git/objects/88
+A    infinity/.git/objects/8c
+A    infinity/.git/objects/50/f50d9aa5774d4620e4858da7cd7af6161922f0
+A    infinity/.git/objects/55/d20a9fc11a0f29d12278d567a42049a392e7f1
+A    infinity/.git/objects/5e/d5216f2841113d778238116d763f61948e19d5
+A    infinity/.git/objects/62/2da107ffcbdab14aec6a3d2dc9bb2f2be30791
+A    infinity/.git/objects/92
+A    infinity/.git/objects/94
+A    infinity/.git/objects/96
+A    infinity/.git/objects/53/f52d4f940afc18c30ee264ded99f9a34481466
+A    infinity/.git/objects/56/0f3887d088b219cefb15f05b04ff870189f6a5
+A    infinity/.git/objects/5f/9607f9322bea339ae63bc18074d386800d7416
+A    infinity/.git/objects/54/831fdfb0ff2e96f5da7a2d403b3ae1a8c105c9
+A    infinity/.git/objects/5c/dfd4fa756ceb5c19ee03de2f50d66bd242bf92
+A    infinity/.git/objects/60/2bdf4f2112ad81fdf97f4847b0284a9fa3a723
+A    infinity/.git/objects/51/307319d947aae8a02cc1f6d0c312ee5b50a1d4
+A    infinity/.git/objects/55/dbdf3772b30b171c3e9804cb51da3d21277dd5
+A    infinity/.git/objects/5e/f44ff91f9e50310f0934b65ca44bd90fb0ee5d
+A    infinity/.git/objects/97
+A    infinity/.git/objects/98
+A    infinity/.git/objects/99
+A    infinity/.git/objects/9a
+A    infinity/.git/objects/9b
+A    infinity/.git/objects/9e
+A    infinity/.git/objects/9f
+A    infinity/.git/objects/66/5a36ce9a7470f469b843ac734176408b0772da
+A    infinity/.git/objects/65/88294b0f01f7c9b8f11aa28b25f817e8c41307
+A    infinity/.git/objects/64/479a3ee5cfc2b19aa7e45809975a4a0eae939f
+A    infinity/.git/objects/a0
+A    infinity/.git/objects/a1
+A    infinity/.git/objects/69/050bafca04a96dd629757152e8086a1dae75ea
+A    infinity/.git/objects/6c/8ecf56e6707036d82ea41fcb0be40d4fcf6b6d
+A    infinity/.git/objects/6b/50c0fe7f096054c945f63ae629512f38dbb921
+A    infinity/.git/objects/63/a82342487c02a5f10950e42ebc3ce1eb33bb6c
+A    infinity/.git/objects/68/3ab65376f0a4d991d96c1feadb6b4ba77450a1
+A    infinity/.git/objects/6a/626c6ffa2161fc0a3b49771327e179cba808b1
+A    infinity/.git/objects/a4
+A    infinity/.git/objects/a6
+A    infinity/.git/objects/a9
+A    infinity/.git/objects/aa
+A    infinity/.git/objects/ab
+A    infinity/.git/objects/6d/fdf13093eacd0ad65353d164bd0ba98507ed49
+A    infinity/.git/objects/6c/d4b63a53bc8fa492502a13c66c39285aafe1ef
+A    infinity/.git/objects/72/f95ee9fdedd2863d81d3dae6f0084a36e8306e
+A    infinity/.git/objects/6b/e9d8ad48fac9f46148759ae8c2bee6761fee24
+A    infinity/.git/objects/72/2954082d3add38458dd34132ca5509779348a9
+A    infinity/.git/objects/ac
+A    infinity/.git/objects/af
+A    infinity/.git/objects/b1
+A    infinity/.git/objects/b3
+A    infinity/.git/objects/73/e31c6b06b316ade3593e8fcd5dac6fc7643dcc
+A    infinity/.git/objects/7b/042e781df79de1fdae3bb893e2c93048723e0a
+A    infinity/.git/objects/78/20c20105187b0457275c13846fc520cda17ff2
+A    infinity/.git/objects/7e/5b8f050b8e6334d0f4e98f6040723cbd1339fe
+A    infinity/.git/objects/b4
+A    infinity/.git/objects/b9
+A    infinity/.git/objects/73/b480f1cce32f7632727b594f7d643435a1987f
+A    infinity/.git/objects/79/5ed080b01c925033b51173d8fa2024387d3a9b
+A    infinity/.git/objects/75/567c74a281cc158380dd5fd1107d69db4ba24f
+A    infinity/.git/objects/7e/39ea408701fb49af1196368bfebc574116a335
+A    infinity/.git/objects/ba
+A    infinity/.git/objects/bb
+A    infinity/.git/objects/80/f15b45280e17153baab79a5b559806ce95d624
+A    infinity/.git/objects/81/772f28762b5b2c175a70e65de63d7887d1c5d3
+A    infinity/.git/objects/85/fa06ea82098a844c99e96b805364e4b5dfae8a
+A    infinity/.git/objects/94/7e767cd83caadc73dad75dc6adba978850866b
+A    infinity/.git/objects/99/3fedf2b4e1fc90c3f3f7673df1663d17f91461
+A    infinity/.git/objects/80/4bcc22ce72273ec0d3e725905c914e6f8a2617
+A    infinity/.git/objects/85/101f0ae74fbd6ba176df8ef315928fe6ec883f
+A    infinity/.git/objects/8c/03e718dba5151013337445e6f4bc031357b2a0
+A    infinity/.git/objects/97/e535112875980ea3feeb6a533ee65127b418ac
+A    infinity/.git/objects/9b/029a04343faf2b0dcbcc71f1b38395a263c785
+A    infinity/.git/objects/bc
+A    infinity/.git/objects/bd
+A    infinity/.git/objects/bf
+A    infinity/.git/objects/c1
+A    infinity/.git/objects/c2
+A    infinity/.git/objects/c4
+A    infinity/.git/objects/c7
+A    infinity/.git/objects/c8
+A    infinity/.git/objects/ca
+A    infinity/.git/objects/cd
+A    infinity/.git/objects/ce
+A    infinity/.git/objects/85/3992f83506baacec8a391dcfc5c0cfa38c155d
+A    infinity/.git/objects/92/afce2b30e8c901b9b7e139005f1bb27cf3343c
+A    infinity/.git/objects/98/b09e8f2da7302c9424922250d8cc53ab116e4b
+A    infinity/.git/objects/9e/6f9f081bf4c86b261709a1e5ae459c60e07871
+A    infinity/.git/objects/84/a91360c647ce6d9e40a32b891f902239e64823
+A    infinity/.git/objects/88/fe2a46d33d0e513158b84e7074b7c0bc6f669a
+A    infinity/.git/objects/96/9320e56bacb626363ebecb832879b6e32316a7
+A    infinity/.git/objects/9a/a39ec1470809f1cf707cf027e51d3863da2c94
+A    infinity/.git/objects/cf
+A    infinity/.git/objects/d1
+A    infinity/.git/objects/a0/de2a15288bb13f9c7f6e69de6d55b79f9168df
+A    infinity/.git/objects/a6/7fdd2679de6b5dd08e7b330e0643cf68beae83
+A    infinity/.git/objects/a0/20f8e2c6be3cf50acfc6c269972307046eab87
+A    infinity/.git/objects/a1/ad5643f8c15193e76d2927f7e0e6b963878c4e
+A    infinity/.git/objects/9f/49038eebc0e504f63d84750eb3b3cd2c07e3c3
+A    infinity/.git/objects/a0/7b10d4fe4d8ea5e640a4be2a6263c75d3c52c7
+A    infinity/.git/objects/d2
+A    infinity/.git/objects/d5
+A    infinity/.git/objects/d7
+A    infinity/.git/objects/db
+A    infinity/.git/objects/dc
+A    infinity/.git/objects/a4/b2c296d167bffef7ceabbe482063373f3f14ed
+A    infinity/.git/objects/a1/956db4a2b6a6b3c7caecbee9255482a459693d
+A    infinity/.git/objects/a6/c823e5735eba7f0089f224724d0d82c7d1c969
+A    infinity/.git/objects/de
+A    infinity/.git/objects/df
+A    infinity/.git/objects/ab/ab3e7a0a6c557e57b5376acaacbf7096efcf43
+A    infinity/.git/objects/aa/21b1ed9dfd800cfed22d7ed925fd202dd2db59
+A    infinity/.git/objects/a9/ab27e6d9de6aa61411dac0435893206eb04c82
+A    infinity/.git/objects/af/22fb49b4482ad884551f7e185cd5ff3fb1922c
+A    infinity/.git/objects/b4/d76bc9e1f852dd81084fb981968bd5c4b71a64
+A    infinity/.git/objects/b1/7657e4e5f0da93baee5ca37cb52d6234bd9941
+A    infinity/.git/objects/ac/fe778bf1a69e49f5a0bdfcf436a192349b17b6
+A    infinity/.git/objects/e4
+A    infinity/.git/objects/e5
+A    infinity/.git/objects/b3/62cbdf4aca95478cded7614aa3665802d4b1d5
+A    infinity/.git/objects/b4/c455285cbf04d7a5e2e49968ea685d86c4c224
+A    infinity/.git/objects/b9/6c51766a819296cf3a3c0b0ce7731404090abd
+A    infinity/.git/objects/b9/8874dab9c8e1703cc8083d65b60083387b045f
+A    infinity/.git/objects/e8
+A    infinity/.git/objects/e9
+A    infinity/.git/objects/ea
+A    infinity/.git/objects/eb
+A    infinity/.git/objects/bb/076e440f76cf252b27ada7fa011d59238d92c5
+A    infinity/.git/objects/ec
+A    infinity/.git/objects/f1
+A    infinity/.git/objects/ba/342ed70826ef89dd20f91da27eadf6f48c82c1
+A    infinity/.git/objects/bc/d7cfa39171874b2ddad1980b769eb215bfa04a
+A    infinity/.git/objects/ba/02724f7529215b0ad8cf82de71fe2c84e8f12b
+A    infinity/.git/objects/c1/f5fe16169fd1ca0c3adb1f0b5510913c4a3f33
+A    infinity/.git/objects/f2
+A    infinity/.git/objects/f3
+A    infinity/.git/objects/f4
+A    infinity/.git/objects/c2/10bb024654f0350b88761dd7c4d266f6d4dbe0
+A    infinity/.git/objects/ca/9bf9e3996e5f35df7505d61cdd2f330b878b93
+A    infinity/.git/objects/ce/51d5e7aebf02bc0fe18d9353b25eac52f910e5
+A    infinity/.git/objects/d1/3b566c4aef6d7bcd16ea110ed33ff48987fa86
+A    infinity/.git/objects/d5/61033fb7423a534781cd4e3e1b16eb81a981ce
+A    infinity/.git/objects/dc/1d6d6639935da365e7e88c6dc908283bc99131
+A    infinity/.git/objects/de/a949c10e898999729299e00791729c8ddcd09b
+A    infinity/.git/objects/bf/fe16bd7d0b9f177ac8fb0e3643d58b0d5e688e
+A    infinity/.git/objects/c7/431a89aeacbca23a78cf108cee802f129dc6cf
+A    infinity/.git/objects/cd/5c2475b6ead0c6d0c97c823c20e24f99bcd5c4
+A    infinity/.git/objects/cf/c2fc3297579ee84f9f9c95dbc09f2a046fff41
+A    infinity/.git/objects/d2/8c436256806d541af706b2db838d25456180b5
+A    infinity/.git/objects/d7/07e3dd0c28ff537f04370d79175341ac4b8cb9
+A    infinity/.git/objects/dc/813fab1efc49ca7680dd50aae4a94526500297
+A    infinity/.git/objects/f7
+A    infinity/.git/objects/f8
+A    infinity/.git/objects/fa
+A    infinity/.git/objects/fc
+A    infinity/.git/objects/ff
+A    infinity/.git/objects/info
+A    infinity/.git/objects/pack
+A    infinity/.git/refs
+A    infinity/.git/refs/heads
+A    infinity/.git/refs/remotes
+A    infinity/.git/refs/remotes/origin
+A    infinity/.git/refs/tags
+A    infinity/.gradle
+A    infinity/.gradle/7.5
+A    infinity/.git/objects/c8/74bd0eb7fa8fe2a64cff25d6a34e0fdbeba520
+A    infinity/.git/objects/ce/0b9705a2c5b25b304a620ad4f6888c73efb53d
+A    infinity/.git/objects/cf/f93b5226891dcd260637ec0bffeeafe67b0b92
+A    infinity/.git/objects/d2/9390afe1066df075507b802d2ada16113a0e75
+A    infinity/.git/objects/db/ec00e04b657c3c70a56e9c50966c1776bc672d
+A    infinity/.git/objects/de/8b6a4ff2328a757db56d1575d3488697231bbc
+A    infinity/.git/objects/bd/50e07619706db7441117cfb82d94f3ce79f96a
+A    infinity/.git/objects/c4/9e513efe00feed1af3232d8ecdfaefee35659f
+A    infinity/.git/objects/cd/49f973395a09f8e63933b5cf6024a1622fd480
+A    infinity/.git/objects/ce/730d1d52b71099f9bb4c8d590886b0dc6a893f
+A    infinity/.git/objects/d1/50606d9908a18952d9dde61d19e2888899b2cc
+A    infinity/.git/objects/d7/034b9625965e4867e18a81d4923d3d5e3f0843
+A    infinity/.git/objects/dc/4db97c12f5d387076d775c93049c6b8c67d65f
+A    infinity/.gradle/7.5/checksums
+A    infinity/.gradle/7.5/dependencies-accessors
+A    infinity/.gradle/7.5/executionHistory
+A    infinity/.gradle/7.5/fileChanges
+A    infinity/.gradle/7.5/fileHashes
+A    infinity/.gradle/7.5/vcsMetadata
+A    infinity/.gradle/buildOutputCleanup
+A    infinity/.git/objects/df/ead6aaf321948201cc05f03663648572aea4f9
+A    infinity/.git/objects/e5/1a2439e0589ebd33be330e094af709a867b3df
+A    infinity/.git/objects/df/393343f87e462352139296c46fc890123b6dff
+A    infinity/.git/objects/e4/3178aad433dfe9e1ee81c27d3180d9fe0fb848
+A    infinity/.gradle/vcs-1
+A    infinity/.idea
+A    infinity/.git/objects/e8/dcdb98906e383c8dd71d92fc62e7cedf291f35
+A    infinity/.git/objects/ea/e01ddb9d6423889f3dfc1f2e699714e9510c88
+A    infinity/.git/objects/ec/99d4add1de22cc04b4313a158bd000121ea59c
+A    infinity/.git/objects/e5/9de3e7316fd2f80ae7c3f0675882a777ec55d9
+A    infinity/.git/objects/e9/4d1db8546109862e3f715f8efe4ca5b7ddb6a4
+A    infinity/.git/objects/eb/b6528a921b3636e5a7f33dffc797e8bfe0854c
+A    infinity/.git/objects/ec/3cf09978792c9e37c6cb1753c227db55219a24
+A    infinity/.git/objects/ec/8d78a8cf441695c5543324fddf68892041a2eb
+A    infinity/.git/objects/f4/bbe2fffac612a23cf100f4f47fe8e2bc06ac85
+A    infinity/.git/objects/f1/c13dead9045d0695c8884faee7052bd39ea76a
+A    infinity/.git/objects/f7/1407ed0acb2892df22be98ffaff94027efbc4a
+A    infinity/.git/objects/fc/ea62242bbf41b1c6844ebc13e79c06f895197c
+A    infinity/.git/objects/f3/eb2f48937ef4d52e23238d88b299d4867b4722
+A    infinity/.git/objects/fa/b42f98093b36a79de840d441136d10bb8964e4
+A    infinity/.git/objects/f2/0a4e195521ef9bf7231099b62c4b93164cac24
+A    infinity/.git/objects/f8/8cc6c380bec92ac09c0a324ab9b3b8a0a58092
+A    infinity/.git/objects/ff/2d332f76c77dccd6259d4591a5d8fa2a07e91f
+A    infinity/.git/objects/fc/b82f3fe03c2196edb172bde5e290a45bf04114
+A    infinity/app
+A    infinity/app/src
+A    infinity/app/src/androidTest
+A    infinity/app/src/androidTest/java
+A    infinity/app/src/androidTest/java/com
+A    infinity/app/src/androidTest/java/com/example
+A    infinity/app/src/androidTest/java/com/example/flashcards
+A    infinity/app/src/main
+A    infinity/app/src/main/java
+A    infinity/app/src/main/java/com
+A    infinity/app/src/main/java/com/example
+A    infinity/app/src/main/java/com/example/flashcards
+A    infinity/.git/objects/pack/pack-a50303c40982dec1098d004589a9765a5b9e971d.idx
+A    infinity/.git/packed-refs
+A    infinity/.git/refs/heads/master
+A    infinity/.git/refs/remotes/origin/HEAD
+A    infinity/.git/refs/remotes/origin/mbranch
+A    infinity/.gitignore
+A    infinity/.gradle/7.5/checksums/checksums.lock
+A    infinity/.gradle/7.5/dependencies-accessors/dependencies-accessors.lock
+A    infinity/.gradle/7.5/fileChanges/last-build.bin
+A    infinity/.gradle/7.5/dependencies-accessors/gc.properties
+A    infinity/.gradle/7.5/checksums/sha1-checksums.bin
+A    infinity/.gradle/7.5/gc.properties
+A    infinity/.gradle/7.5/executionHistory/executionHistory.lock
+A    infinity/.gradle/file-system.probe
+A    infinity/.idea/deploymentTargetDropDown.xml
+A    infinity/app/src/main/res
+A    infinity/app/src/main/res/drawable
+A    infinity/.idea/misc.xml
+A    infinity/app/build.gradle
+A    infinity/app/src/main/AndroidManifest.xml
+A    infinity/app/src/main/java/com/example/flashcards/Database.kt
+A    infinity/app/src/main/java/com/example/flashcards/FlashCard.kt
+A    infinity/app/src/main/java/com/example/flashcards/MainActivity.kt
+A    infinity/app/src/main/java/com/example/flashcards/StudyingActivity.kt
+A    infinity/app/src/main/res/drawable-v24
+A    infinity/app/src/main/res/font
+A    infinity/.git/objects/pack/pack-a50303c40982dec1098d004589a9765a5b9e971d.pack
+A    infinity/.git/refs/remotes/origin/master
+A    infinity/.gradle/7.5/checksums/md5-checksums.bin
+A    infinity/app/src/main/res/layout
+A    infinity/app/src/main/res/drawable/circle.xml
+A    infinity/app/src/main/res/font/doppio_one.ttf
+A    infinity/.gradle/7.5/fileHashes/fileHashes.bin
+A    infinity/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+A    infinity/.gradle/vcs-1/gc.properties
+A    infinity/.idea/gradle.xml
+A    infinity/.idea/vcs.xml
+A    infinity/app/google-services.json
+A    infinity/app/src/main/ic_launcher-playstore.png
+A    infinity/app/src/main/java/com/example/flashcards/DatabaseDao.kt
+A    infinity/app/src/main/java/com/example/flashcards/FlashCardStudyingAdapter.kt
+A    infinity/app/src/main/java/com/example/flashcards/Package.kt
+A    infinity/app/src/main/java/com/example/flashcards/TestActivity.kt
+A    infinity/app/src/main/res/drawable/ic_launcher_background.xml
+A    infinity/app/src/main/res/mipmap-anydpi-v26
+A    infinity/app/src/main/res/mipmap-hdpi
+A    infinity/.gradle/7.5/fileHashes/resourceHashesCache.bin
+A    infinity/app/src/main/res/layout/activity_add_flash_card.xml
+A    infinity/app/src/main/res/layout/activity_flash_cards_list.xml
+A    infinity/app/src/main/res/layout/activity_test_mode.xml
+A    infinity/app/src/main/res/layout/test_score.xml
+A    infinity/app/src/main/res/mipmap-mdpi
+A    infinity/app/src/main/res/mipmap-xhdpi
+A    infinity/app/src/main/res/layout/activity_edit_flash_card.xml
+A    infinity/app/src/main/res/layout/activity_test.xml
+A    infinity/app/src/main/res/layout/package_item.xml
+A    infinity/app/src/main/res/mipmap-hdpi/ic_launcher.png
+A    infinity/app/src/main/res/mipmap-xxhdpi
+A    infinity/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png
+A    infinity/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png
+A    infinity/app/src/main/res/mipmap-mdpi/ic_launcher_round.png
+A    infinity/app/src/main/res/mipmap-xxxhdpi
+A    infinity/app/src/main/res/values
+A    infinity/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+A    infinity/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png
+A    infinity/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+A    infinity/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png
+A    infinity/app/src/main/res/values-night
+A    infinity/app/src/main/res/xml
+A    infinity/app/src/main/res/values/ic_launcher_background.xml
+A    infinity/app/src/main/res/values/strings.xml
+A    infinity/.gradle/buildOutputCleanup/outputFiles.bin
+A    infinity/.idea/compiler.xml
+A    infinity/.idea/kotlinc.xml
+A    infinity/app/.gitignore
+A    infinity/app/src/androidTest/java/com/example/flashcards/ExampleInstrumentedTest.kt
+A    infinity/app/src/main/java/com/example/flashcards/AddPackageActivity.kt
+A    infinity/app/src/main/java/com/example/flashcards/EditFlashCardActivity.kt
+A    infinity/app/src/main/java/com/example/flashcards/FlashCardsListRecyclerAdapter.kt
+A    infinity/app/src/main/java/com/example/flashcards/PackageRecyclerAdapter.kt
+A    infinity/app/src/main/java/com/example/flashcards/TestScoreActivity.kt
+A    infinity/app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+A    infinity/app/src/main/res/layout/activity_download_package.xml
+A    infinity/app/src/main/res/layout/activity_main.xml
+A    infinity/app/src/main/res/layout/flashcard_view.xml
+A    infinity/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+A    infinity/app/src/main/res/mipmap-mdpi/ic_launcher.png
+A    infinity/app/src/test
+A    infinity/app/src/test/java
+A    infinity/app/src/test/java/com
+A    infinity/app/src/test/java/com/example
+A    infinity/app/src/test/java/com/example/flashcards
+A    infinity/build
+A    infinity/build/kotlin
+A    infinity/build/kotlin/sessions
+A    infinity/gradle
+A    infinity/gradle/wrapper
+A    infinity/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png
+A    infinity/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png
+A    infinity/app/src/main/res/values/colors.xml
+A    infinity/app/src/main/res/values-night/themes.xml
+A    infinity/app/src/main/res/xml/backup_rules.xml
+A    infinity/app/src/main/res/xml/data_extraction_rules.xml
+A    infinity/build.gradle
+A    infinity/gradle/wrapper/gradle-wrapper.properties
+A    infinity/local.properties
+A    infinity/gradlew
+A    infinity/gradle/wrapper/gradle-wrapper.jar
+A    infinity/gradlew.bat
+A    infinity/.gradle/7.5/executionHistory/executionHistory.bin
+A    infinity/.gradle/7.5/fileHashes/fileHashes.lock
+A    infinity/.gradle/buildOutputCleanup/cache.properties
+A    infinity/.idea/.gitignore
+A    infinity/.idea/jarRepositories.xml
+A    infinity/.idea/workspace.xml
+A    infinity/app/proguard-rules.pro
+A    infinity/app/src/main/java/com/example/flashcards/AddFlashCardActivity.kt
+A    infinity/app/src/main/java/com/example/flashcards/DownloadPackageActivity.kt
+A    infinity/app/src/main/java/com/example/flashcards/FlashCardsListActivity.kt
+A    infinity/app/src/main/java/com/example/flashcards/PackageFireBaseAdapter.kt
+A    infinity/app/src/main/java/com/example/flashcards/TestModeActivity.kt
+A    infinity/app/src/main/res/drawable/icon.png
+A    infinity/app/src/main/res/layout/activity_add_package.xml
+A    infinity/app/src/main/res/layout/activity_learning.xml
+A    infinity/app/src/main/res/layout/flashcard_list_item.xml
+A    infinity/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+A    infinity/app/src/main/res/mipmap-hdpi/ic_launcher_round.png
+A    infinity/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+A    infinity/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png
+A    infinity/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png
+A    infinity/app/src/main/res/values/themes.xml
+A    infinity/app/src/test/java/com/example/flashcards/ExampleUnitTest.kt
+A    infinity/gradle.properties
+A    infinity/settings.gradle
+Exported revision 37.
+
+# Sprawdzanie folderów stworzonych przy użyciu opcji 'sparse directories'
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX2$ tree empty
+empty
+
+0 directories, 0 files
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX2$ tree files
+files
+├── build.gradle
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── local.properties
+└── settings.gradle
+
+0 directories, 6 files
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX2$ tree immediates
+immediates
+├── app
+├── build
+├── build.gradle
+├── gradle
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── local.properties
+└── settings.gradle
+
+3 directories, 6 files
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX2$ tree infinity
+infinity
+├── app
+│   ├── build.gradle
+│   ├── google-services.json
+│   ├── proguard-rules.pro
+│   └── src
+│       ├── androidTest
+│       │   └── java
+│       │       └── com
+│       │           └── example
+│       │               └── flashcards
+│       │                   └── ExampleInstrumentedTest.kt
+│       ├── main
+│       │   ├── AndroidManifest.xml
+│       │   ├── ic_launcher-playstore.png
+│       │   ├── java
+│       │   │   └── com
+│       │   │       └── example
+│       │   │           └── flashcards
+│       │   │               ├── AddFlashCardActivity.kt
+│       │   │               ├── AddPackageActivity.kt
+│       │   │               ├── DatabaseDao.kt
+│       │   │               ├── Database.kt
+│       │   │               ├── DownloadPackageActivity.kt
+│       │   │               ├── EditFlashCardActivity.kt
+│       │   │               ├── FlashCard.kt
+│       │   │               ├── FlashCardsListActivity.kt
+│       │   │               ├── FlashCardsListRecyclerAdapter.kt
+│       │   │               ├── FlashCardStudyingAdapter.kt
+│       │   │               ├── MainActivity.kt
+│       │   │               ├── PackageFireBaseAdapter.kt
+│       │   │               ├── Package.kt
+│       │   │               ├── PackageRecyclerAdapter.kt
+│       │   │               ├── StudyingActivity.kt
+│       │   │               ├── TestActivity.kt
+│       │   │               ├── TestModeActivity.kt
+│       │   │               └── TestScoreActivity.kt
+│       │   └── res
+│       │       ├── drawable
+│       │       │   ├── circle.xml
+│       │       │   ├── ic_launcher_background.xml
+│       │       │   └── icon.png
+│       │       ├── drawable-v24
+│       │       │   └── ic_launcher_foreground.xml
+│       │       ├── font
+│       │       │   └── doppio_one.ttf
+│       │       ├── layout
+│       │       │   ├── activity_add_flash_card.xml
+│       │       │   ├── activity_add_package.xml
+│       │       │   ├── activity_download_package.xml
+│       │       │   ├── activity_edit_flash_card.xml
+│       │       │   ├── activity_flash_cards_list.xml
+│       │       │   ├── activity_learning.xml
+│       │       │   ├── activity_main.xml
+│       │       │   ├── activity_test_mode.xml
+│       │       │   ├── activity_test.xml
+│       │       │   ├── flashcard_list_item.xml
+│       │       │   ├── flashcard_view.xml
+│       │       │   ├── package_item.xml
+│       │       │   └── test_score.xml
+│       │       ├── mipmap-anydpi-v26
+│       │       │   ├── ic_launcher_round.xml
+│       │       │   └── ic_launcher.xml
+│       │       ├── mipmap-hdpi
+│       │       │   ├── ic_launcher_foreground.png
+│       │       │   ├── ic_launcher.png
+│       │       │   └── ic_launcher_round.png
+│       │       ├── mipmap-mdpi
+│       │       │   ├── ic_launcher_foreground.png
+│       │       │   ├── ic_launcher.png
+│       │       │   └── ic_launcher_round.png
+│       │       ├── mipmap-xhdpi
+│       │       │   ├── ic_launcher_foreground.png
+│       │       │   ├── ic_launcher.png
+│       │       │   └── ic_launcher_round.png
+│       │       ├── mipmap-xxhdpi
+│       │       │   ├── ic_launcher_foreground.png
+│       │       │   ├── ic_launcher.png
+│       │       │   └── ic_launcher_round.png
+│       │       ├── mipmap-xxxhdpi
+│       │       │   ├── ic_launcher_foreground.png
+│       │       │   ├── ic_launcher.png
+│       │       │   └── ic_launcher_round.png
+│       │       ├── values
+│       │       │   ├── colors.xml
+│       │       │   ├── ic_launcher_background.xml
+│       │       │   ├── strings.xml
+│       │       │   └── themes.xml
+│       │       ├── values-night
+│       │       │   └── themes.xml
+│       │       └── xml
+│       │           ├── backup_rules.xml
+│       │           └── data_extraction_rules.xml
+│       └── test
+│           └── java
+│               └── com
+│                   └── example
+│                       └── flashcards
+│                           └── ExampleUnitTest.kt
+├── build
+│   └── kotlin
+│       └── sessions
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── local.properties
+└── settings.gradle
+
+36 directories, 75 files

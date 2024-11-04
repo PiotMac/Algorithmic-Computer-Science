@@ -1,0 +1,1156 @@
+# Piotr Maciejończyk, 268425, Zadanie 3
+
+# Na początek tworzę dwie kopie robocze
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3$ svn checkout https://repo.cs.pwr.edu.pl/mk1-268425/AM/Projekt/FlashCards first-copy
+A    first-copy
+A    first-copy/.git
+A    first-copy/.git/branches
+A    first-copy/.git/hooks
+A    first-copy/.git/info
+A    first-copy/.git/logs
+A    first-copy/.git/logs/refs
+A    first-copy/.git/logs/refs/heads
+A    first-copy/.git/logs/refs/remotes
+A    first-copy/.git/logs/refs/remotes/origin
+A    first-copy/.git/objects
+A    first-copy/.git/objects/01
+A    first-copy/.git/objects/02
+A    first-copy/.git/objects/03
+A    first-copy/.git/objects/04
+A    first-copy/.git/objects/05
+A    first-copy/.git/objects/07
+A    first-copy/.git/objects/08
+A    first-copy/.git/objects/0c
+A    first-copy/.git/objects/0e
+A    first-copy/.git/objects/0f
+A    first-copy/.git/objects/10
+A    first-copy/.git/objects/13
+A    first-copy/.git/objects/18
+A    first-copy/.git/objects/19
+A    first-copy/.git/objects/08/5118578a192878f7498dcdd97b0612dce2d7c0
+A    first-copy/.git/COMMIT_EDITMSG
+A    first-copy/.git/FETCH_HEAD
+A    first-copy/.git/objects/1b
+A    first-copy/.git/objects/1c
+A    first-copy/.git/objects/1f
+A    first-copy/.git/HEAD
+A    first-copy/.git/ORIG_HEAD
+A    first-copy/.git/config
+A    first-copy/.git/description
+A    first-copy/.git/objects/22
+A    first-copy/.git/objects/23
+A    first-copy/.git/logs/refs/remotes/origin/mbranch
+A    first-copy/.git/hooks/applypatch-msg.sample
+A    first-copy/.git/hooks/commit-msg.sample
+A    first-copy/.git/objects/29
+A    first-copy/.git/objects/2c
+A    first-copy/.git/objects/01/6f063c216d914bc799d445ff48f55a7d3b9814
+A    first-copy/.git/objects/03/6d09bc5fd523323794379703c4a111d1e28a04
+A    first-copy/.git/objects/05/21fe70ec6d483ee98001ea29f7c13bae8512f0
+A    first-copy/.git/objects/07/ced52002d238a324eb80889a508b8abc74cf3e
+A    first-copy/.git/objects/0f/a6c03ef273bb9376e2f6aea7cb1c4e15ae3777
+A    first-copy/.git/objects/18/6d085ed07884bf00125f9b173c5e590f368f6b
+A    first-copy/.git/objects/2e
+A    first-copy/.git/objects/31
+A    first-copy/.git/objects/32
+A    first-copy/.git/objects/33
+A    first-copy/.git/hooks/fsmonitor-watchman.sample
+A    first-copy/.git/hooks/post-update.sample
+A    first-copy/.git/hooks/pre-applypatch.sample
+A    first-copy/.git/hooks/pre-commit.sample
+A    first-copy/.git/hooks/pre-merge-commit.sample
+A    first-copy/.git/hooks/pre-push.sample
+A    first-copy/.git/hooks/pre-rebase.sample
+A    first-copy/.git/hooks/pre-receive.sample
+A    first-copy/.git/hooks/prepare-commit-msg.sample
+A    first-copy/.git/hooks/push-to-checkout.sample
+A    first-copy/.git/objects/35
+A    first-copy/.git/objects/36
+A    first-copy/.git/objects/37
+A    first-copy/.git/objects/39
+A    first-copy/.git/objects/3d
+A    first-copy/.git/objects/42
+A    first-copy/.git/objects/43
+A    first-copy/.git/objects/47
+A    first-copy/.git/objects/1f/757e0ec9333cbe43aa5acd538a3ec6c114fba8
+A    first-copy/.git/hooks/update.sample
+A    first-copy/.git/objects/1c/0ed0c69eac45dd832a02555890b957e7fe60c5
+A    first-copy/.git/objects/22/dde2b3faa16f281b2c4599dd49c1b8563ce593
+A    first-copy/.git/objects/0e/d5a0a13cbb3e6d7814efe292f727de699d3865
+A    first-copy/.git/objects/13/1705488e62bc7a9dd515a547a6d75788cd9131
+A    first-copy/.git/objects/1b/193ce99d5d1c5fff703e5ee942605e9fe11358
+A    first-copy/.git/objects/4a
+A    first-copy/.git/objects/4c
+A    first-copy/.git/objects/23/080d63eb1e4adf25a79cb48e96be6378b65566
+A    first-copy/.git/objects/22/369054a644d4f0d1c4e1a0458297eb902a3dc7
+A    first-copy/.git/objects/50
+A    first-copy/.git/objects/51
+A    first-copy/.git/objects/53
+A    first-copy/.git/index
+A    first-copy/.git/info/exclude
+A    first-copy/.git/logs/HEAD
+A    first-copy/.git/logs/refs/heads/master
+A    first-copy/.git/logs/refs/remotes/origin/HEAD
+A    first-copy/.git/logs/refs/remotes/origin/master
+A    first-copy/.git/objects/01/3299cd92cd335052f588c02bbc2e06e016fedf
+A    first-copy/.git/objects/54
+A    first-copy/.git/objects/55
+A    first-copy/.git/objects/56
+A    first-copy/.git/objects/5c
+A    first-copy/.git/objects/5e
+A    first-copy/.git/objects/29/0e0d13c34a8ddf9f5e0ff238728a1966255701
+A    first-copy/.git/objects/29/02856d5939c27621744056e03507e2676f6fa1
+A    first-copy/.git/objects/29/f5ca8a6e201205a58e58579a87fb7d56b399ca
+A    first-copy/.git/objects/5f
+A    first-copy/.git/objects/60
+A    first-copy/.git/objects/62
+A    first-copy/.git/objects/2e/e184ebaef9305ee06c67c11b42660923e101c4
+A    first-copy/.git/objects/31/a0198916760c2a95c20bd4180c1de2dfdb1c24
+A    first-copy/.git/objects/32/98f5fc12a3877d1a203c88363f2130e261f1d9
+A    first-copy/.git/objects/02/4fa8ed24f2aaf746a828a6c7eae6deb3201f38
+A    first-copy/.git/objects/04/1ebf693a61af7c64cd495f83cea0e0a099e39c
+A    first-copy/.git/objects/07/69f9486834c3fdf9629029955686a5cd1c9ed8
+A    first-copy/.git/objects/0c/d7cde34a548cfdc9924004865f7289dd0bce57
+A    first-copy/.git/objects/10/3860e32fb352930456eb18c75ce417cdcc213d
+A    first-copy/.git/objects/19/96b7484f77827feeab9014ce13be149ce8543d
+A    first-copy/.git/objects/1f/8e7f7f2038e93b17dba14f9dfd3803d9fb0aca
+A    first-copy/.git/objects/23/d4803a8274841e2e4f2dc0bf85ec671abe977a
+A    first-copy/.git/objects/2c/42cac6f37c9ae22c3b2ce1e20301df46416c04
+A    first-copy/.git/objects/63
+A    first-copy/.git/objects/64
+A    first-copy/.git/objects/65
+A    first-copy/.git/objects/66
+A    first-copy/.git/objects/68
+A    first-copy/.git/objects/69
+A    first-copy/.git/objects/6a
+A    first-copy/.git/objects/6b
+A    first-copy/.git/objects/6c
+A    first-copy/.git/objects/33/fc8bc2d20125eb05f375675ddd1f49ed3305c4
+A    first-copy/.git/objects/37/2780cc4fb3fab1a8c8eaa4cb6043ccb8fbba65
+A    first-copy/.git/objects/6d
+A    first-copy/.git/objects/72
+A    first-copy/.git/objects/73
+A    first-copy/.git/objects/33/9062daa6041c4430a1c597e0535c2abe983832
+A    first-copy/.git/objects/33/26ccab949a53e3915b4e34d277fc8a592aeb1d
+A    first-copy/.git/objects/35/bf953decd1f4f49c2f8db18f3cfa25ffd36b08
+A    first-copy/.git/objects/36/a54ddf47d6ccaf90c7a2de6cb808c733f3a518
+A    first-copy/.git/objects/75
+A    first-copy/.git/objects/78
+A    first-copy/.git/objects/79
+A    first-copy/.git/objects/35/d0455b2d8a1d21652bc6af5b84c5eb1c18db35
+A    first-copy/.git/objects/3d/48ff032b15c405c1f4155ee5c8e6214b1223e4
+A    first-copy/.git/objects/47/3e36a1b492d9eb1c35b2d44f3b0b8387641d2c
+A    first-copy/.git/objects/39/60b04afb54c6414cb1502d7739926cd99ca7b0
+A    first-copy/.git/objects/47/1d231271d8e6733b0af2ab484f1b9674293269
+A    first-copy/.git/objects/43/e607ad935988a862ad8ed28723815afe2bade8
+A    first-copy/.git/objects/4c/1d36934bb4f50909adf587910bc00e89a2e028
+A    first-copy/.git/objects/42/e511b0fc99d865b3022b596d2d280891f803d1
+A    first-copy/.git/objects/4a/4ea1d92f20f545b6a4ff239ec65a8a115857fa
+A    first-copy/.git/objects/7b
+A    first-copy/.git/objects/7e
+A    first-copy/.git/objects/80
+A    first-copy/.git/objects/81
+A    first-copy/.git/objects/84
+A    first-copy/.git/objects/50/f50d9aa5774d4620e4858da7cd7af6161922f0
+A    first-copy/.git/objects/55/d20a9fc11a0f29d12278d567a42049a392e7f1
+A    first-copy/.git/objects/5e/d5216f2841113d778238116d763f61948e19d5
+A    first-copy/.git/objects/62/2da107ffcbdab14aec6a3d2dc9bb2f2be30791
+A    first-copy/.git/objects/50/1dd853470e64b0f2d5e0a678aa40b6f3ba618d
+A    first-copy/.git/objects/53/f52d4f940afc18c30ee264ded99f9a34481466
+A    first-copy/.git/objects/56/0f3887d088b219cefb15f05b04ff870189f6a5
+A    first-copy/.git/objects/5f/9607f9322bea339ae63bc18074d386800d7416
+A    first-copy/.git/objects/50/c4706fe3bbfa2f9f4898afede55258d4f8c143
+A    first-copy/.git/objects/54/831fdfb0ff2e96f5da7a2d403b3ae1a8c105c9
+A    first-copy/.git/objects/5c/dfd4fa756ceb5c19ee03de2f50d66bd242bf92
+A    first-copy/.git/objects/60/2bdf4f2112ad81fdf97f4847b0284a9fa3a723
+A    first-copy/.git/objects/85
+A    first-copy/.git/objects/88
+A    first-copy/.git/objects/8c
+A    first-copy/.git/objects/92
+A    first-copy/.git/objects/94
+A    first-copy/.git/objects/96
+A    first-copy/.git/objects/97
+A    first-copy/.git/objects/98
+A    first-copy/.git/objects/99
+A    first-copy/.git/objects/4c/5a8779b802202ff0d739ece2e7ddde8d0e3192
+A    first-copy/.git/objects/51/307319d947aae8a02cc1f6d0c312ee5b50a1d4
+A    first-copy/.git/objects/55/dbdf3772b30b171c3e9804cb51da3d21277dd5
+A    first-copy/.git/objects/5e/f44ff91f9e50310f0934b65ca44bd90fb0ee5d
+A    first-copy/.git/objects/63/a82342487c02a5f10950e42ebc3ce1eb33bb6c
+A    first-copy/.git/objects/68/3ab65376f0a4d991d96c1feadb6b4ba77450a1
+A    first-copy/.git/objects/6b/e9d8ad48fac9f46148759ae8c2bee6761fee24
+A    first-copy/.git/objects/72/2954082d3add38458dd34132ca5509779348a9
+A    first-copy/.git/objects/9a
+A    first-copy/.git/objects/9b
+A    first-copy/.git/objects/9e
+A    first-copy/.git/objects/9f
+A    first-copy/.git/objects/a0
+A    first-copy/.git/objects/a1
+A    first-copy/.git/objects/66/5a36ce9a7470f469b843ac734176408b0772da
+A    first-copy/.git/objects/6b/50c0fe7f096054c945f63ae629512f38dbb921
+A    first-copy/.git/objects/6d/fdf13093eacd0ad65353d164bd0ba98507ed49
+A    first-copy/.git/objects/73/e31c6b06b316ade3593e8fcd5dac6fc7643dcc
+A    first-copy/.git/objects/65/88294b0f01f7c9b8f11aa28b25f817e8c41307
+A    first-copy/.git/objects/6a/626c6ffa2161fc0a3b49771327e179cba808b1
+A    first-copy/.git/objects/64/479a3ee5cfc2b19aa7e45809975a4a0eae939f
+A    first-copy/.git/objects/69/050bafca04a96dd629757152e8086a1dae75ea
+A    first-copy/.git/objects/6c/8ecf56e6707036d82ea41fcb0be40d4fcf6b6d
+A    first-copy/.git/objects/a4
+A    first-copy/.git/objects/a6
+A    first-copy/.git/objects/a9
+A    first-copy/.git/objects/aa
+A    first-copy/.git/objects/ab
+A    first-copy/.git/objects/ac
+A    first-copy/.git/objects/af
+A    first-copy/.git/objects/b1
+A    first-copy/.git/objects/b3
+A    first-copy/.git/objects/7b/042e781df79de1fdae3bb893e2c93048723e0a
+A    first-copy/.git/objects/72/f95ee9fdedd2863d81d3dae6f0084a36e8306e
+A    first-copy/.git/objects/78/20c20105187b0457275c13846fc520cda17ff2
+A    first-copy/.git/objects/b4
+A    first-copy/.git/objects/b9
+A    first-copy/.git/objects/6c/d4b63a53bc8fa492502a13c66c39285aafe1ef
+A    first-copy/.git/objects/73/b480f1cce32f7632727b594f7d643435a1987f
+A    first-copy/.git/objects/80/f15b45280e17153baab79a5b559806ce95d624
+A    first-copy/.git/objects/85/3992f83506baacec8a391dcfc5c0cfa38c155d
+A    first-copy/.git/objects/92/afce2b30e8c901b9b7e139005f1bb27cf3343c
+A    first-copy/.git/objects/7e/5b8f050b8e6334d0f4e98f6040723cbd1339fe
+A    first-copy/.git/objects/ba
+A    first-copy/.git/objects/bb
+A    first-copy/.git/objects/84/a91360c647ce6d9e40a32b891f902239e64823
+A    first-copy/.git/objects/88/fe2a46d33d0e513158b84e7074b7c0bc6f669a
+A    first-copy/.git/objects/96/9320e56bacb626363ebecb832879b6e32316a7
+A    first-copy/.git/objects/bc
+A    first-copy/.git/objects/bd
+A    first-copy/.git/objects/bf
+A    first-copy/.git/objects/c1
+A    first-copy/.git/objects/79/5ed080b01c925033b51173d8fa2024387d3a9b
+A    first-copy/.git/objects/80/4bcc22ce72273ec0d3e725905c914e6f8a2617
+A    first-copy/.git/objects/85/101f0ae74fbd6ba176df8ef315928fe6ec883f
+A    first-copy/.git/objects/8c/03e718dba5151013337445e6f4bc031357b2a0
+A    first-copy/.git/objects/97/e535112875980ea3feeb6a533ee65127b418ac
+A    first-copy/.git/objects/98/b09e8f2da7302c9424922250d8cc53ab116e4b
+A    first-copy/.git/objects/c2
+A    first-copy/.git/objects/c4
+A    first-copy/.git/objects/c7
+A    first-copy/.git/objects/c8
+A    first-copy/.git/objects/ca
+A    first-copy/.git/objects/75/567c74a281cc158380dd5fd1107d69db4ba24f
+A    first-copy/.git/objects/7e/39ea408701fb49af1196368bfebc574116a335
+A    first-copy/.git/objects/81/772f28762b5b2c175a70e65de63d7887d1c5d3
+A    first-copy/.git/objects/85/fa06ea82098a844c99e96b805364e4b5dfae8a
+A    first-copy/.git/objects/94/7e767cd83caadc73dad75dc6adba978850866b
+A    first-copy/.git/objects/cd
+A    first-copy/.git/objects/ce
+A    first-copy/.git/objects/cf
+A    first-copy/.git/objects/d1
+A    first-copy/.git/objects/99/3fedf2b4e1fc90c3f3f7673df1663d17f91461
+A    first-copy/.git/objects/9b/029a04343faf2b0dcbcc71f1b38395a263c785
+A    first-copy/.git/objects/9e/6f9f081bf4c86b261709a1e5ae459c60e07871
+A    first-copy/.git/objects/a0/de2a15288bb13f9c7f6e69de6d55b79f9168df
+A    first-copy/.git/objects/a6/7fdd2679de6b5dd08e7b330e0643cf68beae83
+A    first-copy/.git/objects/ab/ab3e7a0a6c557e57b5376acaacbf7096efcf43
+A    first-copy/.git/objects/d2
+A    first-copy/.git/objects/d5
+A    first-copy/.git/objects/d7
+A    first-copy/.git/objects/a0/7b10d4fe4d8ea5e640a4be2a6263c75d3c52c7
+A    first-copy/.git/objects/a4/b2c296d167bffef7ceabbe482063373f3f14ed
+A    first-copy/.git/objects/aa/21b1ed9dfd800cfed22d7ed925fd202dd2db59
+A    first-copy/.git/objects/b1/7657e4e5f0da93baee5ca37cb52d6234bd9941
+A    first-copy/.git/objects/9a/a39ec1470809f1cf707cf027e51d3863da2c94
+A    first-copy/.git/objects/a0/20f8e2c6be3cf50acfc6c269972307046eab87
+A    first-copy/.git/objects/a1/ad5643f8c15193e76d2927f7e0e6b963878c4e
+A    first-copy/.git/objects/a9/ab27e6d9de6aa61411dac0435893206eb04c82
+A    first-copy/.git/objects/af/22fb49b4482ad884551f7e185cd5ff3fb1922c
+A    first-copy/.git/objects/9f/49038eebc0e504f63d84750eb3b3cd2c07e3c3
+A    first-copy/.git/objects/db
+A    first-copy/.git/objects/dc
+A    first-copy/.git/objects/de
+A    first-copy/.git/objects/df
+A    first-copy/.git/objects/b3/62cbdf4aca95478cded7614aa3665802d4b1d5
+A    first-copy/.git/objects/b9/8874dab9c8e1703cc8083d65b60083387b045f
+A    first-copy/.git/objects/b9/6c51766a819296cf3a3c0b0ce7731404090abd
+A    first-copy/.git/objects/bb/076e440f76cf252b27ada7fa011d59238d92c5
+A    first-copy/.git/objects/b4/d76bc9e1f852dd81084fb981968bd5c4b71a64
+A    first-copy/.git/objects/e4
+A    first-copy/.git/objects/e5
+A    first-copy/.git/objects/bc/d7cfa39171874b2ddad1980b769eb215bfa04a
+A    first-copy/.git/objects/c2/10bb024654f0350b88761dd7c4d266f6d4dbe0
+A    first-copy/.git/objects/ba/342ed70826ef89dd20f91da27eadf6f48c82c1
+A    first-copy/.git/objects/e8
+A    first-copy/.git/objects/e9
+A    first-copy/.git/objects/ea
+A    first-copy/.git/objects/eb
+A    first-copy/.git/objects/c1/f5fe16169fd1ca0c3adb1f0b5510913c4a3f33
+A    first-copy/.git/objects/ec
+A    first-copy/.git/objects/f1
+A    first-copy/.git/objects/bf/fe16bd7d0b9f177ac8fb0e3643d58b0d5e688e
+A    first-copy/.git/objects/c7/431a89aeacbca23a78cf108cee802f129dc6cf
+A    first-copy/.git/objects/c8/74bd0eb7fa8fe2a64cff25d6a34e0fdbeba520
+A    first-copy/.git/objects/cd/5c2475b6ead0c6d0c97c823c20e24f99bcd5c4
+A    first-copy/.git/objects/cf/c2fc3297579ee84f9f9c95dbc09f2a046fff41
+A    first-copy/.git/objects/ce/0b9705a2c5b25b304a620ad4f6888c73efb53d
+A    first-copy/.git/objects/cf/f93b5226891dcd260637ec0bffeeafe67b0b92
+A    first-copy/.git/objects/ca/9bf9e3996e5f35df7505d61cdd2f330b878b93
+A    first-copy/.git/objects/f2
+A    first-copy/.git/objects/f3
+A    first-copy/.git/objects/f4
+A    first-copy/.git/objects/f7
+A    first-copy/.git/objects/f8
+A    first-copy/.git/objects/fa
+A    first-copy/.git/objects/fc
+A    first-copy/.git/objects/ce/51d5e7aebf02bc0fe18d9353b25eac52f910e5
+A    first-copy/.git/objects/d1/3b566c4aef6d7bcd16ea110ed33ff48987fa86
+A    first-copy/.git/objects/a1/956db4a2b6a6b3c7caecbee9255482a459693d
+A    first-copy/.git/objects/d2/9390afe1066df075507b802d2ada16113a0e75
+A    first-copy/.git/objects/db/ec00e04b657c3c70a56e9c50966c1776bc672d
+A    first-copy/.git/objects/de/8b6a4ff2328a757db56d1575d3488697231bbc
+A    first-copy/.git/objects/ff
+A    first-copy/.git/objects/info
+A    first-copy/.git/objects/pack
+A    first-copy/.git/refs
+A    first-copy/.git/refs/heads
+A    first-copy/.git/refs/remotes
+A    first-copy/.git/objects/d5/61033fb7423a534781cd4e3e1b16eb81a981ce
+A    first-copy/.git/objects/dc/1d6d6639935da365e7e88c6dc908283bc99131
+A    first-copy/.git/objects/d2/8c436256806d541af706b2db838d25456180b5
+A    first-copy/.git/objects/d7/07e3dd0c28ff537f04370d79175341ac4b8cb9
+A    first-copy/.git/objects/dc/813fab1efc49ca7680dd50aae4a94526500297
+A    first-copy/.git/refs/remotes/origin
+A    first-copy/.git/refs/tags
+A    first-copy/.gradle
+A    first-copy/.gradle/7.5
+A    first-copy/.git/objects/de/a949c10e898999729299e00791729c8ddcd09b
+A    first-copy/.git/objects/e5/1a2439e0589ebd33be330e094af709a867b3df
+A    first-copy/.git/objects/df/ead6aaf321948201cc05f03663648572aea4f9
+A    first-copy/.git/objects/e4/3178aad433dfe9e1ee81c27d3180d9fe0fb848
+A    first-copy/.gradle/7.5/checksums
+A    first-copy/.gradle/7.5/dependencies-accessors
+A    first-copy/.git/objects/ea/e01ddb9d6423889f3dfc1f2e699714e9510c88
+A    first-copy/.git/objects/e8/dcdb98906e383c8dd71d92fc62e7cedf291f35
+A    first-copy/.git/objects/e9/4d1db8546109862e3f715f8efe4ca5b7ddb6a4
+A    first-copy/.git/objects/ec/8d78a8cf441695c5543324fddf68892041a2eb
+A    first-copy/.gradle/7.5/executionHistory
+A    first-copy/.gradle/7.5/fileChanges
+A    first-copy/.gradle/7.5/fileHashes
+A    first-copy/.git/objects/ec/99d4add1de22cc04b4313a158bd000121ea59c
+A    first-copy/.git/objects/ec/3cf09978792c9e37c6cb1753c227db55219a24
+A    first-copy/.git/objects/a6/c823e5735eba7f0089f224724d0d82c7d1c969
+A    first-copy/.git/objects/ac/fe778bf1a69e49f5a0bdfcf436a192349b17b6
+A    first-copy/.git/objects/b4/c455285cbf04d7a5e2e49968ea685d86c4c224
+A    first-copy/.gradle/7.5/vcsMetadata
+A    first-copy/.gradle/buildOutputCleanup
+A    first-copy/.git/objects/ba/02724f7529215b0ad8cf82de71fe2c84e8f12b
+A    first-copy/.git/objects/bd/50e07619706db7441117cfb82d94f3ce79f96a
+A    first-copy/.git/objects/c4/9e513efe00feed1af3232d8ecdfaefee35659f
+A    first-copy/.git/objects/cd/49f973395a09f8e63933b5cf6024a1622fd480
+A    first-copy/.gradle/vcs-1
+A    first-copy/.idea
+A    first-copy/.git/objects/f4/bbe2fffac612a23cf100f4f47fe8e2bc06ac85
+A    first-copy/.git/objects/f3/eb2f48937ef4d52e23238d88b299d4867b4722
+A    first-copy/.git/objects/fa/b42f98093b36a79de840d441136d10bb8964e4
+A    first-copy/.git/objects/f2/0a4e195521ef9bf7231099b62c4b93164cac24
+A    first-copy/.git/objects/f8/8cc6c380bec92ac09c0a324ab9b3b8a0a58092
+A    first-copy/.git/objects/ce/730d1d52b71099f9bb4c8d590886b0dc6a893f
+A    first-copy/.git/objects/d1/50606d9908a18952d9dde61d19e2888899b2cc
+A    first-copy/.git/objects/d7/034b9625965e4867e18a81d4923d3d5e3f0843
+A    first-copy/.git/objects/dc/4db97c12f5d387076d775c93049c6b8c67d65f
+A    first-copy/.git/objects/df/393343f87e462352139296c46fc890123b6dff
+A    first-copy/.git/objects/e5/9de3e7316fd2f80ae7c3f0675882a777ec55d9
+A    first-copy/.git/objects/eb/b6528a921b3636e5a7f33dffc797e8bfe0854c
+A    first-copy/app
+A    first-copy/.git/objects/f1/c13dead9045d0695c8884faee7052bd39ea76a
+A    first-copy/.git/objects/f7/1407ed0acb2892df22be98ffaff94027efbc4a
+A    first-copy/.git/objects/ff/2d332f76c77dccd6259d4591a5d8fa2a07e91f
+A    first-copy/.git/refs/heads/master
+A    first-copy/.git/objects/fc/b82f3fe03c2196edb172bde5e290a45bf04114
+A    first-copy/app/src
+A    first-copy/app/src/androidTest
+A    first-copy/app/src/androidTest/java
+A    first-copy/app/src/androidTest/java/com
+A    first-copy/app/src/androidTest/java/com/example
+A    first-copy/app/src/androidTest/java/com/example/flashcards
+A    first-copy/app/src/main
+A    first-copy/app/src/main/java
+A    first-copy/app/src/main/java/com
+A    first-copy/app/src/main/java/com/example
+A    first-copy/app/src/main/java/com/example/flashcards
+A    first-copy/.git/objects/pack/pack-a50303c40982dec1098d004589a9765a5b9e971d.idx
+A    first-copy/.gitignore
+A    first-copy/.git/refs/remotes/origin/HEAD
+A    first-copy/.gradle/7.5/dependencies-accessors/dependencies-accessors.lock
+A    first-copy/.gradle/7.5/checksums/checksums.lock
+A    first-copy/.git/objects/fc/ea62242bbf41b1c6844ebc13e79c06f895197c
+A    first-copy/.git/packed-refs
+A    first-copy/.git/refs/remotes/origin/mbranch
+A    first-copy/.gradle/7.5/fileChanges/last-build.bin
+A    first-copy/.gradle/7.5/gc.properties
+A    first-copy/.gradle/7.5/dependencies-accessors/gc.properties
+A    first-copy/.gradle/file-system.probe
+A    first-copy/.idea/deploymentTargetDropDown.xml
+A    first-copy/.idea/misc.xml
+A    first-copy/app/build.gradle
+A    first-copy/app/src/main/res
+A    first-copy/app/src/main/res/drawable
+A    first-copy/app/src/main/AndroidManifest.xml
+A    first-copy/app/src/main/java/com/example/flashcards/Database.kt
+A    first-copy/app/src/main/java/com/example/flashcards/FlashCard.kt
+A    first-copy/app/src/main/java/com/example/flashcards/MainActivity.kt
+A    first-copy/app/src/main/java/com/example/flashcards/StudyingActivity.kt
+A    first-copy/app/src/main/res/drawable-v24
+A    first-copy/app/src/main/res/font
+A    first-copy/.gradle/7.5/checksums/sha1-checksums.bin
+A    first-copy/.gradle/7.5/executionHistory/executionHistory.lock
+A    first-copy/.gradle/7.5/fileHashes/fileHashes.bin
+A    first-copy/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+A    first-copy/.gradle/vcs-1/gc.properties
+A    first-copy/.idea/gradle.xml
+A    first-copy/.idea/vcs.xml
+A    first-copy/app/google-services.json
+A    first-copy/app/src/main/res/layout
+A    first-copy/.git/objects/pack/pack-a50303c40982dec1098d004589a9765a5b9e971d.pack
+A    first-copy/.git/refs/remotes/origin/master
+A    first-copy/.gradle/7.5/checksums/md5-checksums.bin
+A    first-copy/app/src/main/res/drawable/circle.xml
+A    first-copy/app/src/main/res/font/doppio_one.ttf
+A    first-copy/app/src/main/res/layout/activity_edit_flash_card.xml
+A    first-copy/app/src/main/res/layout/activity_test.xml
+A    first-copy/app/src/main/res/layout/package_item.xml
+A    first-copy/.gradle/7.5/fileHashes/resourceHashesCache.bin
+A    first-copy/app/src/main/ic_launcher-playstore.png
+A    first-copy/app/src/main/java/com/example/flashcards/DatabaseDao.kt
+A    first-copy/app/src/main/java/com/example/flashcards/FlashCardStudyingAdapter.kt
+A    first-copy/app/src/main/java/com/example/flashcards/Package.kt
+A    first-copy/app/src/main/java/com/example/flashcards/TestActivity.kt
+A    first-copy/app/src/main/res/drawable/ic_launcher_background.xml
+A    first-copy/app/src/main/res/layout/activity_add_flash_card.xml
+A    first-copy/app/src/main/res/layout/activity_flash_cards_list.xml
+A    first-copy/app/src/main/res/layout/activity_test_mode.xml
+A    first-copy/app/src/main/res/mipmap-anydpi-v26
+A    first-copy/app/src/main/res/mipmap-hdpi
+A    first-copy/app/src/main/res/mipmap-mdpi
+A    first-copy/app/src/main/res/mipmap-xhdpi
+A    first-copy/app/src/main/res/mipmap-xxhdpi
+A    first-copy/app/src/main/res/mipmap-hdpi/ic_launcher.png
+A    first-copy/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png
+A    first-copy/app/src/main/res/layout/test_score.xml
+A    first-copy/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png
+A    first-copy/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png
+A    first-copy/app/src/main/res/mipmap-mdpi/ic_launcher_round.png
+A    first-copy/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+A    first-copy/app/src/main/res/mipmap-xxxhdpi
+A    first-copy/app/src/main/res/values
+A    first-copy/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+A    first-copy/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png
+A    first-copy/app/src/main/res/values-night
+A    first-copy/app/src/main/res/xml
+A    first-copy/app/src/main/res/values/ic_launcher_background.xml
+A    first-copy/app/src/main/res/values/strings.xml
+A    first-copy/.gradle/buildOutputCleanup/outputFiles.bin
+A    first-copy/.idea/compiler.xml
+A    first-copy/.idea/kotlinc.xml
+A    first-copy/app/.gitignore
+A    first-copy/app/src/androidTest/java/com/example/flashcards/ExampleInstrumentedTest.kt
+A    first-copy/app/src/main/java/com/example/flashcards/AddPackageActivity.kt
+A    first-copy/app/src/main/java/com/example/flashcards/EditFlashCardActivity.kt
+A    first-copy/app/src/main/java/com/example/flashcards/FlashCardsListRecyclerAdapter.kt
+A    first-copy/app/src/main/java/com/example/flashcards/PackageRecyclerAdapter.kt
+A    first-copy/app/src/main/java/com/example/flashcards/TestScoreActivity.kt
+A    first-copy/app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+A    first-copy/app/src/main/res/layout/activity_download_package.xml
+A    first-copy/app/src/main/res/layout/activity_main.xml
+A    first-copy/app/src/main/res/layout/flashcard_view.xml
+A    first-copy/app/src/test
+A    first-copy/app/src/test/java
+A    first-copy/app/src/test/java/com
+A    first-copy/app/src/test/java/com/example
+A    first-copy/app/src/test/java/com/example/flashcards
+A    first-copy/build
+A    first-copy/build/kotlin
+A    first-copy/build/kotlin/sessions
+A    first-copy/gradle
+A    first-copy/gradle/wrapper
+A    first-copy/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+A    first-copy/app/src/main/res/mipmap-mdpi/ic_launcher.png
+A    first-copy/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png
+A    first-copy/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png
+A    first-copy/app/src/main/res/values/colors.xml
+A    first-copy/app/src/main/res/values-night/themes.xml
+A    first-copy/app/src/main/res/xml/backup_rules.xml
+A    first-copy/build.gradle
+A    first-copy/gradlew
+A    first-copy/app/src/main/res/xml/data_extraction_rules.xml
+A    first-copy/gradle/wrapper/gradle-wrapper.properties
+A    first-copy/local.properties
+A    first-copy/gradle/wrapper/gradle-wrapper.jar
+A    first-copy/gradlew.bat
+A    first-copy/.gradle/7.5/executionHistory/executionHistory.bin
+A    first-copy/.gradle/7.5/fileHashes/fileHashes.lock
+A    first-copy/.gradle/buildOutputCleanup/cache.properties
+A    first-copy/.idea/.gitignore
+A    first-copy/.idea/jarRepositories.xml
+A    first-copy/.idea/workspace.xml
+A    first-copy/app/proguard-rules.pro
+A    first-copy/app/src/main/java/com/example/flashcards/AddFlashCardActivity.kt
+A    first-copy/app/src/main/java/com/example/flashcards/DownloadPackageActivity.kt
+A    first-copy/app/src/main/java/com/example/flashcards/FlashCardsListActivity.kt
+A    first-copy/app/src/main/java/com/example/flashcards/PackageFireBaseAdapter.kt
+A    first-copy/app/src/main/java/com/example/flashcards/TestModeActivity.kt
+A    first-copy/app/src/main/res/drawable/icon.png
+A    first-copy/app/src/main/res/layout/activity_add_package.xml
+A    first-copy/app/src/main/res/layout/activity_learning.xml
+A    first-copy/app/src/main/res/layout/flashcard_list_item.xml
+A    first-copy/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+A    first-copy/app/src/main/res/mipmap-hdpi/ic_launcher_round.png
+A    first-copy/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+A    first-copy/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png
+A    first-copy/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png
+A    first-copy/app/src/main/res/values/themes.xml
+A    first-copy/app/src/test/java/com/example/flashcards/ExampleUnitTest.kt
+A    first-copy/gradle.properties
+A    first-copy/settings.gradle
+Exported revision 38.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3$ svn checkout https://repo.cs.pwr.edu.pl/mk1-268425/AM/Projekt/FlashCards second-copy
+A    second-copy
+A    second-copy/.git
+A    second-copy/.git/branches
+A    second-copy/.git/hooks
+A    second-copy/.git/info
+A    second-copy/.git/logs
+A    second-copy/.git/logs/refs
+A    second-copy/.git/logs/refs/heads
+A    second-copy/.git/logs/refs/remotes
+A    second-copy/.git/logs/refs/remotes/origin
+A    second-copy/.git/objects
+A    second-copy/.git/objects/01
+A    second-copy/.git/objects/02
+A    second-copy/.git/objects/03
+A    second-copy/.git/objects/04
+A    second-copy/.git/objects/05
+A    second-copy/.git/objects/07
+A    second-copy/.git/objects/08
+A    second-copy/.git/objects/0c
+A    second-copy/.git/objects/0e
+A    second-copy/.git/objects/0f
+A    second-copy/.git/objects/10
+A    second-copy/.git/objects/13
+A    second-copy/.git/objects/18
+A    second-copy/.git/objects/19
+A    second-copy/.git/objects/08/5118578a192878f7498dcdd97b0612dce2d7c0
+A    second-copy/.git/COMMIT_EDITMSG
+A    second-copy/.git/FETCH_HEAD
+A    second-copy/.git/HEAD
+A    second-copy/.git/ORIG_HEAD
+A    second-copy/.git/config
+A    second-copy/.git/description
+A    second-copy/.git/hooks/applypatch-msg.sample
+A    second-copy/.git/logs/refs/remotes/origin/mbranch
+A    second-copy/.git/objects/01/6f063c216d914bc799d445ff48f55a7d3b9814
+A    second-copy/.git/objects/03/6d09bc5fd523323794379703c4a111d1e28a04
+A    second-copy/.git/objects/05/21fe70ec6d483ee98001ea29f7c13bae8512f0
+A    second-copy/.git/objects/07/ced52002d238a324eb80889a508b8abc74cf3e
+A    second-copy/.git/objects/1b
+A    second-copy/.git/objects/1c
+A    second-copy/.git/objects/1f
+A    second-copy/.git/objects/22
+A    second-copy/.git/objects/23
+A    second-copy/.git/objects/29
+A    second-copy/.git/objects/2c
+A    second-copy/.git/objects/0e/d5a0a13cbb3e6d7814efe292f727de699d3865
+A    second-copy/.git/objects/13/1705488e62bc7a9dd515a547a6d75788cd9131
+A    second-copy/.git/objects/1b/193ce99d5d1c5fff703e5ee942605e9fe11358
+A    second-copy/.git/objects/22/369054a644d4f0d1c4e1a0458297eb902a3dc7
+A    second-copy/.git/objects/29/02856d5939c27621744056e03507e2676f6fa1
+A    second-copy/.git/objects/0f/a6c03ef273bb9376e2f6aea7cb1c4e15ae3777
+A    second-copy/.git/objects/18/6d085ed07884bf00125f9b173c5e590f368f6b
+A    second-copy/.git/objects/1c/0ed0c69eac45dd832a02555890b957e7fe60c5
+A    second-copy/.git/objects/22/dde2b3faa16f281b2c4599dd49c1b8563ce593
+A    second-copy/.git/objects/29/0e0d13c34a8ddf9f5e0ff238728a1966255701
+A    second-copy/.git/objects/2e
+A    second-copy/.git/objects/31
+A    second-copy/.git/objects/32
+A    second-copy/.git/objects/33
+A    second-copy/.git/objects/35
+A    second-copy/.git/objects/36
+A    second-copy/.git/objects/37
+A    second-copy/.git/objects/39
+A    second-copy/.git/objects/3d
+A    second-copy/.git/objects/1f/757e0ec9333cbe43aa5acd538a3ec6c114fba8
+A    second-copy/.git/objects/23/080d63eb1e4adf25a79cb48e96be6378b65566
+A    second-copy/.git/hooks/commit-msg.sample
+A    second-copy/.git/hooks/fsmonitor-watchman.sample
+A    second-copy/.git/hooks/post-update.sample
+A    second-copy/.git/hooks/pre-applypatch.sample
+A    second-copy/.git/hooks/pre-commit.sample
+A    second-copy/.git/hooks/pre-merge-commit.sample
+A    second-copy/.git/hooks/pre-push.sample
+A    second-copy/.git/hooks/pre-rebase.sample
+A    second-copy/.git/hooks/pre-receive.sample
+A    second-copy/.git/hooks/prepare-commit-msg.sample
+A    second-copy/.git/hooks/push-to-checkout.sample
+A    second-copy/.git/hooks/update.sample
+A    second-copy/.git/index
+A    second-copy/.git/info/exclude
+A    second-copy/.git/logs/HEAD
+A    second-copy/.git/logs/refs/heads/master
+A    second-copy/.git/logs/refs/remotes/origin/HEAD
+A    second-copy/.git/logs/refs/remotes/origin/master
+A    second-copy/.git/objects/01/3299cd92cd335052f588c02bbc2e06e016fedf
+A    second-copy/.git/objects/02/4fa8ed24f2aaf746a828a6c7eae6deb3201f38
+A    second-copy/.git/objects/04/1ebf693a61af7c64cd495f83cea0e0a099e39c
+A    second-copy/.git/objects/07/69f9486834c3fdf9629029955686a5cd1c9ed8
+A    second-copy/.git/objects/0c/d7cde34a548cfdc9924004865f7289dd0bce57
+A    second-copy/.git/objects/10/3860e32fb352930456eb18c75ce417cdcc213d
+A    second-copy/.git/objects/19/96b7484f77827feeab9014ce13be149ce8543d
+A    second-copy/.git/objects/1f/8e7f7f2038e93b17dba14f9dfd3803d9fb0aca
+A    second-copy/.git/objects/23/d4803a8274841e2e4f2dc0bf85ec671abe977a
+A    second-copy/.git/objects/2c/42cac6f37c9ae22c3b2ce1e20301df46416c04
+A    second-copy/.git/objects/33/26ccab949a53e3915b4e34d277fc8a592aeb1d
+A    second-copy/.git/objects/35/d0455b2d8a1d21652bc6af5b84c5eb1c18db35
+A    second-copy/.git/objects/42
+A    second-copy/.git/objects/43
+A    second-copy/.git/objects/47
+A    second-copy/.git/objects/4a
+A    second-copy/.git/objects/4c
+A    second-copy/.git/objects/50
+A    second-copy/.git/objects/51
+A    second-copy/.git/objects/53
+A    second-copy/.git/objects/54
+A    second-copy/.git/objects/55
+A    second-copy/.git/objects/56
+A    second-copy/.git/objects/5c
+A    second-copy/.git/objects/5e
+A    second-copy/.git/objects/5f
+A    second-copy/.git/objects/60
+A    second-copy/.git/objects/62
+A    second-copy/.git/objects/63
+A    second-copy/.git/objects/64
+A    second-copy/.git/objects/65
+A    second-copy/.git/objects/66
+A    second-copy/.git/objects/68
+A    second-copy/.git/objects/69
+A    second-copy/.git/objects/6a
+A    second-copy/.git/objects/6b
+A    second-copy/.git/objects/6c
+A    second-copy/.git/objects/31/a0198916760c2a95c20bd4180c1de2dfdb1c24
+A    second-copy/.git/objects/33/fc8bc2d20125eb05f375675ddd1f49ed3305c4
+A    second-copy/.git/objects/37/2780cc4fb3fab1a8c8eaa4cb6043ccb8fbba65
+A    second-copy/.git/objects/2e/e184ebaef9305ee06c67c11b42660923e101c4
+A    second-copy/.git/objects/33/9062daa6041c4430a1c597e0535c2abe983832
+A    second-copy/.git/objects/36/a54ddf47d6ccaf90c7a2de6cb808c733f3a518
+A    second-copy/.git/objects/6d
+A    second-copy/.git/objects/72
+A    second-copy/.git/objects/73
+A    second-copy/.git/objects/29/f5ca8a6e201205a58e58579a87fb7d56b399ca
+A    second-copy/.git/objects/32/98f5fc12a3877d1a203c88363f2130e261f1d9
+A    second-copy/.git/objects/35/bf953decd1f4f49c2f8db18f3cfa25ffd36b08
+A    second-copy/.git/objects/39/60b04afb54c6414cb1502d7739926cd99ca7b0
+A    second-copy/.git/objects/47/1d231271d8e6733b0af2ab484f1b9674293269
+A    second-copy/.git/objects/42/e511b0fc99d865b3022b596d2d280891f803d1
+A    second-copy/.git/objects/4a/4ea1d92f20f545b6a4ff239ec65a8a115857fa
+A    second-copy/.git/objects/50/c4706fe3bbfa2f9f4898afede55258d4f8c143
+A    second-copy/.git/objects/54/831fdfb0ff2e96f5da7a2d403b3ae1a8c105c9
+A    second-copy/.git/objects/5c/dfd4fa756ceb5c19ee03de2f50d66bd242bf92
+A    second-copy/.git/objects/60/2bdf4f2112ad81fdf97f4847b0284a9fa3a723
+A    second-copy/.git/objects/65/88294b0f01f7c9b8f11aa28b25f817e8c41307
+A    second-copy/.git/objects/3d/48ff032b15c405c1f4155ee5c8e6214b1223e4
+A    second-copy/.git/objects/47/3e36a1b492d9eb1c35b2d44f3b0b8387641d2c
+A    second-copy/.git/objects/50/1dd853470e64b0f2d5e0a678aa40b6f3ba618d
+A    second-copy/.git/objects/53/f52d4f940afc18c30ee264ded99f9a34481466
+A    second-copy/.git/objects/56/0f3887d088b219cefb15f05b04ff870189f6a5
+A    second-copy/.git/objects/5f/9607f9322bea339ae63bc18074d386800d7416
+A    second-copy/.git/objects/75
+A    second-copy/.git/objects/78
+A    second-copy/.git/objects/79
+A    second-copy/.git/objects/7b
+A    second-copy/.git/objects/7e
+A    second-copy/.git/objects/80
+A    second-copy/.git/objects/81
+A    second-copy/.git/objects/84
+A    second-copy/.git/objects/85
+A    second-copy/.git/objects/88
+A    second-copy/.git/objects/8c
+A    second-copy/.git/objects/92
+A    second-copy/.git/objects/94
+A    second-copy/.git/objects/96
+A    second-copy/.git/objects/43/e607ad935988a862ad8ed28723815afe2bade8
+A    second-copy/.git/objects/4c/1d36934bb4f50909adf587910bc00e89a2e028
+A    second-copy/.git/objects/50/f50d9aa5774d4620e4858da7cd7af6161922f0
+A    second-copy/.git/objects/55/d20a9fc11a0f29d12278d567a42049a392e7f1
+A    second-copy/.git/objects/5e/d5216f2841113d778238116d763f61948e19d5
+A    second-copy/.git/objects/62/2da107ffcbdab14aec6a3d2dc9bb2f2be30791
+A    second-copy/.git/objects/97
+A    second-copy/.git/objects/98
+A    second-copy/.git/objects/99
+A    second-copy/.git/objects/9a
+A    second-copy/.git/objects/9b
+A    second-copy/.git/objects/9e
+A    second-copy/.git/objects/9f
+A    second-copy/.git/objects/4c/5a8779b802202ff0d739ece2e7ddde8d0e3192
+A    second-copy/.git/objects/51/307319d947aae8a02cc1f6d0c312ee5b50a1d4
+A    second-copy/.git/objects/55/dbdf3772b30b171c3e9804cb51da3d21277dd5
+A    second-copy/.git/objects/5e/f44ff91f9e50310f0934b65ca44bd90fb0ee5d
+A    second-copy/.git/objects/63/a82342487c02a5f10950e42ebc3ce1eb33bb6c
+A    second-copy/.git/objects/68/3ab65376f0a4d991d96c1feadb6b4ba77450a1
+A    second-copy/.git/objects/6b/e9d8ad48fac9f46148759ae8c2bee6761fee24
+A    second-copy/.git/objects/72/2954082d3add38458dd34132ca5509779348a9
+A    second-copy/.git/objects/a0
+A    second-copy/.git/objects/a1
+A    second-copy/.git/objects/a4
+A    second-copy/.git/objects/a6
+A    second-copy/.git/objects/66/5a36ce9a7470f469b843ac734176408b0772da
+A    second-copy/.git/objects/6b/50c0fe7f096054c945f63ae629512f38dbb921
+A    second-copy/.git/objects/6d/fdf13093eacd0ad65353d164bd0ba98507ed49
+A    second-copy/.git/objects/73/e31c6b06b316ade3593e8fcd5dac6fc7643dcc
+A    second-copy/.git/objects/7b/042e781df79de1fdae3bb893e2c93048723e0a
+A    second-copy/.git/objects/80/f15b45280e17153baab79a5b559806ce95d624
+A    second-copy/.git/objects/85/3992f83506baacec8a391dcfc5c0cfa38c155d
+A    second-copy/.git/objects/92/afce2b30e8c901b9b7e139005f1bb27cf3343c
+A    second-copy/.git/objects/6a/626c6ffa2161fc0a3b49771327e179cba808b1
+A    second-copy/.git/objects/6c/d4b63a53bc8fa492502a13c66c39285aafe1ef
+A    second-copy/.git/objects/73/b480f1cce32f7632727b594f7d643435a1987f
+A    second-copy/.git/objects/79/5ed080b01c925033b51173d8fa2024387d3a9b
+A    second-copy/.git/objects/80/4bcc22ce72273ec0d3e725905c914e6f8a2617
+A    second-copy/.git/objects/85/101f0ae74fbd6ba176df8ef315928fe6ec883f
+A    second-copy/.git/objects/8c/03e718dba5151013337445e6f4bc031357b2a0
+A    second-copy/.git/objects/64/479a3ee5cfc2b19aa7e45809975a4a0eae939f
+A    second-copy/.git/objects/69/050bafca04a96dd629757152e8086a1dae75ea
+A    second-copy/.git/objects/6c/8ecf56e6707036d82ea41fcb0be40d4fcf6b6d
+A    second-copy/.git/objects/72/f95ee9fdedd2863d81d3dae6f0084a36e8306e
+A    second-copy/.git/objects/78/20c20105187b0457275c13846fc520cda17ff2
+A    second-copy/.git/objects/7e/5b8f050b8e6334d0f4e98f6040723cbd1339fe
+A    second-copy/.git/objects/a9
+A    second-copy/.git/objects/aa
+A    second-copy/.git/objects/ab
+A    second-copy/.git/objects/ac
+A    second-copy/.git/objects/af
+A    second-copy/.git/objects/b1
+A    second-copy/.git/objects/b3
+A    second-copy/.git/objects/b4
+A    second-copy/.git/objects/b9
+A    second-copy/.git/objects/ba
+A    second-copy/.git/objects/bb
+A    second-copy/.git/objects/bc
+A    second-copy/.git/objects/bd
+A    second-copy/.git/objects/bf
+A    second-copy/.git/objects/c1
+A    second-copy/.git/objects/75/567c74a281cc158380dd5fd1107d69db4ba24f
+A    second-copy/.git/objects/7e/39ea408701fb49af1196368bfebc574116a335
+A    second-copy/.git/objects/81/772f28762b5b2c175a70e65de63d7887d1c5d3
+A    second-copy/.git/objects/85/fa06ea82098a844c99e96b805364e4b5dfae8a
+A    second-copy/.git/objects/94/7e767cd83caadc73dad75dc6adba978850866b
+A    second-copy/.git/objects/99/3fedf2b4e1fc90c3f3f7673df1663d17f91461
+A    second-copy/.git/objects/9f/49038eebc0e504f63d84750eb3b3cd2c07e3c3
+A    second-copy/.git/objects/c2
+A    second-copy/.git/objects/c4
+A    second-copy/.git/objects/c7
+A    second-copy/.git/objects/c8
+A    second-copy/.git/objects/ca
+A    second-copy/.git/objects/cd
+A    second-copy/.git/objects/ce
+A    second-copy/.git/objects/84/a91360c647ce6d9e40a32b891f902239e64823
+A    second-copy/.git/objects/88/fe2a46d33d0e513158b84e7074b7c0bc6f669a
+A    second-copy/.git/objects/96/9320e56bacb626363ebecb832879b6e32316a7
+A    second-copy/.git/objects/cf
+A    second-copy/.git/objects/d1
+A    second-copy/.git/objects/9a/a39ec1470809f1cf707cf027e51d3863da2c94
+A    second-copy/.git/objects/a0/20f8e2c6be3cf50acfc6c269972307046eab87
+A    second-copy/.git/objects/a1/ad5643f8c15193e76d2927f7e0e6b963878c4e
+A    second-copy/.git/objects/a9/ab27e6d9de6aa61411dac0435893206eb04c82
+A    second-copy/.git/objects/af/22fb49b4482ad884551f7e185cd5ff3fb1922c
+A    second-copy/.git/objects/b4/d76bc9e1f852dd81084fb981968bd5c4b71a64
+A    second-copy/.git/objects/ba/342ed70826ef89dd20f91da27eadf6f48c82c1
+A    second-copy/.git/objects/d2
+A    second-copy/.git/objects/d5
+A    second-copy/.git/objects/d7
+A    second-copy/.git/objects/98/b09e8f2da7302c9424922250d8cc53ab116e4b
+A    second-copy/.git/objects/97/e535112875980ea3feeb6a533ee65127b418ac
+A    second-copy/.git/objects/9b/029a04343faf2b0dcbcc71f1b38395a263c785
+A    second-copy/.git/objects/a0/7b10d4fe4d8ea5e640a4be2a6263c75d3c52c7
+A    second-copy/.git/objects/a4/b2c296d167bffef7ceabbe482063373f3f14ed
+A    second-copy/.git/objects/aa/21b1ed9dfd800cfed22d7ed925fd202dd2db59
+A    second-copy/.git/objects/b1/7657e4e5f0da93baee5ca37cb52d6234bd9941
+A    second-copy/.git/objects/b9/6c51766a819296cf3a3c0b0ce7731404090abd
+A    second-copy/.git/objects/bb/076e440f76cf252b27ada7fa011d59238d92c5
+A    second-copy/.git/objects/c1/f5fe16169fd1ca0c3adb1f0b5510913c4a3f33
+A    second-copy/.git/objects/c8/74bd0eb7fa8fe2a64cff25d6a34e0fdbeba520
+A    second-copy/.git/objects/db
+A    second-copy/.git/objects/dc
+A    second-copy/.git/objects/de
+A    second-copy/.git/objects/df
+A    second-copy/.git/objects/e4
+A    second-copy/.git/objects/e5
+A    second-copy/.git/objects/a1/956db4a2b6a6b3c7caecbee9255482a459693d
+A    second-copy/.git/objects/a6/c823e5735eba7f0089f224724d0d82c7d1c969
+A    second-copy/.git/objects/ac/fe778bf1a69e49f5a0bdfcf436a192349b17b6
+A    second-copy/.git/objects/b4/c455285cbf04d7a5e2e49968ea685d86c4c224
+A    second-copy/.git/objects/ba/02724f7529215b0ad8cf82de71fe2c84e8f12b
+A    second-copy/.git/objects/bd/50e07619706db7441117cfb82d94f3ce79f96a
+A    second-copy/.git/objects/c4/9e513efe00feed1af3232d8ecdfaefee35659f
+A    second-copy/.git/objects/cd/49f973395a09f8e63933b5cf6024a1622fd480
+A    second-copy/.git/objects/ce/730d1d52b71099f9bb4c8d590886b0dc6a893f
+A    second-copy/.git/objects/d1/50606d9908a18952d9dde61d19e2888899b2cc
+A    second-copy/.git/objects/e8
+A    second-copy/.git/objects/e9
+A    second-copy/.git/objects/ea
+A    second-copy/.git/objects/eb
+A    second-copy/.git/objects/ec
+A    second-copy/.git/objects/f1
+A    second-copy/.git/objects/9e/6f9f081bf4c86b261709a1e5ae459c60e07871
+A    second-copy/.git/objects/a0/de2a15288bb13f9c7f6e69de6d55b79f9168df
+A    second-copy/.git/objects/a6/7fdd2679de6b5dd08e7b330e0643cf68beae83
+A    second-copy/.git/objects/ab/ab3e7a0a6c557e57b5376acaacbf7096efcf43
+A    second-copy/.git/objects/b3/62cbdf4aca95478cded7614aa3665802d4b1d5
+A    second-copy/.git/objects/b9/8874dab9c8e1703cc8083d65b60083387b045f
+A    second-copy/.git/objects/bc/d7cfa39171874b2ddad1980b769eb215bfa04a
+A    second-copy/.git/objects/c2/10bb024654f0350b88761dd7c4d266f6d4dbe0
+A    second-copy/.git/objects/ca/9bf9e3996e5f35df7505d61cdd2f330b878b93
+A    second-copy/.git/objects/bf/fe16bd7d0b9f177ac8fb0e3643d58b0d5e688e
+A    second-copy/.git/objects/c7/431a89aeacbca23a78cf108cee802f129dc6cf
+A    second-copy/.git/objects/cd/5c2475b6ead0c6d0c97c823c20e24f99bcd5c4
+A    second-copy/.git/objects/cf/c2fc3297579ee84f9f9c95dbc09f2a046fff41
+A    second-copy/.git/objects/d2/8c436256806d541af706b2db838d25456180b5
+A    second-copy/.git/objects/f2
+A    second-copy/.git/objects/f3
+A    second-copy/.git/objects/f4
+A    second-copy/.git/objects/f7
+A    second-copy/.git/objects/f8
+A    second-copy/.git/objects/fa
+A    second-copy/.git/objects/fc
+A    second-copy/.git/objects/ff
+A    second-copy/.git/objects/info
+A    second-copy/.git/objects/pack
+A    second-copy/.git/refs
+A    second-copy/.git/refs/heads
+A    second-copy/.git/refs/remotes
+A    second-copy/.git/objects/ce/0b9705a2c5b25b304a620ad4f6888c73efb53d
+A    second-copy/.git/objects/cf/f93b5226891dcd260637ec0bffeeafe67b0b92
+A    second-copy/.git/objects/d2/9390afe1066df075507b802d2ada16113a0e75
+A    second-copy/.git/objects/ce/51d5e7aebf02bc0fe18d9353b25eac52f910e5
+A    second-copy/.git/objects/d1/3b566c4aef6d7bcd16ea110ed33ff48987fa86
+A    second-copy/.git/objects/d5/61033fb7423a534781cd4e3e1b16eb81a981ce
+A    second-copy/.git/objects/dc/1d6d6639935da365e7e88c6dc908283bc99131
+A    second-copy/.git/objects/de/a949c10e898999729299e00791729c8ddcd09b
+A    second-copy/.git/objects/e5/1a2439e0589ebd33be330e094af709a867b3df
+A    second-copy/.git/objects/ea/e01ddb9d6423889f3dfc1f2e699714e9510c88
+A    second-copy/.git/objects/ec/99d4add1de22cc04b4313a158bd000121ea59c
+A    second-copy/.git/objects/f4/bbe2fffac612a23cf100f4f47fe8e2bc06ac85
+A    second-copy/.git/objects/fc/b82f3fe03c2196edb172bde5e290a45bf04114
+A    second-copy/.git/refs/remotes/origin
+A    second-copy/.git/refs/tags
+A    second-copy/.gradle
+A    second-copy/.gradle/7.5
+A    second-copy/.gradle/7.5/checksums
+A    second-copy/.gradle/7.5/dependencies-accessors
+A    second-copy/.gradle/7.5/executionHistory
+A    second-copy/.gradle/7.5/fileChanges
+A    second-copy/.gradle/7.5/fileHashes
+A    second-copy/.gradle/7.5/vcsMetadata
+A    second-copy/.gradle/buildOutputCleanup
+A    second-copy/.git/objects/d7/034b9625965e4867e18a81d4923d3d5e3f0843
+A    second-copy/.git/objects/dc/4db97c12f5d387076d775c93049c6b8c67d65f
+A    second-copy/.git/objects/df/393343f87e462352139296c46fc890123b6dff
+A    second-copy/.git/objects/e5/9de3e7316fd2f80ae7c3f0675882a777ec55d9
+A    second-copy/.git/objects/eb/b6528a921b3636e5a7f33dffc797e8bfe0854c
+A    second-copy/.git/objects/f1/c13dead9045d0695c8884faee7052bd39ea76a
+A    second-copy/.git/objects/f7/1407ed0acb2892df22be98ffaff94027efbc4a
+A    second-copy/.git/objects/fc/ea62242bbf41b1c6844ebc13e79c06f895197c
+A    second-copy/.gradle/vcs-1
+A    second-copy/.idea
+A    second-copy/.git/objects/db/ec00e04b657c3c70a56e9c50966c1776bc672d
+A    second-copy/.git/objects/de/8b6a4ff2328a757db56d1575d3488697231bbc
+A    second-copy/.git/objects/e4/3178aad433dfe9e1ee81c27d3180d9fe0fb848
+A    second-copy/.git/objects/d7/07e3dd0c28ff537f04370d79175341ac4b8cb9
+A    second-copy/.git/objects/dc/813fab1efc49ca7680dd50aae4a94526500297
+A    second-copy/.git/objects/df/ead6aaf321948201cc05f03663648572aea4f9
+A    second-copy/.git/objects/e8/dcdb98906e383c8dd71d92fc62e7cedf291f35
+A    second-copy/.git/objects/ec/3cf09978792c9e37c6cb1753c227db55219a24
+A    second-copy/.git/objects/f2/0a4e195521ef9bf7231099b62c4b93164cac24
+A    second-copy/.git/objects/f8/8cc6c380bec92ac09c0a324ab9b3b8a0a58092
+A    second-copy/.git/objects/ff/2d332f76c77dccd6259d4591a5d8fa2a07e91f
+A    second-copy/app
+A    second-copy/.git/packed-refs
+A    second-copy/.git/refs/remotes/origin/mbranch
+A    second-copy/.git/refs/heads/master
+A    second-copy/.gitignore
+A    second-copy/.gradle/7.5/dependencies-accessors/dependencies-accessors.lock
+A    second-copy/.gradle/7.5/fileChanges/last-build.bin
+A    second-copy/.gradle/7.5/gc.properties
+A    second-copy/.gradle/file-system.probe
+A    second-copy/.idea/deploymentTargetDropDown.xml
+A    second-copy/.idea/misc.xml
+A    second-copy/app/build.gradle
+A    second-copy/.git/objects/e9/4d1db8546109862e3f715f8efe4ca5b7ddb6a4
+A    second-copy/.git/objects/ec/8d78a8cf441695c5543324fddf68892041a2eb
+A    second-copy/.git/objects/f3/eb2f48937ef4d52e23238d88b299d4867b4722
+A    second-copy/.git/objects/fa/b42f98093b36a79de840d441136d10bb8964e4
+A    second-copy/app/src
+A    second-copy/app/src/androidTest
+A    second-copy/app/src/androidTest/java
+A    second-copy/app/src/androidTest/java/com
+A    second-copy/app/src/androidTest/java/com/example
+A    second-copy/app/src/androidTest/java/com/example/flashcards
+A    second-copy/app/src/main
+A    second-copy/app/src/main/java
+A    second-copy/app/src/main/java/com
+A    second-copy/app/src/main/java/com/example
+A    second-copy/app/src/main/java/com/example/flashcards
+A    second-copy/.git/objects/pack/pack-a50303c40982dec1098d004589a9765a5b9e971d.idx
+A    second-copy/.git/refs/remotes/origin/HEAD
+A    second-copy/.gradle/7.5/checksums/checksums.lock
+A    second-copy/.gradle/7.5/dependencies-accessors/gc.properties
+A    second-copy/app/src/main/res
+A    second-copy/app/src/main/res/drawable
+A    second-copy/app/src/main/AndroidManifest.xml
+A    second-copy/app/src/main/java/com/example/flashcards/Database.kt
+A    second-copy/app/src/main/java/com/example/flashcards/FlashCard.kt
+A    second-copy/app/src/main/java/com/example/flashcards/MainActivity.kt
+A    second-copy/app/src/main/java/com/example/flashcards/StudyingActivity.kt
+A    second-copy/app/src/main/res/drawable-v24
+A    second-copy/app/src/main/res/font
+A    second-copy/app/src/main/res/drawable/circle.xml
+A    second-copy/.gradle/7.5/checksums/sha1-checksums.bin
+A    second-copy/.gradle/7.5/executionHistory/executionHistory.lock
+A    second-copy/app/src/main/res/font/doppio_one.ttf
+A    second-copy/.gradle/7.5/fileHashes/resourceHashesCache.bin
+A    second-copy/app/src/main/res/layout
+A    second-copy/.gradle/7.5/fileHashes/fileHashes.bin
+A    second-copy/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+A    second-copy/.gradle/vcs-1/gc.properties
+A    second-copy/.idea/gradle.xml
+A    second-copy/.idea/vcs.xml
+A    second-copy/app/google-services.json
+A    second-copy/.git/objects/pack/pack-a50303c40982dec1098d004589a9765a5b9e971d.pack
+A    second-copy/.git/refs/remotes/origin/master
+A    second-copy/app/src/main/res/layout/activity_edit_flash_card.xml
+A    second-copy/.gradle/7.5/checksums/md5-checksums.bin
+A    second-copy/app/src/main/res/layout/activity_test.xml
+A    second-copy/app/src/main/res/layout/package_item.xml
+A    second-copy/app/src/main/res/mipmap-anydpi-v26
+A    second-copy/app/src/main/res/mipmap-hdpi
+A    second-copy/app/src/main/ic_launcher-playstore.png
+A    second-copy/app/src/main/java/com/example/flashcards/DatabaseDao.kt
+A    second-copy/app/src/main/java/com/example/flashcards/FlashCardStudyingAdapter.kt
+A    second-copy/app/src/main/java/com/example/flashcards/Package.kt
+A    second-copy/app/src/main/java/com/example/flashcards/TestActivity.kt
+A    second-copy/app/src/main/res/drawable/ic_launcher_background.xml
+A    second-copy/app/src/main/res/layout/activity_add_flash_card.xml
+A    second-copy/app/src/main/res/layout/activity_flash_cards_list.xml
+A    second-copy/app/src/main/res/layout/activity_test_mode.xml
+A    second-copy/app/src/main/res/mipmap-mdpi
+A    second-copy/app/src/main/res/mipmap-xhdpi
+A    second-copy/app/src/main/res/mipmap-xxhdpi
+A    second-copy/app/src/main/res/mipmap-hdpi/ic_launcher.png
+A    second-copy/app/src/main/res/layout/test_score.xml
+A    second-copy/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png
+A    second-copy/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png
+A    second-copy/app/src/main/res/mipmap-mdpi/ic_launcher_round.png
+A    second-copy/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+A    second-copy/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png
+A    second-copy/app/src/main/res/mipmap-xxxhdpi
+A    second-copy/app/src/main/res/values
+A    second-copy/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png
+A    second-copy/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+A    second-copy/app/src/main/res/values-night
+A    second-copy/app/src/main/res/xml
+A    second-copy/app/src/main/res/values/strings.xml
+A    second-copy/app/src/main/res/values/ic_launcher_background.xml
+A    second-copy/.gradle/buildOutputCleanup/outputFiles.bin
+A    second-copy/.idea/compiler.xml
+A    second-copy/.idea/kotlinc.xml
+A    second-copy/app/.gitignore
+A    second-copy/app/src/test
+A    second-copy/app/src/test/java
+A    second-copy/app/src/test/java/com
+A    second-copy/app/src/test/java/com/example
+A    second-copy/app/src/test/java/com/example/flashcards
+A    second-copy/app/src/androidTest/java/com/example/flashcards/ExampleInstrumentedTest.kt
+A    second-copy/build
+A    second-copy/build/kotlin
+A    second-copy/build/kotlin/sessions
+A    second-copy/gradle
+A    second-copy/gradle/wrapper
+A    second-copy/app/src/main/java/com/example/flashcards/AddPackageActivity.kt
+A    second-copy/app/src/main/java/com/example/flashcards/EditFlashCardActivity.kt
+A    second-copy/app/src/main/java/com/example/flashcards/FlashCardsListRecyclerAdapter.kt
+A    second-copy/app/src/main/java/com/example/flashcards/PackageRecyclerAdapter.kt
+A    second-copy/app/src/main/java/com/example/flashcards/TestScoreActivity.kt
+A    second-copy/app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+A    second-copy/app/src/main/res/layout/activity_download_package.xml
+A    second-copy/app/src/main/res/layout/activity_main.xml
+A    second-copy/app/src/main/res/layout/flashcard_view.xml
+A    second-copy/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+A    second-copy/app/src/main/res/mipmap-mdpi/ic_launcher.png
+A    second-copy/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png
+A    second-copy/app/src/main/res/xml/data_extraction_rules.xml
+A    second-copy/app/src/main/res/xml/backup_rules.xml
+A    second-copy/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png
+A    second-copy/app/src/main/res/values/colors.xml
+A    second-copy/app/src/main/res/values-night/themes.xml
+A    second-copy/build.gradle
+A    second-copy/gradle/wrapper/gradle-wrapper.properties
+A    second-copy/local.properties
+A    second-copy/gradlew
+A    second-copy/gradle/wrapper/gradle-wrapper.jar
+A    second-copy/gradlew.bat
+A    second-copy/.gradle/7.5/executionHistory/executionHistory.bin
+A    second-copy/.gradle/7.5/fileHashes/fileHashes.lock
+A    second-copy/.gradle/buildOutputCleanup/cache.properties
+A    second-copy/.idea/.gitignore
+A    second-copy/.idea/jarRepositories.xml
+A    second-copy/.idea/workspace.xml
+A    second-copy/app/proguard-rules.pro
+A    second-copy/app/src/main/java/com/example/flashcards/AddFlashCardActivity.kt
+A    second-copy/app/src/main/java/com/example/flashcards/DownloadPackageActivity.kt
+A    second-copy/app/src/main/java/com/example/flashcards/FlashCardsListActivity.kt
+A    second-copy/app/src/main/java/com/example/flashcards/PackageFireBaseAdapter.kt
+A    second-copy/app/src/main/java/com/example/flashcards/TestModeActivity.kt
+A    second-copy/app/src/main/res/drawable/icon.png
+A    second-copy/app/src/main/res/layout/activity_add_package.xml
+A    second-copy/app/src/main/res/layout/activity_learning.xml
+A    second-copy/app/src/main/res/layout/flashcard_list_item.xml
+A    second-copy/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+A    second-copy/app/src/main/res/mipmap-hdpi/ic_launcher_round.png
+A    second-copy/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+A    second-copy/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png
+A    second-copy/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png
+A    second-copy/app/src/main/res/values/themes.xml
+A    second-copy/app/src/test/java/com/example/flashcards/ExampleUnitTest.kt
+A    second-copy/gradle.properties
+A    second-copy/settings.gradle
+Exported revision 38.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3$ ll
+total 16
+drwxrwxr-x 4 monek monek 4096 lis  4 01:47 ./
+drwxrwxr-x 5 monek monek 4096 lis  4 01:38 ../
+drwxrwxr-x 9 monek monek 4096 lis  4 01:47 first-copy/
+drwxrwxr-x 9 monek monek 4096 lis  4 01:47 second-copy/
+
+# W jednej kopii roboczej tworzę skrypt
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3$ cd first-copy
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/first-copy$ nano exec.sh
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/first-copy$ ll
+total 72
+drwxrwxr-x 9 monek monek 4096 lis  4 01:50 ./
+drwxrwxr-x 4 monek monek 4096 lis  4 01:47 ../
+drwxrwxr-x 3 monek monek 4096 lis  4 01:47 app/
+drwxrwxr-x 3 monek monek 4096 lis  4 01:47 build/
+-rw-rw-r-- 1 monek monek  871 lis  4 01:47 build.gradle
+-rw-rw-r-- 1 monek monek   37 lis  4 01:50 exec.sh
+drwxrwxr-x 8 monek monek 4096 lis  4 01:47 .git/
+-rw-rw-r-- 1 monek monek  225 lis  4 01:47 .gitignore
+drwxrwxr-x 5 monek monek 4096 lis  4 01:47 .gradle/
+drwxrwxr-x 3 monek monek 4096 lis  4 01:47 gradle/
+-rw-rw-r-- 1 monek monek 1358 lis  4 01:47 gradle.properties
+-rw-rw-r-- 1 monek monek 5766 lis  4 01:47 gradlew
+-rw-rw-r-- 1 monek monek 2674 lis  4 01:47 gradlew.bat
+drwxrwxr-x 2 monek monek 4096 lis  4 01:47 .idea/
+-rw-rw-r-- 1 monek monek  337 lis  4 01:47 local.properties
+-rw-rw-r-- 1 monek monek  163 lis  4 01:47 settings.gradle
+drwxrwxr-x 4 monek monek 4096 lis  4 01:47 .svn/
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/first-copy$ ./exec.sh
+bash: ./exec.sh: Permission denied
+
+# Jak można zauważyć - nie jest to na ten moment plik wykonywalny. Dodajmy go do repozytorium.
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/first-copy$ svn add exec.sh
+A         exec.sh
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/first-copy$ svn commit -m "Non-executable script added"
+Adding         exec.sh
+Transmitting file data .done
+Committing transaction...
+Committed revision 39.
+
+# Teraz dodajmy mu parametr 'executable'
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/first-copy$ svn propset svn:executable on exec.sh
+property 'svn:executable' set on 'exec.sh'
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/first-copy$ ll
+total 72
+drwxrwxr-x 9 monek monek 4096 lis  4 01:50 ./
+drwxrwxr-x 4 monek monek 4096 lis  4 01:47 ../
+drwxrwxr-x 3 monek monek 4096 lis  4 01:47 app/
+drwxrwxr-x 3 monek monek 4096 lis  4 01:47 build/
+-rw-rw-r-- 1 monek monek  871 lis  4 01:47 build.gradle
+-rwxrwxr-x 1 monek monek   37 lis  4 01:50 exec.sh*
+drwxrwxr-x 8 monek monek 4096 lis  4 01:47 .git/
+-rw-rw-r-- 1 monek monek  225 lis  4 01:47 .gitignore
+drwxrwxr-x 5 monek monek 4096 lis  4 01:47 .gradle/
+drwxrwxr-x 3 monek monek 4096 lis  4 01:47 gradle/
+-rw-rw-r-- 1 monek monek 1358 lis  4 01:47 gradle.properties
+-rw-rw-r-- 1 monek monek 5766 lis  4 01:47 gradlew
+-rw-rw-r-- 1 monek monek 2674 lis  4 01:47 gradlew.bat
+drwxrwxr-x 2 monek monek 4096 lis  4 01:47 .idea/
+-rw-rw-r-- 1 monek monek  337 lis  4 01:47 local.properties
+-rw-rw-r-- 1 monek monek  163 lis  4 01:47 settings.gradle
+drwxrwxr-x 4 monek monek 4096 lis  4 01:47 .svn/
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/first-copy$ svn status
+ M      exec.sh
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/first-copy$ svn diff
+Index: exec.sh
+===================================================================
+--- exec.sh	(revision 39)
++++ exec.sh	(working copy)
+
+Property changes on: exec.sh
+___________________________________________________________________
+Added: svn:executable
+## -0,0 +1 ##
++*
+\ No newline at end of property
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/first-copy$ ./exec.sh
+Some bash script
+
+
+# Jest on teraz plikiem wykonywalnym, co z resztą wykrył sam SVN. Zaktualizujmy repozytorium i sprawdźmy drugą kopię.
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/first-copy$ svn commit -m " Added svn:executable"
+Sending        exec.sh
+Committing transaction...
+Committed revision 40.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/first-copy$ cd ..
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3$ cd second-copy
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/second-copy$ svn update
+Updating '.':
+A    exec.sh
+Updated to revision 40.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/second-copy$ ll
+total 72
+drwxrwxr-x 9 monek monek 4096 lis  4 01:58 ./
+drwxrwxr-x 4 monek monek 4096 lis  4 01:47 ../
+drwxrwxr-x 3 monek monek 4096 lis  4 01:47 app/
+drwxrwxr-x 3 monek monek 4096 lis  4 01:47 build/
+-rw-rw-r-- 1 monek monek  871 lis  4 01:47 build.gradle
+-rwxrwxr-x 1 monek monek   37 lis  4 01:58 exec.sh*
+drwxrwxr-x 8 monek monek 4096 lis  4 01:47 .git/
+-rw-rw-r-- 1 monek monek  225 lis  4 01:47 .gitignore
+drwxrwxr-x 5 monek monek 4096 lis  4 01:47 .gradle/
+drwxrwxr-x 3 monek monek 4096 lis  4 01:47 gradle/
+-rw-rw-r-- 1 monek monek 1358 lis  4 01:47 gradle.properties
+-rw-rw-r-- 1 monek monek 5766 lis  4 01:47 gradlew
+-rw-rw-r-- 1 monek monek 2674 lis  4 01:47 gradlew.bat
+drwxrwxr-x 2 monek monek 4096 lis  4 01:47 .idea/
+-rw-rw-r-- 1 monek monek  337 lis  4 01:47 local.properties
+-rw-rw-r-- 1 monek monek  163 lis  4 01:47 settings.gradle
+drwxrwxr-x 4 monek monek 4096 lis  4 01:47 .svn/
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX3/second-copy$ ./exec.sh
+Some bash script
+
+
+# W drugiej kopii plik jest także wykonywalny
+
+# LOGI
+------------------------------------------------------------------------
+r40 | 268425 | 2024-11-04 01:57:04 +0100 (pon, 04 lis 2024) | 1 line
+Changed paths:
+   M /AM/Projekt/FlashCards/exec.sh
+
+ Added svn:executable
+------------------------------------------------------------------------
+r39 | 268425 | 2024-11-04 01:53:18 +0100 (pon, 04 lis 2024) | 1 line
+Changed paths:
+   A /AM/Projekt/FlashCards/exec.sh
+
+Non-executable script added

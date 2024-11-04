@@ -1,0 +1,254 @@
+# Piotr Maciejończyk, 268425, Zadanie 6.
+
+# 1st task
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2$ cd EX6
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn mkdir a
+A         a
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn mkdir b
+A         b
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ cd a
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6/a$ cat > a.txt
+AaaaaAAAAAAaaaAAAAAaAaAaA 
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6/a$ cd ..
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ cd b
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6/b$ cat > b.txt
+BbbbBBbBbbbbBBbBBBbbbbBbb
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6/b$ cd ..
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn status -u
+?                    a/a.txt
+A                -   a
+?                    b/b.txt
+A                -   b
+Status against revision:     53
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ tree
+.
+├── a
+│   └── a.txt
+└── b
+    └── b.txt
+
+2 directories, 2 files
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn add a/a.txt b/b.txt
+A         a/a.txt
+A         b/b.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn commit -m "Added two directories a, b and two textfiles"
+Adding         a
+Adding         a/a.txt
+Adding         b
+Adding         b/b.txt
+Transmitting file data ..done
+Committing transaction...
+Committed revision 54.
+
+# 2nd task
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn move a/a.txt b/a.txt
+A         b/a.txt
+D         a/a.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ tree
+.
+├── a
+└── b
+    ├── a.txt
+    └── b.txt
+
+2 directories, 2 files
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn move b/b.txt a/b.txt
+A         a/b.txt
+D         b/b.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ tree
+.
+├── a
+│   └── b.txt
+└── b
+    └── a.txt
+
+2 directories, 2 files
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ nano a/b.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ cat a/b.txt
+BbbbBBbBbbbbBBbBBBbbbbBbb
+added more BBBBBBBBBBBBBB
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ nano b/a.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ cat b/a.txt
+AaaaaAAAAAAaaaAAAAAaAaAaA
+added some more AaaaAAAAa
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn commit -m "swapped a with b and added one line to each"
+Deleting       a/a.txt
+Adding         a/b.txt
+Adding         b/a.txt
+Deleting       b/b.txt
+Transmitting file data ..done
+Committing transaction...
+Committed revision 55.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ tree
+.
+├── a
+│   └── b.txt
+└── b
+    └── a.txt
+
+2 directories, 2 files
+
+
+# 3rd task
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ cat b/a.txt
+AaaaaAAAAAAaaaAAAAAaAaAaA
+added some more AaaaAAAAa
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ nano b/a.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ cat b/a.txt
+AaaaaAAAAAAaaaAAAAAaAaAaA
+added some more AaaaAAAAa
+even more AAAAaaaaAaAaAaa
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn move b/a.txt b/c.txt
+A         b/c.txt
+D         b/a.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ tree
+.
+├── a
+│   └── b.txt
+└── b
+    └── c.txt
+
+2 directories, 2 files
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ cat b/c.txt
+AaaaaAAAAAAaaaAAAAAaAaAaA
+added some more AaaaAAAAa
+even more AAAAaaaaAaAaAaa
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn commit -m "(3) Changed a.txt to c.txt and expanded it"
+Deleting       b/a.txt
+Adding         b/c.txt
+Transmitting file data .done
+Committing transaction...
+Committed revision 56.
+
+# 4th task
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ nano a/b.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ cat a/b.txt
+BbbbBBbBbbbbBBbBBBbbbbBbb
+added more BBBBBBBBBBBBBB
+even more bbBbbBBBbbbBBbB
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn move a/b.txt a/a.txt
+A         a/a.txt
+D         a/b.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ tree
+.
+├── a
+│   └── a.txt
+└── b
+    └── c.txt
+
+2 directories, 2 files
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn commit -m "(4) Changed b.txt to a.txt and expanded it"
+Adding         a/a.txt
+Deleting       a/b.txt
+Transmitting file data .done
+Committing transaction...
+Committed revision 57.
+
+# 5th task
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ cat > b/b.txt
+that is a new B file!
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ tree
+.
+├── a
+│   └── a.txt
+└── b
+    ├── b.txt
+    └── c.txt
+
+2 directories, 3 files
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn status
+?       b/b.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn add b/b.txt
+A         b/b.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn commit -m "(5) Added new b.txt file"
+Adding         b/b.txt
+Transmitting file data .done
+Committing transaction...
+Committed revision 58.
+
+# Sprawdźmy teraz historię zmian
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ svn log -v
+------------------------------------------------------------------------
+r53 | 268425 | 2024-11-04 17:25:01 +0100 (pon, 04 lis 2024) | 1 line
+Changed paths:
+   A /SP/L2/EX6
+
+Added ex6 directory
+------------------------------------------------------------------------
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ cd a
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6/a$ svn log -v
+------------------------------------------------------------------------
+r54 | 268425 | 2024-11-04 17:32:01 +0100 (pon, 04 lis 2024) | 1 line
+Changed paths:
+   A /SP/L2/EX6/a
+   A /SP/L2/EX6/a/a.txt
+   A /SP/L2/EX6/b
+   A /SP/L2/EX6/b/b.txt
+
+Added two directories a, b and two textfiles
+------------------------------------------------------------------------
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6/a$ svn cat -r 54 a.txt
+BbbbBBbBbbbbBBbBBBbbbbBbb
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6/a$ svn cat -r 55 a.txt
+BbbbBBbBbbbbBBbBBBbbbbBbb
+added more BBBBBBBBBBBBBB
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6/a$ svn cat -r 56 a.txt
+BbbbBBbBbbbbBBbBBBbbbbBbb
+added more BBBBBBBBBBBBBB
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6/a$ svn cat -r 57 a.txt
+BbbbBBbBbbbbBBbBBBbbbbBbb
+added more BBBBBBBBBBBBBB
+even more bbBbbBBBbbbBBbB
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6/a$ svn cat -r 58 a.txt
+BbbbBBbBbbbbBBbBBBbbbbBbb
+added more BBBBBBBBBBBBBB
+even more bbBbbBBBbbbBBbB
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6/a$ cd ..
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6$ cd b
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX6/b$ svn log --diff c.txt
+------------------------------------------------------------------------
+r56 | 268425 | 2024-11-04 17:44:56 +0100 (pon, 04 lis 2024) | 1 line
+
+(3) Changed a.txt to c.txt and expanded it
+
+Index: a.txt
+===================================================================
+--- a.txt	(.../a.txt)	(revision 55)
++++ a.txt	(.../c.txt)	(revision 56)
+@@ -1,2 +1,3 @@
+ AaaaaAAAAAAaaaAAAAAaAaAaA
+ added some more AaaaAAAAa
++even more AAAAaaaaAaAaAaa
+
+------------------------------------------------------------------------
+r55 | 268425 | 2024-11-04 17:39:56 +0100 (pon, 04 lis 2024) | 1 line
+
+swapped a with b and added one line to each
+
+Index: a.txt
+===================================================================
+--- a.txt	(.../a/a.txt)	(revision 54)
++++ a.txt	(.../b/a.txt)	(revision 55)
+@@ -1 +1,2 @@
+ AaaaaAAAAAAaaaAAAAAaAaAaA
++added some more AaaaAAAAa
+
+------------------------------------------------------------------------
+r54 | 268425 | 2024-11-04 17:32:01 +0100 (pon, 04 lis 2024) | 1 line
+
+Added two directories a, b and two textfiles
+
+Index: a.txt
+===================================================================
+--- a.txt	(nonexistent)
++++ a.txt	(revision 54)
+@@ -0,0 +1 @@
++AaaaaAAAAAAaaaAAAAAaAaAaA
+
+------------------------------------------------------------------------

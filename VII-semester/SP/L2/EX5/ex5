@@ -1,0 +1,138 @@
+# Piotr Maciejończyk, 268425, Zadanie 5.
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5$ svn checkout https://repo.cs.pwr.edu.pl/mk1-268425/AM/L1/ test1
+A    test1/L1Z1Java.zip
+A    test1/L1Z1Kotlin.zip
+A    test1/L1Z2Java.zip
+A    test1/L1Z2Kotlin.zip
+Checked out revision 48.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5$ svn checkout https://repo.cs.pwr.edu.pl/mk1-268425/AM/L1/ test2
+A    test2/L1Z1Java.zip
+A    test2/L1Z1Kotlin.zip
+A    test2/L1Z2Java.zip
+A    test2/L1Z2Kotlin.zip
+Checked out revision 48.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5$ ll
+total 16
+drwxrwxr-x 4 monek monek 4096 lis  4 16:54 ./
+drwxrwxr-x 7 monek monek 4096 lis  4 16:52 ../
+drwxrwxr-x 3 monek monek 4096 lis  4 16:54 test1/
+drwxrwxr-x 3 monek monek 4096 lis  4 16:54 test2/
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5$ cd test1
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ cat > testfile.txt
+Test1 wrote here something
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ cat testfile.txt
+Test1 wrote here something
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ svn add testfile.txt
+A         testfile.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ svn commit -m "Added some text file"
+Adding         testfile.txt
+Transmitting file data .done
+Committing transaction...
+Committed revision 50.
+
+# Blokujemy plik tekstowy
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ svn lock testfile.txt -m "test1 is currently editing testfile.txt"
+'testfile.txt' locked by user '268425'.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ cd ..
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5$ cd test2
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ svn update
+Updating '.':
+A    testfile.txt
+Updated to revision 50.
+
+# Plik jest prawidłowo zablokowany
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ svn status -u
+     O          50   testfile.txt
+Status against revision:     50
+
+# Spróbujmy go zmodyfikować
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ nano testfile.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ cat testfile.txt
+Test1 wrote here something
+Test2 tried to write something here!
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ svn commit -m "Trying to modify locked file"
+Sending        testfile.txt
+Transmitting file data .svn: E195022: Commit failed (details follow):
+svn: E195022: File '/home/monek/mk1-268425/SP/L2/EX5/test2/testfile.txt' is locked in another working copy
+svn: E160038: While preparing '/home/monek/mk1-268425/SP/L2/EX5/test2/testfile.txt' for commit
+svn: E160038: '/mk1-268425/!svn/txr/50-1h/AM/L1/testfile.txt': no lock token available
+
+# Jak widać, plik jest zablokowany, zatem odblokujemy teraz tę blokadę
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ cd ..
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5$ cd test1
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ svn unlock testfile.txt
+'testfile.txt' unlocked.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ cd ..
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5$ cd test2
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ svn status -u
+M               50   testfile.txt
+Status against revision:     50
+
+# Plik nie jest już zablokowany i można go modyfikować
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ svn commit -m "Finally modifying now unlocked file"
+Sending        testfile.txt
+Transmitting file data .done
+Committing transaction...
+Committed revision 51.
+
+# Zablokujmy teraz plik przez użytkownika nr 2
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ svn lock testfile.txt -m "I want to modify it again!"
+'testfile.txt' locked by user '268425'.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ cd ..
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5$ cd test1
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ svn status -u
+     O  *       50   testfile.txt
+Status against revision:     51
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ svn up
+Updating '.':
+U    testfile.txt
+Updated to revision 51.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ cat testfile.txt
+Test1 wrote here something
+Test2 tried to write something here!
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ svn status -u
+     O          51   testfile.txt
+Status against revision:     51
+
+# Zerwijmy teraz blokadę przez użytkownika nr 1
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ svn lock testfile.txt -m "Give it back!"
+svn: warning: W160035: Path '/AM/L1/testfile.txt' is already locked by user '268425' in filesystem '4a28339a-686f-4046-b414-97979b0c6be6'
+svn: E200009: One or more locks could not be obtained
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ svn lock testfile.txt -m "Give it back!" --force
+'testfile.txt' locked by user '268425'.
+
+# Obecnie to użytkownik nr 1 jest właścicielem blokady
+# Zatem spróbujmy zerwać blokadę z perspektywy drugiego użytkownika
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test1$ cd ..
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5$ cd test2
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ svn status
+     K  testfile.txt
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ svn unlock testfile.txt
+svn: warning: W160040: No lock on path 'testfile.txt' (400 Bad Request)
+svn: E200009: One or more locks could not be released
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ svn unlock testfile.txt --force
+'testfile.txt' unlocked.
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5/test2$ svn status -u
+Status against revision:     51
+
+# Zatem plik nie jest już zablokowany
+
+monek@monek-HP-Laptop-15s-eq2xxx:~/mk1-268425/SP/L2/EX5$ svn log -v
+------------------------------------------------------------------------
+r49 | 268425 | 2024-11-04 16:57:16 +0100 (pon, 04 lis 2024) | 1 line
+Changed paths:
+   A /SP/L2/EX5
+
+Added two working copies
+-----------------------------
+
+
